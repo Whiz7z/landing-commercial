@@ -1,15 +1,17 @@
 import CPUSvg from "../../svgComponents/CPUSvg";
 import LightingSvg from "../../svgComponents/LightingSvg";
+import NutSvg from "../../svgComponents/NutSvg";
 import PlugsSvg from "../../svgComponents/PlugsSvg";
 import ShieldSvg from "../../svgComponents/ShieldSvg";
+import WrenchSvg from "../../svgComponents/WrenchSvg";
 import style from "./ProductItem.module.scss";
 import PropTypes from "prop-types";
 
-function ProductItem({image, title, code, tags }) {
+function ProductItem({image, title, code, tags, generalType }) {
   
   return (
     <div className={style.container}>
-      <div className={style.imageWrapper}>
+      <div className={` ${style.imageWrapper} ${style[generalType]}`}>
         <img src={image} alt="product" />
       </div>
       <div className={style.info}>
@@ -34,6 +36,12 @@ function ProductItem({image, title, code, tags }) {
                   {tag.icon === "cpu" && (
                     <CPUSvg w="13.13px" h="13.13px" fill="#757f7b" />
                   )}
+                  {tag.icon === "nut" && (
+                    <NutSvg w="12.19px" h="13.13px" fill="#757f7b" />
+                  )}
+                  {tag.icon === "wrench" && (
+                    <WrenchSvg w="12.15px" h="12.15px" fill="#757f7b" />
+                  )}
                 </span>
                 <span
                   className={style.text}
@@ -42,10 +50,26 @@ function ProductItem({image, title, code, tags }) {
               </span>
             ))}
         </div>
-        <div className={style.actions}>
-          <button className={style.chooseBtn}>Выбрать</button>
-          <button className={style.phoneBtn}>Заказать звонок</button>
-        </div>
+
+        {generalType === "stations" && (
+          <div className={style.actions}>
+            <button className={style.chooseBtn}>Выбрать</button>
+            <button className={style.phoneBtn}>Заказать звонок</button>
+          </div>
+        )}
+
+        {generalType === "services" && (
+          <div className={style.actions}>
+            <button className={`${style.chooseBtn} ${style.consultMe}`}>Проконсультировать меня</button>
+          </div>
+        )}
+
+        {generalType === "details" && (
+          <div className={style.actions}>
+            <button className={style.chooseBtn}>Выбрать</button>
+            <button className={style.phoneBtn}>Позвонить нам</button>
+          </div>
+        )}
       </div>
     </div>
   );

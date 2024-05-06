@@ -51,6 +51,15 @@ aside {
     color: $text-dark;
     outline: none;
     border: 1px solid $text-dark-30;
+    width: 100%;
+
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background: transparent;
+    background-image: url("data:image/svg+xml;utf8,<svg width='14' height='9' viewBox='0 0 14 9' fill='none' xmlns='http://www.w3.org/2000/svg'><path d='M13.6922 1.94219L7.44219 8.19219C7.38415 8.2503 7.31522 8.2964 7.23934 8.32785C7.16347 8.3593 7.08214 8.37549 7 8.37549C6.91787 8.37549 6.83654 8.3593 6.76067 8.32785C6.68479 8.2964 6.61586 8.2503 6.55782 8.19219L0.307816 1.94219C0.220309 1.85478 0.160705 1.74337 0.136548 1.62207C0.112392 1.50076 0.12477 1.37502 0.172115 1.26076C0.21946 1.14649 0.299644 1.04884 0.402515 0.980175C0.505386 0.911506 0.626319 0.874903 0.750004 0.875L13.25 0.875C13.3737 0.874903 13.4946 0.911506 13.5975 0.980175C13.7004 1.04884 13.7805 1.14649 13.8279 1.26076C13.8752 1.37502 13.8876 1.50076 13.8635 1.62207C13.8393 1.74337 13.7797 1.85478 13.6922 1.94219Z' fill='black'/></svg>");
+    background-repeat: no-repeat;
+    background-position-x: calc(100% - 20px);
+    background-position-y: 24px;
   }
 }
 
@@ -131,7 +140,7 @@ aside {
     width: 320px;
     height: 60px;
     cursor: pointer;
-    transition: 0.3s;
+    transition: 0.3s ease-in-out;
   }
 
   .btnNonActive {
@@ -160,18 +169,18 @@ menu {
   padding-left: 0;
 }
 
-
-
 .topBar {
   display: flex;
   gap: 20px;
   margin-bottom: 10px;
   .categories {
+    z-index: 0;
     padding: 10px 15px;
     background-color: #fff;
     border-radius: 10px;
-    
-    menu {
+    min-width: 620px;
+
+    ul {
       display: flex;
       gap: 10px;
       margin: 0;
@@ -191,10 +200,30 @@ menu {
           align-items: center;
 
           .radio {
-           display: flex;
-           align-items: center;
+            display: flex;
+            align-items: center;
           }
         }
+      }
+
+      .disabled {
+        background-color: $bg;
+        cursor: default;
+        font-weight: 300;
+        position: relative;
+        padding: 0 20px 0 20px;
+        color: $text-muted;
+        font-size: 18px;
+        border-radius: 10px;
+        gap: 8px;
+        height: 50px;
+        display: flex;
+        align-items: center;
+
+        .radio {
+            display: flex;
+            align-items: center;
+          }
       }
 
       .active {
@@ -211,7 +240,7 @@ menu {
     }
   }
 
-  .consult{
+  .consult {
     padding: 15px 19px 15px 20px;
     border-radius: 10px;
     border: 1px solid $text-muted;

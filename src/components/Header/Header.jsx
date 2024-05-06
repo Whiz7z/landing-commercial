@@ -3,8 +3,12 @@ import LightingSvg from '../../svgComponents/LightingSvg';
 import NutSvg from '../../svgComponents/NutSvg';
 import WrenchSvg from '../../svgComponents/WrenchSvg';
 import style from './Header.module.scss'
+import { NavLink, useLocation } from "react-router-dom";
 
 const Header = () => {
+  const {pathname} = useLocation();
+
+  console.log(pathname);
   return (
     <>
       <header className={style.headerContainer}>
@@ -26,29 +30,47 @@ const Header = () => {
             <a href="#">energotochka</a>
           </div>
           <menu className={style.menu}>
-            <li className={`${style.active}`}>
-              <a href="#">
+            <li
+              className={
+                pathname === "/" || pathname === "/stations"
+                  ? `${style.active}`
+                  : `${style.nonActive}`
+              }
+            >
+              <NavLink to="/stations">
                 <span className={style.icon}>
                   <LightingSvg />
                 </span>
                 станции
-              </a>
+              </NavLink>
             </li>
-            <li className={`${style.nonActive}`}>
-              <a href="#">
+            <li
+              className={
+                pathname === "/services"
+                  ? `${style.active}`
+                  : `${style.nonActive}`
+              }
+            >
+              <NavLink to="/services">
                 <span className={style.icon}>
                   <WrenchSvg />
                 </span>
                 услуги
-              </a>
+              </NavLink>
             </li>
-            <li className={`${style.nonActive}`}>
-              <a href="#">
+            <li
+              className={
+                pathname === "/details"
+                  ? `${style.active}`
+                  : `${style.nonActive}`
+              }
+            >
+              <NavLink to="/details">
                 <span className={style.icon}>
                   <NutSvg />
                 </span>
                 дополнительные детали
-              </a>
+              </NavLink>
             </li>
           </menu>
         </section>

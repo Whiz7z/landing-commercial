@@ -1,0 +1,64 @@
+@import "../../src/styles/variables.scss";
+
+.modalWrapper {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(9, 9, 9, 0.7);
+  top: 0;
+  left: 0;
+  display: grid;
+  .modal {
+    padding: 40px 30px 25px 30px;
+    background-color: rgba(255, 255, 255, 0.5);
+    width: 485px;
+    border-radius: 10px;
+    backdrop-filter: blur(5.4px);
+    -webkit-backdrop-filter: blur(5.4px);
+    justify-self: center;
+    margin-top: 175px;
+    max-height: 355px;
+    
+
+    .icon {
+      margin-bottom: 20px;
+    }
+
+    p{
+      font-size: 18px;
+      color: white;
+      line-height: 20px;
+      font-weight: 300;
+      margin-bottom: 20px;
+      a{
+        color: white;
+        text-decoration: underline;
+        font-weight: 600;
+      }
+    }
+
+    .btn{
+      cursor: pointer;
+      transition: 0.3s ease-in-out;
+      font-size: 16px;
+      background-color: $logo;
+      border-radius: 10px;
+      color: white;
+      border: none;
+      outline: none;
+      width: 100%;
+      padding: 20px 0;
+      margin-bottom: 20px;
+      &:hover{
+        background-color: $btn-hover;
+      }
+    }
+
+    .copyright{
+      font-size: 14px;
+      color: $text-dark;
+      text-align: center;
+      margin-bottom: 0;
+    }
+  }
+}

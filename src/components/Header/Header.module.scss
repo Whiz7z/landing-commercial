@@ -35,10 +35,14 @@
   margin-bottom: 20px;
   gap: 60px;
   border-radius: 10px;
-  background:  linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 60%, rgba(255,255,255,0) 100%), url('../../assets/images/menu-bg.png');
-  background-position: center center, right;
-  background-size: 100% 100%, contain;
-  background-repeat: no-repeat;
+  
+  
+ background: linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 55%, rgba(255,255,255,0) 100%) , url('../../assets/images/menu-bg.png');
+  //background:  linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 60%, rgba(255,255,255,0) 100%), url('../../assets/images/menu-bg.png');
+  background-position: bottom -2px right -5px;
+  background-color: white;
+  background-size:  contain;
+  background-repeat: no-repeat, no-repeat;
   .logo {
     align-self: center;
     a {
@@ -60,7 +64,7 @@
 
       a{
         position: relative;
-        padding: 15px 30px 15px 25px;
+        padding: 15px 25px 15px 25px;
         color: $text-dark;
         font-size: 18px;
         border-radius: 10px;

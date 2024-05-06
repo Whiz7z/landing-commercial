@@ -2,7 +2,6 @@
 
 footer {
   width: 100%;
-
   position: relative;
   background-color: $text-dark;
   border-top-left-radius: 10px;
@@ -30,6 +29,7 @@ footer {
       position: relative;
       top: -10px;
       margin-bottom: 10px;
+      font-family: "Age";
     }
 
     .docs {

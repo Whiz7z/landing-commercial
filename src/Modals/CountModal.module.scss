@@ -1,0 +1,108 @@
+@import "../../src/styles/variables.scss";
+
+.modalWrapper {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(9, 9, 9, 0.7);
+  top: 0;
+  left: 0;
+  display: grid;
+  .modal {
+    padding: 40px 30px 45px 30px;
+    width: 500px;
+    background-color: #fff;
+    background-image: linear-gradient(to right bottom, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 15%, rgba(255,255,255,0) 100%),  url("../assets/images/modal-bg.png");
+    
+    
+    background-size: 100%;
+    background-repeat: no-repeat;
+    
+    border-radius: 20px;
+    // backdrop-filter: blur(5.4px);
+    // -webkit-backdrop-filter: blur(5.4px);
+    justify-self: center;
+    margin-top: 175px;
+    max-height: 410px;
+
+    position: relative;
+    
+
+    .icon{
+      display: grid;
+      justify-items: flex-end;
+      position: absolute;
+      right: 15px;
+      top: 25px;
+    }
+
+    .logo {
+      align-self: center;
+      a {
+        font-family: "Age";
+        font-size: 50px;
+        color: $logo;
+      }
+    }
+
+     h2 {
+      font-size: 2rem;
+      color: $text-dark;
+      position: relative;
+      top: -10px;
+      margin-bottom: 10px;
+      font-family: "Age";
+    }
+
+    .text{
+      font-size: 18px;
+      color: $text-dark;
+      line-height: 18px;
+      margin-bottom: 30px;
+    }
+
+    input{
+      height: 50px;
+      width: 330px;
+      font-size: 18px;
+      font-weight: 300;
+      border-radius: 10px;
+      outline: none;
+      border: 1px solid $input-border;
+      padding: 0 20px;
+      margin-bottom: 15px;
+      
+    }
+
+    .btn{
+      cursor: pointer;
+      transition: 0.3s ease-in-out;
+      font-size: 16px;
+      width: 330px;
+      height: 60px;
+      border-radius: 10px;
+      border: none;
+      outline: none;
+      padding: 0 0;
+      margin-bottom: 20px;
+      font-weight: 500;
+    }
+
+    .active {
+      color: white;
+      background-color: $logo;
+      &:hover{
+        background-color: $btn-hover;
+      }
+    }
+
+    .nonActive {
+      color: $text-dark-30;
+      background-color: $btn-not-active;
+      &:hover{
+        
+      }
+    }
+
+  }
+}
