@@ -1,0 +1,89 @@
+@import "../../styles/variables.scss";
+
+.headerContainer{
+  display: flex;
+  flex-direction: column;
+  gap:1rem;
+}
+
+.headerTop {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: $text-muted;
+  
+  font-size: 1.4rem;
+
+  .infoText {
+  }
+
+  .contact {
+    display: flex;
+
+    span {
+      font-size: 1.6rem;
+      color: $text-light;
+      margin-left: 4px;
+    }
+  }
+}
+
+.headerBottom {
+  width: 100%;
+  display: flex;
+  padding: 0px 20px;
+  margin-bottom: 20px;
+  gap: 60px;
+  border-radius: 10px;
+  background:  linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 60%, rgba(255,255,255,0) 100%), url('../../assets/images/menu-bg.png');
+  background-position: center center, right;
+  background-size: 100% 100%, contain;
+  background-repeat: no-repeat;
+  .logo {
+    align-self: center;
+    a {
+      font-family: "Age";
+      font-size: 40px;
+      color: $logo;
+    }
+  }
+
+  .menu{
+    display: flex;
+    justify-self: start;
+    align-self: center;
+    gap: 1rem;
+    padding-left: 0;
+    
+    li{
+      list-style-type: none;
+
+      a{
+        position: relative;
+        padding: 15px 30px 15px 25px;
+        color: $text-dark;
+        font-size: 18px;
+        border-radius: 10px;
+        font-weight: 500;
+        display: flex;
+        gap: 8px;
+        .icon{
+          position: relative;
+          top: 5px
+        }
+      }
+    }
+
+    .active {
+      a{
+        background-color: $btn-active;
+      }
+    }
+
+    .nonActive {
+      a{
+        background-color: $btn-nonactive;
+      }
+    }
+  }
+}

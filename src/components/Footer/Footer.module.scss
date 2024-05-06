@@ -1,0 +1,90 @@
+@import "../../styles/variables.scss";
+
+footer {
+  width: 100%;
+
+  position: relative;
+  background-color: $text-dark;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  padding: 50px 30px 35px 30px;
+}
+
+.topFooter {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 30px;
+  .info {
+    .logo {
+      align-self: center;
+      a {
+        font-family: "Age";
+        font-size: 40px;
+        color: #fff;
+      }
+    }
+
+    h2 {
+      font-size: 2rem;
+      color: $text-title-muted;
+      position: relative;
+      top: -10px;
+      margin-bottom: 10px;
+    }
+
+    .docs {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+      a {
+        color: #fff;
+        font-size: 1.6rem;
+      }
+    }
+  }
+
+  .contact {
+    display: grid;
+    align-items: center;
+
+    .telegram_link {
+      align-self: flex-end;
+    }
+
+    .phone,
+    .gmail {
+      p:first-child {
+        color: $text-semi-muted;
+        font-size: 14px;
+      }
+
+      p:last-child {
+        color: #fff;
+        font-size: 18px;
+      }
+    }
+    .phone {
+      align-self: flex-end;
+    }
+    .gmail {
+      align-self: self-end;
+    }
+  }
+}
+
+.bottomFooter {
+  display: flex;
+  flex-direction: column;
+
+  color: #fff;
+  font-size: 1.6rem;
+
+  .firstCopyright {
+    margin-bottom: 25px;
+  }
+
+  .copyright {
+    color: $text-semi-muted;
+    font-size: 16px;
+  }
+}
