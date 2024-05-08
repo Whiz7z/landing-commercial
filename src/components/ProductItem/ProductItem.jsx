@@ -7,7 +7,16 @@ import WrenchSvg from "../../svgComponents/WrenchSvg";
 import style from "./ProductItem.module.scss";
 import PropTypes from "prop-types";
 
+import useStore from "../../store/store";
+import PhoneSvg from "../../svgComponents/PhoneSvg";
+
 function ProductItem({image, title, code, tags, generalType }) {
+
+  const { selectedItems, add, remove } = useStore((state) => ({
+    selectedItems: state.selectedItems,
+    add: state.add,
+    remove: state.remove,
+  }));
   
   return (
     <div className={style.container}>
@@ -53,20 +62,58 @@ function ProductItem({image, title, code, tags, generalType }) {
 
         {generalType === "stations" && (
           <div className={style.actions}>
-            <button className={style.chooseBtn}>Выбрать</button>
+            <button
+              className={`${style.chooseBtn} ${
+                selectedItems.find((item) => item.code === code)
+                  ? style.choosedBtn
+                  : null
+              }`}
+              onClick={() =>
+                selectedItems.find((item) => item.code === code)
+                  ? remove(code)
+                  : add(code, title)
+              }
+            >
+              {selectedItems.find((item) => item.code === code)
+                ? "Выбрано"
+                : "Выбрать"}
+            </button>
             <button className={style.phoneBtn}>Заказать звонок</button>
+            <button className={style.callBtn}>
+              <PhoneSvg />
+            </button>
           </div>
         )}
 
         {generalType === "services" && (
           <div className={style.actions}>
-            <button className={`${style.chooseBtn} ${style.consultMe}`}>Проконсультировать меня</button>
+            <button className={`${style.chooseBtn} ${style.consultMe}`}>
+              Проконсультировать меня
+            </button>
+            <button className={style.callBtn}>
+              <PhoneSvg />
+            </button>
           </div>
         )}
 
         {generalType === "details" && (
           <div className={style.actions}>
-            <button className={style.chooseBtn}>Выбрать</button>
+            <button
+              className={`${style.chooseBtn} ${
+                selectedItems.find((item) => item.code === code)
+                  ? style.choosedBtn
+                  : null
+              }`}
+              onClick={() =>
+                selectedItems.find((item) => item.code === code)
+                  ? remove(code)
+                  : add(code, title)
+              }
+            >
+              {selectedItems.find((item) => item.code === code)
+                ? "Выбрано"
+                : "Выбрать"}
+            </button>
             <button className={style.phoneBtn}>Позвонить нам</button>
           </div>
         )}

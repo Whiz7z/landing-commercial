@@ -1,32 +1,81 @@
-import CheckCircle from '../../svgComponents/CheckCircle';
-import RadioSvg from '../../svgComponents/RadioSvg';
-import ProductItem from '../ProductItem/ProductItem';
-import style from './MainContent.module.scss'
+import CheckCircle from "../../svgComponents/CheckCircle";
+import RadioSvg from "../../svgComponents/RadioSvg";
+import ProductItem from "../ProductItem/ProductItem";
+import style from "./MainContent.module.scss";
 import { Routes, Route } from "react-router-dom";
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
+import "swiper/css/scrollbar";
 
 import {
   productsSlowCurrentStation,
   productsFastCurrentStation,
 } from "../../data/products";
-import { useEffect, useState } from 'react';
-import CountModal from '../../Modals/CountModal';
-import ProductList from '../MainContent/ProductList';
+import { useEffect, useState } from "react";
+import CountModal from "../../Modals/CountModal";
+import ProductList from "../MainContent/ProductList";
+import SelectArrowSvg from "../../svgComponents/SelectArrowSvg";
 
+import useStore from "../../store/store"
+
+
+let currentTypes = [
+  {
+    id: 1,
+    value: "all",
+    text: "Выберите тип тока",
+  },
+  {
+    id: 2,
+    value: "slow",
+    text: "Медленный переменный ток",
+  },
+  {
+    id: 3,
+    value: "fast",
+    text: "Быстрый постоянный ток",
+  },
+];
 
 function MainContent() {
-
-  const [currentType, setCurrentType] = useState('all')
+  const [currentType, setCurrentType] = useState("all");
   const [productType, setProductType] = useState("wall");
 
-  const [countModal, setCountModal ] = useState(false);
+  const [number, setNumber] = useState("");
 
+  const [countModal, setCountModal] = useState(false);
+
+  const [openSelect, setOpenSelect] = useState(false);
+
+  const { selectedItems, add, remove } = useStore((state) => ({
+    selectedItems: state.selectedItems,
+    add: state.add,
+    remove: state.remove,
+  }));
+
+
+
+
+  const openTypeSelect = () => {
+    setOpenSelect(true);
+  };
+
+  const chooseCurrent = (id) => {
+   setCurrentType(currentTypes.find((item) => item.id === id).value);
+   setOpenSelect(false);
+
+    console.log('currentType',currentType);
+  }
   useEffect(() => {
-    console.log(currentType);
-  }, [currentType]);
+    console.log("selectedItems", selectedItems);
+  }, [selectedItems]);
 
   return (
     <div className={style.container}>
       {countModal && <CountModal onClose={() => setCountModal(false)} />}
+
       <aside>
         <div className={style.chooseCurrent}>
           <h2>
@@ -34,17 +83,42 @@ function MainContent() {
             <br /> от производителя
           </h2>
           <p>более 10 моделей · более 50 комплектаций</p>
-          <select
+          <div
             name="current"
             id="current"
             value={currentType}
-            onChange={(e) => setCurrentType(e.target.value)}
-            
+            className={style.select}
+            onMouseLeave={() => setOpenSelect(false)}
           >
-            <option value="all">Выберите тип тока</option>
-            <option value="slow">Медленный переменный ток</option>
-            <option value="fast">Быстрый постоянный ток</option>
-          </select>
+            {!openSelect && (
+              <div
+                className={style.selectPreview}
+                onClick={() => openTypeSelect(true)}
+              >
+                {currentTypes.find((item) => item.value == currentType)?.text}
+                <span>
+                  <SelectArrowSvg />
+                </span>
+              </div>
+            )}
+
+            {openSelect
+              ? currentTypes.map((item) => (
+                  <div
+                    key={item.id}
+                    className={`${style.option} ${
+                      item.checked ? `${style.active}` : `${style.nonactive}`
+                    }`}
+                    onClick={() => chooseCurrent(item.id)}
+                  >
+                    {item.text}
+                    <span>
+                      <SelectArrowSvg />
+                    </span>
+                  </div>
+                ))
+              : null}
+          </div>
         </div>
 
         <div className={style.info}>
@@ -87,9 +161,29 @@ function MainContent() {
             Рассчитаем стоимость
             <br /> станции <span>под ключ</span>
           </h2>
+          <div className={style.mobile_calc}>
+            <input
+              type="text"
+              placeholder="Напишите номер телефона"
+              value={number}
+              onChange={(e) => setNumber(e.target.value)}
+            />
+            <button
+              className={`${
+                selectedItems.length > 0 ? style.btnActive : style.btnNonActive
+              }`}
+              onClick={() => setCountModal(true)}
+              disabled={selectedItems.length === 0}
+            >
+              Рассчитать за 2 минуты
+            </button>
+          </div>
           <button
-            className={`${style.btnActive}`}
+            className={`${
+              selectedItems.length > 0 ? style.btnActive : style.btnNonActive
+            } ${style.desktop_calc}`}
             onClick={() => setCountModal(true)}
+            disabled={selectedItems.length === 0}
           >
             Рассчитать за 2 минуты
           </button>
@@ -139,25 +233,20 @@ function MainContent() {
             <span>бесплатная консультация</span>
           </div>
         </div>
-        <div className={style.products}>
-          {/* {currentType === "slow"
-            ? productsSlowCurrentStation
-                .filter((el) => el.type === productType)
-                .map((product, index) => (
-                  <ProductItem key={index} {...product} />
-                ))
-            : productsFastCurrentStation
-                .filter((el) => el.type === productType)
-                .map((product, index) => (
-                  <ProductItem key={index} {...product} />
-                ))} */}
-          <ProductList productType={productType} currentType={currentType}/>
+        <div className={`${style.products}`}>
+          <ProductList productType={productType} currentType={currentType} />
+        </div>
+
+        <div className={`${style.slider_products}`}>
+          
+            
+            <ProductList productType={productType} currentType={currentType} />
+          
         </div>
       </div>
     </div>
   );
 }
-
 
 const StationsCategories = ({
   onProductTypeChange,
@@ -222,8 +311,6 @@ const StationsCategories = ({
 };
 
 const DetailsCategories = () => {
-
-
   return (
     <div className={style.categories}>
       <ul>
@@ -265,5 +352,4 @@ const ServicesCategories = () => {
   );
 };
 
-
-export default MainContent
+export default MainContent;

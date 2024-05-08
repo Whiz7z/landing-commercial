@@ -1,8 +1,14 @@
 import React, { useState } from 'react'
 import style from './CountModal.module.scss'
 import CrossSvg from './../svgComponents/CrossSvg';
+import useStore  from "../store/store";
 
 function CountModal({onClose}) {
+  const { selectedItems, add, remove } = useStore((state) => ({
+    selectedItems: state.selectedItems,
+    add: state.add,
+    remove: state.remove,
+  }));
   const [number , setNumber] = useState('')
   const closeModal = () => {
     onClose();
@@ -10,6 +16,7 @@ function CountModal({onClose}) {
 
   const sendPhoneNumber = () => {
     console.log(number)
+    console.log(selectedItems);
     onClose();
   };
   return (

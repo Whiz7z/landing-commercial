@@ -1,12 +1,12 @@
-
-import LightingSvg from '../../svgComponents/LightingSvg';
-import NutSvg from '../../svgComponents/NutSvg';
-import WrenchSvg from '../../svgComponents/WrenchSvg';
-import style from './Header.module.scss'
+import LightingSvg from "../../svgComponents/LightingSvg";
+import NutSvg from "../../svgComponents/NutSvg";
+import WrenchSvg from "../../svgComponents/WrenchSvg";
+import style from "./Header.module.scss";
+import PhoneSvg from "../../svgComponents/PhoneSvg";
 import { NavLink, useLocation } from "react-router-dom";
 
 const Header = () => {
-  const {pathname} = useLocation();
+  const { pathname } = useLocation();
 
   console.log(pathname);
   return (
@@ -20,14 +20,23 @@ const Header = () => {
               бренда «beny»
             </p>
           </div>
+          <a href="" className={style.callBtn}>
+            <span>
+              <PhoneSvg />
+            </span>
+            позвонить
+          </a>
           <div className={style.contact}>
-            <p>Быстрая связь с нами:</p>
+            <p className={style.contactText}>Быстрая связь с нами:</p>
+            <p className={style.ourNumberText}>Наш номер:</p>
             <span>+7 (495) 182-00-11 </span>
           </div>
         </section>
+
         <section className={style.headerBottom}>
           <div className={style.logo}>
             <a href="#">energotochka</a>
+            <h2 className={style.subLogo}>електрические станции под ключ</h2>
           </div>
           <menu className={style.menu}>
             <li

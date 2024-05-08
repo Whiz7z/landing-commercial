@@ -15,15 +15,17 @@ function App() {
   // },[]);
 
   return (
-    <div className={"App"}>
-      <main>
-        <Header />
-        <MainContent />
-      </main>
-      <Footer />
+    <>
+      <div className={"App"}>
+        <main>
+          <Header />
+          <MainContent />
+        </main>
 
-      {cookieModal && <CookiesModal onClose={() => setCookieModal(false)} />}
-    </div>
+        {cookieModal && <CookiesModal onClose={() => setCookieModal(false)} />}
+      </div>
+      {/* <Footer /> */}
+    </>
   );
 }
 

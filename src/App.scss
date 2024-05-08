@@ -58,7 +58,7 @@ body {
   // background-color: $light;
   text-rendering: optimizeSpeed;
   line-height: 1.5;
-  overflow-x: hidden;
+  //overflow-x: hidden;
 }
 
 /* Удаляем стандартную стилизацию для всех ul и il, у которых есть атрибут class*/
@@ -107,6 +107,7 @@ a {
 #root {
   width: 100vw;
   display: grid;
+  height: 100vh;
 }
 
 /* Удаляем все анимации и переходы для людей, которые предпочитай их не использовать */
@@ -130,6 +131,28 @@ main{
   padding: 20px 30px 0px 30px;
   
   position: relative;
+}
+
+@media screen and (max-width: 1340px) {
+
+  .App{
+    display: grid;
+    grid-template-columns: 20px 1fr 20px;
+    width: 100%;
+  }
+
+  main{
+    grid-column: 2/3;
+    width: 100%;
+  }
+  
+}
+
+@media screen and (max-width: 1080px) {
+
+  main{
+    padding: 0px 0px 0px 0px;
+  }
 }
 
 // ::-webkit-scrollbar {

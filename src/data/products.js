@@ -212,7 +212,7 @@ export const productsFastCurrentStation = [
   {
     image: null,
     title: "Напольная зарядная станция постоянного тока",
-    code: "BDC-S2",
+    code: "BADC-S2",
     type: "floor",
     tags: [
       {
@@ -351,7 +351,7 @@ export const productsFastCurrentStation = [
   {
     image: null,
     title: "Напольная зарядная станция постоянного тока",
-    code: "BDC-S2",
+    code: "BADC-D3",
     type: "floor",
     tags: [
       {
@@ -540,7 +540,7 @@ export const productsFastCurrentStation = [
     image: null,
     title: "Напольная зарядная станция постоянного тока",
     code: "BDC-P1",
-    type: "wall",
+    type: "floor",
     tags: [
       {
         icon: "lightning",
