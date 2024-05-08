@@ -51,6 +51,61 @@ const StationsList = ({ productType, currentType }) => {
         <style>{`
           .swiper {
             width: 330px;
+            height: 100%;
+            overflow: visible
+          }
+
+          .swiper-wrapper {
+            margin: 0 auto;
+            width: 330px;
+            
+          }
+
+          .slide {
+            width: 330px;
+            height: auto;
+            margin: 0 auto;
+          }
+
+          // .swiper .swiper-wrapper .swiper-slide, swiper-slide-active {
+          //   width: 330px;
+          //   height: auto;
+          //   margin: 0 auto;
+          //   outline: 2px solid red;
+          // }
+        `}</style>
+        <div className={`${style.products}`}>
+          {combinedArray
+            .filter((el) => el.type === productType)
+            .map((product, index) => (
+              <ProductItem key={index} {...product} generalType="stations" />
+            ))}
+        </div>
+        <div className={`${style.slider_products}`}>
+          <Swiper
+            spaceBetween={10}
+            slidesPerView={1}
+            centeredSlides={true}
+            loop={true}
+            modules={[Navigation, Pagination, Scrollbar, A11y]}
+            onSlideChange={() => console.log("slide change")}
+            onSwiper={(swiper) => console.log(swiper)}
+          >
+            {combinedArray.map((product, index) => (
+              <SwiperSlide key={index}>
+                <ProductItem {...product} generalType="stations" />
+              </SwiperSlide>
+            ))}
+          </Swiper>
+        </div>
+      </>
+    );
+  } else if(currentType === "slow") {
+    return (
+      <>
+        <style>{`
+          .swiper {
+            width: 330px;
             //outline: 2px solid blue;
             
             overflow: visible
@@ -74,59 +129,200 @@ const StationsList = ({ productType, currentType }) => {
           //   outline: 2px solid red;
           // }
         `}</style>
-        <Swiper
-          spaceBetween={10}
-          slidesPerView={1}
-          centeredSlides={true}
-          loop={true}
-          modules={[Navigation, Pagination, Scrollbar, A11y]}
-          onSlideChange={() => console.log("slide change")}
-          onSwiper={(swiper) => console.log(swiper)}
-        >
-          {combinedArray
+        <div className={`${style.products}`}>
+          {productsSlowCurrentStation
             .filter((el) => el.type === productType)
             .map((product, index) => (
+              <ProductItem key={index} {...product} generalType="stations" />
+            ))}
+        </div>
+        <div className={`${style.slider_products}`}>
+          <Swiper
+            spaceBetween={10}
+            slidesPerView={1}
+            centeredSlides={true}
+            loop={true}
+            modules={[Navigation, Pagination, Scrollbar, A11y]}
+            onSlideChange={() => console.log("slide change")}
+            onSwiper={(swiper) => console.log(swiper)}
+          >
+            {productsSlowCurrentStation.map((product, index) => (
               <SwiperSlide key={index}>
                 <ProductItem {...product} generalType="stations" />
               </SwiperSlide>
             ))}
-        </Swiper>
+          </Swiper>
+        </div>
       </>
     );
-  }
-  return (
-    <>
-      {currentType === "slow"
-        ? productsSlowCurrentStation
-            .filter((el) => el.type === productType)
-            .map((product, index) => (
-              <ProductItem key={index} {...product} generalType="stations" />
-            ))
-        : productsFastCurrentStation
+  } else if(currentType === "fast") {
+    return (
+      <>
+        <style>{`
+          .swiper {
+            width: 330px;
+            //outline: 2px solid blue;
+            
+            overflow: visible
+          }
+
+          .swiper-wrapper {
+            margin: 0 auto;
+            width: 330px;
+          }
+
+          .slide {
+            width: 330px;
+            height: auto;
+            margin: 0 auto;
+          }
+
+          // .swiper .swiper-wrapper .swiper-slide, swiper-slide-active {
+          //   width: 330px;
+          //   height: auto;
+          //   margin: 0 auto;
+          //   outline: 2px solid red;
+          // }
+        `}</style>
+        <div className={`${style.products}`}>
+          {productsFastCurrentStation
             .filter((el) => el.type === productType)
             .map((product, index) => (
               <ProductItem key={index} {...product} generalType="stations" />
             ))}
-    </>
-  );
+        </div>
+        <div className={`${style.slider_products}`}>
+          <Swiper
+            spaceBetween={10}
+            slidesPerView={1}
+            centeredSlides={true}
+            loop={true}
+            modules={[Navigation, Pagination, Scrollbar, A11y]}
+            onSlideChange={() => console.log("slide change")}
+            onSwiper={(swiper) => console.log(swiper)}
+          >
+            {productsFastCurrentStation.map((product, index) => (
+              <SwiperSlide key={index}>
+                <ProductItem {...product} generalType="stations" />
+              </SwiperSlide>
+            ))}
+          </Swiper>
+        </div>
+      </>
+    );
+  }
+ 
 };
 
 const ServicesList = () => {
   return (
+
     <>
-      {productsServices.map((product, index) => (
-        <ProductItem key={index} {...product} generalType="services" />
-      ))}
+      <style>{`
+          .swiper {
+            width: 330px;
+            //outline: 2px solid blue;
+            
+            overflow: visible
+          }
+
+          .swiper-wrapper {
+            margin: 0 auto;
+            width: 330px;
+          }
+
+          .slide {
+            width: 330px;
+            height: auto;
+            margin: 0 auto;
+          }
+
+          // .swiper .swiper-wrapper .swiper-slide, swiper-slide-active {
+          //   width: 330px;
+          //   height: auto;
+          //   margin: 0 auto;
+          //   outline: 2px solid red;
+          // }
+        `}</style>
+      <div className={`${style.products}`}>
+        {productsServices.map((product, index) => (
+          <ProductItem key={index} {...product} generalType="services" />
+        ))}
+      </div>
+      <div className={`${style.slider_products}`}>
+        <Swiper
+          spaceBetween={10}
+          slidesPerView={1}
+          centeredSlides={true}
+          loop={false}
+          modules={[Navigation, Pagination, Scrollbar, A11y]}
+          onSlideChange={() => console.log("slide change")}
+          onSwiper={(swiper) => console.log(swiper)}
+        >
+          {productsServices.map((product, index) => (
+            <SwiperSlide key={index}>
+              <ProductItem key={index} {...product} generalType="services" />
+            </SwiperSlide>
+          ))}
+        </Swiper>
+      </div>
     </>
   );
 };
 
 const DetailsList = () => {
   return (
+
+
     <>
-      {productsDetails.map((product, index) => (
-        <ProductItem key={index} {...product} generalType="details" />
-      ))}
+      <style>{`
+          .swiper {
+            width: 330px;
+            //outline: 2px solid blue;
+            
+            overflow: visible
+          }
+
+          .swiper-wrapper {
+            margin: 0 auto;
+            width: 330px;
+          }
+
+          .slide {
+            width: 330px;
+            height: auto;
+            margin: 0 auto;
+          }
+
+          // .swiper .swiper-wrapper .swiper-slide, swiper-slide-active {
+          //   width: 330px;
+          //   height: auto;
+          //   margin: 0 auto;
+          //   outline: 2px solid red;
+          // }
+        `}</style>
+      <div className={`${style.products}`}>
+        {productsDetails.map((product, index) => (
+          <ProductItem key={index} {...product} generalType="details" />
+        ))}
+      </div>
+      <div className={`${style.slider_products}`}>
+        <Swiper
+          spaceBetween={10}
+          slidesPerView={1}
+          centeredSlides={true}
+          loop={false}
+          modules={[Navigation, Pagination, Scrollbar, A11y]}
+          onSlideChange={() => console.log("slide change")}
+          onSwiper={(swiper) => console.log(swiper)}
+        >
+          {productsDetails.map((product, index) => (
+            <SwiperSlide key={index}>
+              <ProductItem key={index} {...product} generalType="details" />
+            </SwiperSlide>
+          ))}
+        </Swiper>
+      </div>
     </>
   );
 };

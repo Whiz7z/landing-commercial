@@ -150,8 +150,17 @@ main{
 
 @media screen and (max-width: 1080px) {
 
+  #root {
+  width: 100vw;
+  display: grid;
+  height: auto;
+}
+
   main{
     padding: 0px 0px 0px 0px;
+  }
+
+  .App{
   }
 }
 

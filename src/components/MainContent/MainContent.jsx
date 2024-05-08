@@ -233,16 +233,7 @@ function MainContent() {
             <span>бесплатная консультация</span>
           </div>
         </div>
-        <div className={`${style.products}`}>
-          <ProductList productType={productType} currentType={currentType} />
-        </div>
-
-        <div className={`${style.slider_products}`}>
-          
-            
             <ProductList productType={productType} currentType={currentType} />
-          
-        </div>
       </div>
     </div>
   );

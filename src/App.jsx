@@ -24,7 +24,7 @@ function App() {
 
         {cookieModal && <CookiesModal onClose={() => setCookieModal(false)} />}
       </div>
-      {/* <Footer /> */}
+      <Footer />
     </>
   );
 }

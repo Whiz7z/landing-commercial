@@ -10,6 +10,22 @@ function Footer() {
             <a href="#">energotochka</a>
           </div>
           <h2>электрические станции под ключ</h2>
+
+          <div className={`${style.contact} ${style.contact_mobile} `}>
+            <a href="#" className={style.telegram_link}>
+              <TelegramSvg />
+            </a>
+            <div className={style.phone}>
+              <p>Быстрая связь с нами:</p>
+              <p>+7 (495) 182-00-11 </p>
+            </div>
+
+            <div className={style.gmail}>
+              <p>Почта:</p>
+              <p>info@energotochka.com</p>
+            </div>
+          </div>
+
           <div className={style.docs}>
             <a href="#">
               документация и сертификация поставляемого оборудования{" "}

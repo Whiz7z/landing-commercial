@@ -115,6 +115,9 @@ function ProductItem({image, title, code, tags, generalType }) {
                 : "Выбрать"}
             </button>
             <button className={style.phoneBtn}>Позвонить нам</button>
+            <button className={style.callBtn}>
+              <PhoneSvg />
+            </button>
           </div>
         )}
       </div>
