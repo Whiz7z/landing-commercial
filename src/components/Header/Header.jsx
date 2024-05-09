@@ -9,7 +9,7 @@ const Header = () => {
   const { pathname } = useLocation();
   const  phoneNumber = import.meta.env.VITE_PHONE
 
-  console.log(pathname);
+  console.log(phoneNumber);
   return (
     <>
       <header className={style.headerContainer}>
@@ -21,7 +21,7 @@ const Header = () => {
               бренда «beny»
             </p>
           </div>
-          <a href={`tel:${process.env.REACT_APP_PHONE}`} className={style.callBtn}>
+          <a href={`tel:${phoneNumber}`} className={style.callBtn}>
             <span>
               <PhoneSvg />
             </span>
