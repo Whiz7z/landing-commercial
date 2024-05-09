@@ -46,7 +46,7 @@ const Header = () => {
                   : `${style.nonActive}`
               }
             >
-              <NavLink to="/stations">
+              <NavLink to="/stations" href='#items'>
                 <span className={style.icon}>
                   <LightingSvg />
                 </span>

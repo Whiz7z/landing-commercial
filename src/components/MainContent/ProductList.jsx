@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 
 import ProductItem from "../ProductItem/ProductItem";
 import style from "./MainContent.module.scss";
@@ -16,39 +16,10 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/scrollbar";
+import DecorArrowSvg from "../../svgComponents/DecorArrowSvg";
 
-function ProductList({ productType, currentType }) {
-  return (
-    <Routes>
-      <Route
-        path="/"
-        element={
-          <StationsList productType={productType} currentType={currentType} />
-        }
-        exact
-      ></Route>
-      <Route
-        path="/stations"
-        element={
-          <StationsList productType={productType} currentType={currentType} />
-        }
-        exact
-      ></Route>
-      <Route path="/services" element={<ServicesList />} exact></Route>
-      <Route path="/details" element={<DetailsList />} exact></Route>
-    </Routes>
-  );
-}
-
-const StationsList = ({ productType, currentType }) => {
-  if (currentType === "all") {
-    const combinedArray = [
-      ...productsSlowCurrentStation,
-      ...productsFastCurrentStation,
-    ];
-    return (
-      <>
-        <style>{`
+const styleTag = (
+  <style>{`
           .swiper {
             width: 330px;
             height: 100%;
@@ -66,14 +37,79 @@ const StationsList = ({ productType, currentType }) => {
             height: auto;
             margin: 0 auto;
           }
-
-          // .swiper .swiper-wrapper .swiper-slide, swiper-slide-active {
-          //   width: 330px;
-          //   height: auto;
-          //   margin: 0 auto;
-          //   outline: 2px solid red;
-          // }
         `}</style>
+);
+
+function ProductList({ productType, currentType, calcRef }) {
+  return (
+    <Routes>
+      <Route
+        path="/"
+        element={
+          <StationsList
+            productType={productType}
+            currentType={currentType}
+            calcRef={calcRef}
+          />
+        }
+        exact
+      ></Route>
+      <Route
+        path="/stations"
+        element={
+          <StationsList
+            productType={productType}
+            currentType={currentType}
+            calcRef={calcRef}
+          />
+        }
+        exact
+      ></Route>
+      <Route
+        path="/services"
+        element={<ServicesList calcRef={calcRef} />}
+        exact
+      ></Route>
+      <Route
+        path="/details"
+        element={<DetailsList calcRef={calcRef} />}
+        exact
+      ></Route>
+    </Routes>
+  );
+}
+
+const StationsList = ({ productType, currentType, calcRef }) => {
+  const targetRef = useRef(null);
+
+  useEffect(() => {
+    // targetRef.current.scrollIntoView({ behavior: "smooth" });
+
+    console.log(targetRef.current.offsetTop);
+
+    // const scrolledY = window.scrollY;
+
+    // if (scrolledY) {
+    //   window.scroll(0, targetRef.current.offsetTop + 50);
+    // }
+
+    window.scroll(0, targetRef.current.offsetTop - 50);
+  }, [currentType, productType]);
+
+  if (currentType === "all") {
+    const combinedArray = [
+      ...productsSlowCurrentStation,
+      ...productsFastCurrentStation,
+    ];
+    return (
+      <>
+        {styleTag}
+        <div className={style.category_decor} >
+          станции
+          <span>
+            <DecorArrowSvg />
+          </span>
+        </div>
         <div className={`${style.products}`}>
           {combinedArray
             .filter((el) => el.type === productType)
@@ -81,7 +117,7 @@ const StationsList = ({ productType, currentType }) => {
               <ProductItem key={index} {...product} generalType="stations" />
             ))}
         </div>
-        <div className={`${style.slider_products}`}>
+        <div className={`${style.slider_products}`} ref={targetRef}>
           <Swiper
             spaceBetween={10}
             slidesPerView={1}
@@ -93,42 +129,27 @@ const StationsList = ({ productType, currentType }) => {
           >
             {combinedArray.map((product, index) => (
               <SwiperSlide key={index}>
-                <ProductItem {...product} generalType="stations" />
+                <ProductItem
+                  {...product}
+                  generalType="stations"
+                  calcRef={calcRef}
+                />
               </SwiperSlide>
             ))}
           </Swiper>
         </div>
       </>
     );
-  } else if(currentType === "slow") {
+  } else if (currentType === "slow") {
     return (
       <>
-        <style>{`
-          .swiper {
-            width: 330px;
-            //outline: 2px solid blue;
-            
-            overflow: visible
-          }
-
-          .swiper-wrapper {
-            margin: 0 auto;
-            width: 330px;
-          }
-
-          .slide {
-            width: 330px;
-            height: auto;
-            margin: 0 auto;
-          }
-
-          // .swiper .swiper-wrapper .swiper-slide, swiper-slide-active {
-          //   width: 330px;
-          //   height: auto;
-          //   margin: 0 auto;
-          //   outline: 2px solid red;
-          // }
-        `}</style>
+        {styleTag}
+        <div className={style.category_decor} >
+          станции
+          <span>
+            <DecorArrowSvg />
+          </span>
+        </div>
         <div className={`${style.products}`}>
           {productsSlowCurrentStation
             .filter((el) => el.type === productType)
@@ -136,7 +157,7 @@ const StationsList = ({ productType, currentType }) => {
               <ProductItem key={index} {...product} generalType="stations" />
             ))}
         </div>
-        <div className={`${style.slider_products}`}>
+        <div className={`${style.slider_products}`} ref={targetRef}>
           <Swiper
             spaceBetween={10}
             slidesPerView={1}
@@ -148,42 +169,27 @@ const StationsList = ({ productType, currentType }) => {
           >
             {productsSlowCurrentStation.map((product, index) => (
               <SwiperSlide key={index}>
-                <ProductItem {...product} generalType="stations" />
+                <ProductItem
+                  {...product}
+                  generalType="stations"
+                  calcRef={calcRef}
+                />
               </SwiperSlide>
             ))}
           </Swiper>
         </div>
       </>
     );
-  } else if(currentType === "fast") {
+  } else if (currentType === "fast") {
     return (
       <>
-        <style>{`
-          .swiper {
-            width: 330px;
-            //outline: 2px solid blue;
-            
-            overflow: visible
-          }
-
-          .swiper-wrapper {
-            margin: 0 auto;
-            width: 330px;
-          }
-
-          .slide {
-            width: 330px;
-            height: auto;
-            margin: 0 auto;
-          }
-
-          // .swiper .swiper-wrapper .swiper-slide, swiper-slide-active {
-          //   width: 330px;
-          //   height: auto;
-          //   margin: 0 auto;
-          //   outline: 2px solid red;
-          // }
-        `}</style>
+        {styleTag}
+        <div className={style.category_decor} >
+          станции
+          <span>
+            <DecorArrowSvg />
+          </span>
+        </div>
         <div className={`${style.products}`}>
           {productsFastCurrentStation
             .filter((el) => el.type === productType)
@@ -191,7 +197,7 @@ const StationsList = ({ productType, currentType }) => {
               <ProductItem key={index} {...product} generalType="stations" />
             ))}
         </div>
-        <div className={`${style.slider_products}`}>
+        <div className={`${style.slider_products}`} ref={targetRef}>
           <Swiper
             spaceBetween={10}
             slidesPerView={1}
@@ -203,7 +209,7 @@ const StationsList = ({ productType, currentType }) => {
           >
             {productsFastCurrentStation.map((product, index) => (
               <SwiperSlide key={index}>
-                <ProductItem {...product} generalType="stations" />
+                <ProductItem {...product} generalType="stations" calcRef={calcRef}/>
               </SwiperSlide>
             ))}
           </Swiper>
@@ -211,45 +217,29 @@ const StationsList = ({ productType, currentType }) => {
       </>
     );
   }
- 
 };
 
-const ServicesList = () => {
+const ServicesList = ({ calcRef }) => {
+  const targetRef = useRef(null);
+  useEffect(() => {
+    //targetRef.current.scrollIntoView({ behavior: "smooth" });
+    window.scroll(0, targetRef.current.offsetTop - 50);
+  }, []);
   return (
-
     <>
-      <style>{`
-          .swiper {
-            width: 330px;
-            //outline: 2px solid blue;
-            
-            overflow: visible
-          }
-
-          .swiper-wrapper {
-            margin: 0 auto;
-            width: 330px;
-          }
-
-          .slide {
-            width: 330px;
-            height: auto;
-            margin: 0 auto;
-          }
-
-          // .swiper .swiper-wrapper .swiper-slide, swiper-slide-active {
-          //   width: 330px;
-          //   height: auto;
-          //   margin: 0 auto;
-          //   outline: 2px solid red;
-          // }
-        `}</style>
+      {styleTag}
+      <div className={style.category_decor} ref={targetRef}>
+        услуги
+        <span>
+          <DecorArrowSvg />
+        </span>
+      </div>
       <div className={`${style.products}`}>
         {productsServices.map((product, index) => (
           <ProductItem key={index} {...product} generalType="services" />
         ))}
       </div>
-      <div className={`${style.slider_products}`}>
+      <div className={`${style.slider_products}`} id="items">
         <Swiper
           spaceBetween={10}
           slidesPerView={1}
@@ -261,7 +251,12 @@ const ServicesList = () => {
         >
           {productsServices.map((product, index) => (
             <SwiperSlide key={index}>
-              <ProductItem key={index} {...product} generalType="services" />
+              <ProductItem
+                key={index}
+                {...product}
+                generalType="services"
+                calcRef={calcRef}
+              />
             </SwiperSlide>
           ))}
         </Swiper>
@@ -270,43 +265,26 @@ const ServicesList = () => {
   );
 };
 
-const DetailsList = () => {
+const DetailsList = ({ calcRef }) => {
+  const targetRef = useRef(null);
+  useEffect(() => {
+    window.scroll(0, targetRef.current.offsetTop - 50);
+  }, []);
   return (
-
-
     <>
-      <style>{`
-          .swiper {
-            width: 330px;
-            //outline: 2px solid blue;
-            
-            overflow: visible
-          }
-
-          .swiper-wrapper {
-            margin: 0 auto;
-            width: 330px;
-          }
-
-          .slide {
-            width: 330px;
-            height: auto;
-            margin: 0 auto;
-          }
-
-          // .swiper .swiper-wrapper .swiper-slide, swiper-slide-active {
-          //   width: 330px;
-          //   height: auto;
-          //   margin: 0 auto;
-          //   outline: 2px solid red;
-          // }
-        `}</style>
+      {styleTag}
+      <div className={style.category_decor} ref={targetRef}>
+        дополнительные детали
+        <span>
+          <DecorArrowSvg />
+        </span>
+      </div>
       <div className={`${style.products}`}>
         {productsDetails.map((product, index) => (
           <ProductItem key={index} {...product} generalType="details" />
         ))}
       </div>
-      <div className={`${style.slider_products}`}>
+      <div className={`${style.slider_products}`} id="items">
         <Swiper
           spaceBetween={10}
           slidesPerView={1}
@@ -318,7 +296,12 @@ const DetailsList = () => {
         >
           {productsDetails.map((product, index) => (
             <SwiperSlide key={index}>
-              <ProductItem key={index} {...product} generalType="details" />
+              <ProductItem
+                key={index}
+                {...product}
+                generalType="details"
+                calcRef={calcRef}
+              />
             </SwiperSlide>
           ))}
         </Swiper>

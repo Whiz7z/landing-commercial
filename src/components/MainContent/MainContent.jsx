@@ -13,13 +13,13 @@ import {
   productsSlowCurrentStation,
   productsFastCurrentStation,
 } from "../../data/products";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import CountModal from "../../Modals/CountModal";
 import ProductList from "../MainContent/ProductList";
 import SelectArrowSvg from "../../svgComponents/SelectArrowSvg";
 
-import useStore from "../../store/store"
-
+import useStore from "../../store/store";
+import InputMask from "react-input-mask";
 
 let currentTypes = [
   {
@@ -39,6 +39,18 @@ let currentTypes = [
   },
 ];
 
+const countries = [
+  { code: "RU", dial_code: "+7" },
+  { code: "UA", dial_code: "+380" },
+  { code: "BL", dial_code: "+375" },
+
+  // Add more countries and their dial codes here
+];
+
+function extractNumbers(phoneNumber) {
+  return phoneNumber.replace(/\D/g, ""); // \D matches any non-digit character and replaces it with ''
+}
+
 function MainContent() {
   const [currentType, setCurrentType] = useState("all");
   const [productType, setProductType] = useState("wall");
@@ -49,28 +61,36 @@ function MainContent() {
 
   const [openSelect, setOpenSelect] = useState(false);
 
+  const [countryCode, setCountryCode] = useState(countries[0]);
+  const [phoneNumber, setPhoneNumber] = useState("");
+  const [numberMobile, setNumberMobile] = useState("");
+  const [openCodeSelect, setOpenCodeSelect] = useState(false);
+  const calcRef  = useRef(null);
+
   const { selectedItems, add, remove } = useStore((state) => ({
     selectedItems: state.selectedItems,
     add: state.add,
     remove: state.remove,
   }));
 
-
-
-
   const openTypeSelect = () => {
     setOpenSelect(true);
   };
 
   const chooseCurrent = (id) => {
-   setCurrentType(currentTypes.find((item) => item.id === id).value);
-   setOpenSelect(false);
+    setCurrentType(currentTypes.find((item) => item.id === id).value);
+    setOpenSelect(false);
 
-    console.log('currentType',currentType);
+    console.log("currentType", currentType);
+  };
+
+  const sendProducts =() => {
+    console.log(selectedItems);
+    console.log(numberMobile);
   }
   useEffect(() => {
-    console.log("selectedItems", selectedItems);
-  }, [selectedItems]);
+    console.log("selectedItems", extractNumbers(numberMobile).length);
+  }, [numberMobile]);
 
   return (
     <div className={style.container}>
@@ -161,19 +181,58 @@ function MainContent() {
             Рассчитаем стоимость
             <br /> станции <span>под ключ</span>
           </h2>
-          <div className={style.mobile_calc}>
-            <input
-              type="text"
-              placeholder="Напишите номер телефона"
-              value={number}
-              onChange={(e) => setNumber(e.target.value)}
-            />
+          <div className={style.mobile_calc} id="calc">
+            <div>
+              <InputMask
+                mask={`${countryCode.dial_code} (999) 999-99-99`}
+                maskChar="_"
+                placeholder={`${countryCode.dial_code} (_ _ _) _ _ _-_ _-_ _`}
+                value={numberMobile}
+                onChange={(e) =>
+                  setNumberMobile(extractNumbers(e.target.value))
+                }
+              >
+                {(inputProps) => (
+                  <div className={style.input_container}>
+                    <div
+                      className={style.country_code_selected}
+                      onClick={() => setOpenCodeSelect(true)}
+                    >
+                      {countryCode.code}
+                    </div>
+                    {openCodeSelect && (
+                      <div
+                        className={style.country_code_select}
+                        onMouseLeave={() => setOpenCodeSelect(false)}
+                      >
+                        {countries.map((country, index) => (
+                          <div
+                            key={index}
+                            onClick={() => {
+                              setCountryCode(country);
+                              setOpenCodeSelect(false);
+                            }}
+                          >
+                            {country.code}
+                            <span>{country.dial_code}</span>
+                          </div>
+                        ))}
+                      </div>
+                    )}
+
+                    <input {...inputProps} type="tel" ref={calcRef} />
+                  </div>
+                )}
+              </InputMask>
+            </div>
             <button
               className={`${
-                selectedItems.length > 0 ? style.btnActive : style.btnNonActive
+                selectedItems.length > 0 && numberMobile.length > 8
+                  ? style.btnActive
+                  : style.btnNonActive
               }`}
-              onClick={() => setCountModal(true)}
-              disabled={selectedItems.length === 0}
+              onClick={() => sendProducts()}
+              disabled={selectedItems.length === 0 || numberMobile.length < 8}
             >
               Рассчитать за 2 минуты
             </button>
@@ -233,7 +292,11 @@ function MainContent() {
             <span>бесплатная консультация</span>
           </div>
         </div>
-            <ProductList productType={productType} currentType={currentType} />
+        <ProductList
+          productType={productType}
+          currentType={currentType}
+          calcRef={calcRef}
+        />
       </div>
     </div>
   );

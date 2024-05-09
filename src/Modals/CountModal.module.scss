@@ -11,14 +11,21 @@
   z-index: 5;
   .modal {
     padding: 40px 30px 45px 30px;
-    width: 500px;
+    display: grid;
+
+    width: 820px;
     background-color: #fff;
-    background-image: linear-gradient(to right bottom, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 15%, rgba(255,255,255,0) 100%),  url("../assets/images/modal-bg.png");
-    
-    
+    background-image: linear-gradient(
+        120deg,
+        rgba(255, 255, 255, 1) 0%,
+        rgba(255, 255, 255, 1) 50%,
+        rgba(255, 255, 255, 0) 100%
+      ),
+      url("../assets/images/modal-bg-big.png");
+
     background-size: 100%;
     background-repeat: no-repeat;
-    
+
     border-radius: 20px;
     // backdrop-filter: blur(5.4px);
     // -webkit-backdrop-filter: blur(5.4px);
@@ -27,9 +34,8 @@
     max-height: 410px;
 
     position: relative;
-    
 
-    .icon{
+    .icon {
       display: grid;
       justify-items: flex-end;
       position: absolute;
@@ -47,7 +53,7 @@
       }
     }
 
-     h2 {
+    h2 {
       font-size: 2rem;
       color: $text-dark;
       position: relative;
@@ -56,27 +62,76 @@
       font-family: "Age";
     }
 
-    .text{
+    .text {
       font-size: 18px;
       color: $text-dark;
       line-height: 18px;
       margin-bottom: 30px;
     }
 
-    input{
+    .input_container {
+      padding: 0 20px;
       height: 50px;
       width: 330px;
-      font-size: 18px;
-      font-weight: 300;
       border-radius: 10px;
-      outline: none;
-      border: 1px solid $input-border;
-      padding: 0 20px;
       margin-bottom: 15px;
-      
+      border: 1px solid $input-border;
+      outline: none;
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      position: relative;
+      input {
+        font-size: 18px;
+        font-weight: 300;
+        border: none;
+        outline: none;
+      }
+
+      .country_code_selected {
+        font-family: "Age";
+        font-size: 18px;
+      }
+
+      .country_code_select {
+        position: absolute;
+        top: -20px;
+        left: -20px;
+        width: 80px;
+        height: 100px;
+        display: grid;
+        justify-items: center;
+        border: 1px solid $input-border;
+        background-color: #fff;
+        border-radius: 5px;
+        align-content: space-between;
+        overflow-y: scroll;
+
+        // border-top-right-radius: 0px;
+        // border-top-left-radius: 0px;
+
+        div {
+          width: 100%;
+          text-align: center;
+          border-radius: 0px;
+          font-size: 14px;
+          padding: 5px 0;
+          font-weight: 700;
+          cursor: pointer;
+          display: flex;
+          justify-content: space-between;
+          padding: 5px 5px;
+          span {
+            color: $text-dark-30;
+          }
+          &:hover {
+            background-color: $text-muted;
+          }
+        }
+      }
     }
 
-    .btn{
+    .btn {
       cursor: pointer;
       transition: 0.3s ease-in-out;
       font-size: 16px;
@@ -86,15 +141,15 @@
       border: none;
       outline: none;
       padding: 0 0;
-      margin-bottom: 20px;
       font-weight: 500;
+      align-self: center;
     }
 
     .active {
       color: white;
       background-color: $logo;
       cursor: pointer;
-      &:hover{
+      &:hover {
         background-color: $btn-hover;
       }
     }
@@ -103,10 +158,63 @@
       color: $text-dark-30;
       background-color: $btn-not-active;
       cursor: not-allowed;
-      &:hover{
-        
+      &:hover {
       }
     }
+  }
+}
 
+@media screen and (max-width: 870px) {
+  .modalWrapper {
+    .modal {
+      background-color: #fff;
+      background-image: none;
+
+      width: 430px;
+
+      h2 {
+        font-size: 1.8rem;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 460px) {
+  .modalWrapper {
+    padding: 20px 15px;
+    .modal {
+      background-color: #fff;
+      background-image: none;
+
+      width: 100%;
+
+      .logo {
+        a {
+          font-size: 30px;
+        }
+      }
+
+      h2 {
+        font-size: 1.4rem;
+      }
+
+      .text {
+        font-size: 14px;
+      }
+
+      .btn {
+        width: 100%;
+        font-size: 12px;
+      }
+
+      .input_container {
+        width: 100%;
+        gap: 10px;
+        input {
+          font-size: 14px;
+          width: 100%;
+        }
+      }
+    }
   }
 }

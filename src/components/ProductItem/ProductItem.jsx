@@ -10,14 +10,26 @@ import PropTypes from "prop-types";
 import useStore from "../../store/store";
 import PhoneSvg from "../../svgComponents/PhoneSvg";
 
-function ProductItem({image, title, code, tags, generalType }) {
-
+function ProductItem({ image, title, code, tags, generalType, calcRef }) {
   const { selectedItems, add, remove } = useStore((state) => ({
     selectedItems: state.selectedItems,
     add: state.add,
     remove: state.remove,
   }));
-  
+
+  const scrollToCall = () => {
+    window.scroll(0, calcRef.current.offsetParent.offsetTop - 120, {
+      behavior: "smooth",
+    })
+
+    setTimeout(() => {
+      calcRef.current.focus();
+    }, 500);
+
+    
+    
+  };
+
   return (
     <div className={style.container}>
       <div className={` ${style.imageWrapper} ${style[generalType]}`}>
@@ -79,7 +91,7 @@ function ProductItem({image, title, code, tags, generalType }) {
                 : "Выбрать"}
             </button>
             <button className={style.phoneBtn}>Заказать звонок</button>
-            <button className={style.callBtn}>
+            <button className={style.callBtn} onClick={() => scrollToCall()}>
               <PhoneSvg />
             </button>
           </div>
@@ -87,11 +99,11 @@ function ProductItem({image, title, code, tags, generalType }) {
 
         {generalType === "services" && (
           <div className={style.actions}>
-            <button className={`${style.chooseBtn} ${style.consultMe}`}>
+            <button
+              className={`${style.chooseBtn} ${style.consultMe}`}
+              onClick={() => scrollToCall()}
+            >
               Проконсультировать меня
-            </button>
-            <button className={style.callBtn}>
-              <PhoneSvg />
             </button>
           </div>
         )}
@@ -115,7 +127,7 @@ function ProductItem({image, title, code, tags, generalType }) {
                 : "Выбрать"}
             </button>
             <button className={style.phoneBtn}>Позвонить нам</button>
-            <button className={style.callBtn}>
+            <button className={style.callBtn} onClick={() => scrollToCall()}>
               <PhoneSvg />
             </button>
           </div>
@@ -130,6 +142,8 @@ ProductItem.propTypes = {
   title: PropTypes.string,
   code: PropTypes.string,
   tags: PropTypes.array,
+  generalType: PropTypes.any,
+  calcRef: PropTypes.any,
 };
 
 export default ProductItem;
