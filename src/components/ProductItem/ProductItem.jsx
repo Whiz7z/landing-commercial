@@ -25,10 +25,11 @@ function ProductItem({ image, title, code, tags, generalType, calcRef }) {
     setTimeout(() => {
       calcRef.current.focus();
     }, 500);
-
-    
-    
   };
+
+  const callPhone =() =>[
+    window.location.href = `tel:${import.meta.env.VITE_PHONE}`
+  ]
 
   return (
     <div className={style.container}>
@@ -91,7 +92,7 @@ function ProductItem({ image, title, code, tags, generalType, calcRef }) {
                 : "Выбрать"}
             </button>
             <button className={style.phoneBtn}>Заказать звонок</button>
-            <button className={style.callBtn} onClick={() => scrollToCall()}>
+            <button className={style.callBtn} onClick={() => callPhone()}>
               <PhoneSvg />
             </button>
           </div>
@@ -101,7 +102,7 @@ function ProductItem({ image, title, code, tags, generalType, calcRef }) {
           <div className={style.actions}>
             <button
               className={`${style.chooseBtn} ${style.consultMe}`}
-              onClick={() => scrollToCall()}
+              onClick={() => callPhone()}
             >
               Проконсультировать меня
             </button>
@@ -126,8 +127,10 @@ function ProductItem({ image, title, code, tags, generalType, calcRef }) {
                 ? "Выбрано"
                 : "Выбрать"}
             </button>
-            <button className={style.phoneBtn}>Позвонить нам</button>
-            <button className={style.callBtn} onClick={() => scrollToCall()}>
+            <button className={style.phoneBtn} onClick={() => callPhone()}>
+              Позвонить нам
+            </button>
+            <button className={style.callBtn} onClick={() => callPhone()}>
               <PhoneSvg />
             </button>
           </div>
