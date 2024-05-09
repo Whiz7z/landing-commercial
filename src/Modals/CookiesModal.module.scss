@@ -8,6 +8,7 @@
   top: 0;
   left: 0;
   display: grid;
+  z-index: 1000;
   .modal {
     padding: 40px 30px 25px 30px;
     background-color: rgba(255, 255, 255, 0.5);
@@ -18,26 +19,25 @@
     justify-self: center;
     margin-top: 175px;
     max-height: 355px;
-    
 
     .icon {
       margin-bottom: 20px;
     }
 
-    p{
+    p {
       font-size: 18px;
       color: white;
       line-height: 20px;
       font-weight: 300;
       margin-bottom: 20px;
-      a{
+      a {
         color: white;
         text-decoration: underline;
         font-weight: 600;
       }
     }
 
-    .btn{
+    .btn {
       cursor: pointer;
       transition: 0.3s ease-in-out;
       font-size: 16px;
@@ -49,16 +49,79 @@
       width: 100%;
       padding: 20px 0;
       margin-bottom: 20px;
-      &:hover{
+      &:hover {
         background-color: $btn-hover;
       }
     }
 
-    .copyright{
+    .copyright {
       font-size: 14px;
       color: $text-dark;
       text-align: center;
       margin-bottom: 0;
+    }
+  }
+}
+
+@media screen and (max-width: 540px) {
+  .modalWrapper {
+    padding: 0 15px;
+    .modal {
+      width: 100%;
+      padding: 25px;
+
+      .icon {
+        margin-bottom: 10px;
+        svg {
+          width: 20px;
+          height: 20px;
+        }
+      }
+      p {
+        font-size: 16px;
+        margin-bottom: 20px;
+      }
+
+      .btn {
+        margin-bottom: 20px;
+      }
+
+      .copyright {
+        font-size: 12px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 380px) {
+  .modalWrapper {
+    padding: 0 15px;
+    .modal {
+      width: 100%;
+      padding: 25px;
+      max-height: initial;
+      height: auto;
+      align-self: center;
+      margin-top: 0;
+
+      .icon {
+        margin-bottom: 10px;
+      }
+      p {
+        font-size: 14px;
+        margin-bottom: 20px;
+      }
+
+      .btn {
+        margin-bottom: 20px;
+        font-size: 14px;
+        height: 50px;
+        padding: 0;
+      }
+
+      .copyright {
+        font-size: 10px;
+      }
     }
   }
 }

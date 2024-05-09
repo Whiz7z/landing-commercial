@@ -20,7 +20,7 @@ const Header = () => {
               бренда «beny»
             </p>
           </div>
-          <a href="" className={style.callBtn}>
+          <a href={`tel:${process.env.REACT_APP_PHONE}`} className={style.callBtn}>
             <span>
               <PhoneSvg />
             </span>
@@ -46,7 +46,7 @@ const Header = () => {
                   : `${style.nonActive}`
               }
             >
-              <NavLink to="/stations" href='#items'>
+              <NavLink to="/stations" href="#items">
                 <span className={style.icon}>
                   <LightingSvg />
                 </span>
