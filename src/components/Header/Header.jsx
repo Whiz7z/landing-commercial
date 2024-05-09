@@ -7,6 +7,7 @@ import { NavLink, useLocation } from "react-router-dom";
 
 const Header = () => {
   const { pathname } = useLocation();
+  const  phoneNumber = import.meta.env.VITE_PHONE
 
   console.log(pathname);
   return (
