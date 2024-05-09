@@ -4,12 +4,29 @@ import WrenchSvg from "../../svgComponents/WrenchSvg";
 import style from "./Header.module.scss";
 import PhoneSvg from "../../svgComponents/PhoneSvg";
 import { NavLink, useLocation } from "react-router-dom";
+import { useEffect } from "react";
+
 
 const Header = () => {
-  const { pathname } = useLocation();
+  const location = useLocation();
+
+  const {pathname} = location;
   const  phoneNumber = import.meta.env.VITE_PHONE
 
   console.log(phoneNumber);
+
+  useEffect(() => {
+    // if current url contains #services - remove the hash
+    console.log(location);
+    if (
+      location.hash.includes("#services") ||
+      location.hash.includes("#details") ||
+      location.hash.includes("#stations")
+    ) {
+      console.log("includes");
+      window.location.hash = "";
+    }
+  }, [location]);
   return (
     <>
       <header className={style.headerContainer}>
@@ -47,7 +64,7 @@ const Header = () => {
                   : `${style.nonActive}`
               }
             >
-              <NavLink to="/stations" href="#items">
+              <NavLink to="/stations#stations">
                 <span className={style.icon}>
                   <LightingSvg />
                 </span>
@@ -61,7 +78,7 @@ const Header = () => {
                   : `${style.nonActive}`
               }
             >
-              <NavLink to="/services">
+              <NavLink to="/services#services">
                 <span className={style.icon}>
                   <WrenchSvg />
                 </span>
@@ -75,7 +92,7 @@ const Header = () => {
                   : `${style.nonActive}`
               }
             >
-              <NavLink to="/details">
+              <NavLink to="/details#details">
                 <span className={style.icon}>
                   <NutSvg />
                 </span>
