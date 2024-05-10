@@ -46,15 +46,15 @@ function CountModal({ onClose }) {
         <h2>электрические станции под ключ</h2>
 
         <p className={style.text}>
-          Напишите ваш номер телефона,
-          <br /> чтобы вам перезвонить и ответить на все ваши вопросы и запросы
+          Напишите ваш номер телефона,<br/> чтобы предоставить ответы<br/> по всем
+          вопросам и запросам
         </p>
 
         <div>
           <InputMask
-            mask={`${countryCode.dial_code} (999) 999-99-99`}
+            mask={`${countryCode.dial_code} 999 999 99 99`}
             maskChar=" "
-            placeholder={`${countryCode.dial_code} (_ _ _) _ _ _-_ _-_ _`}
+            placeholder={`${countryCode.dial_code} _ _ _  _ _ _  _ _  _ _`}
             value={number}
             onChange={(e) => setNumber(e.target.value)}
           >
@@ -67,7 +67,10 @@ function CountModal({ onClose }) {
                   {countryCode.code}
                 </div>
                 {openCodeSelect && (
-                  <div className={style.country_code_select} onMouseLeave={() => setOpenCodeSelect(false)}>
+                  <div
+                    className={style.country_code_select}
+                    onMouseLeave={() => setOpenCodeSelect(false)}
+                  >
                     {countries.map((country, index) => (
                       <div
                         key={index}

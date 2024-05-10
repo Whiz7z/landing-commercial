@@ -20,6 +20,8 @@ import SelectArrowSvg from "../../svgComponents/SelectArrowSvg";
 
 import useStore from "../../store/store";
 import InputMask from "react-input-mask";
+import CheckLineSvg from "../../svgComponents/CheckLineSvg";
+import GradientLineSvg from "../../svgComponents/GradientLineSvg";
 
 let currentTypes = [
   {
@@ -143,14 +145,16 @@ function MainContent() {
 
         <div className={style.info}>
           <div className={style.lineContainer}>
-            <span>
+            {/* <span>
               <CheckCircle />
             </span>
-            <div className={style.line}></div>
+            <div className={style.line}></div> */}
+            <CheckLineSvg />
           </div>
           <h2>
-            Выберите себе станцию,
-            <br /> либо просто позвоните нам
+            Выберите себе станцию,{" "}
+            <br />
+            либо просто позвоните нам
           </h2>
           <ul>
             <li>
@@ -172,10 +176,13 @@ function MainContent() {
 
         <div className={style.calculate}>
           <div className={style.lineContainer}>
-            <span>
+            {/* <span className={style.checkContainer}>
               <CheckCircle />
             </span>
-            <div className={style.line}></div>
+            <span style={{ width: "100%" }} className={style.spanLineContainer}>
+              <GradientLineSvg />
+            </span> */}
+            <CheckLineSvg />
           </div>
           <h2>
             Рассчитаем стоимость

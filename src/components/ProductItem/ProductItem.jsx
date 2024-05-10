@@ -50,16 +50,16 @@ function ProductItem({ image, title, code, tags, generalType, calcRef }) {
                     <LightingSvg w="12.31px" h="14.06px" fill="#757f7b" />
                   )}
                   {tag.icon === "shield" && (
-                    <ShieldSvg w="11.25px" h="11.25px" fill="#757f7b" />
+                    <ShieldSvg w="12px" h="12px" fill="#757f7b" />
                   )}
                   {tag.icon === "plugs" && (
                     <PlugsSvg w="13.13px" h="13.13px" fill="#757f7b" />
                   )}
                   {tag.icon === "cpu" && (
-                    <CPUSvg w="13.13px" h="13.13px" fill="#757f7b" />
+                    <CPUSvg w="14px" h="14px" fill="#757f7b" />
                   )}
                   {tag.icon === "nut" && (
-                    <NutSvg w="12.19px" h="13.13px" fill="#757f7b" />
+                    <NutSvg w="13px" h="14px" fill="#757f7b" />
                   )}
                   {tag.icon === "wrench" && (
                     <WrenchSvg w="12.15px" h="12.15px" fill="#757f7b" />

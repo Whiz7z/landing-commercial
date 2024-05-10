@@ -10,7 +10,7 @@
   display: grid;
   z-index: 5;
   .modal {
-    padding: 40px 30px 45px 30px;
+    padding: 48px 30px 45px 40px;
     display: grid;
 
     width: 820px;
@@ -23,7 +23,7 @@
       ),
       url("../assets/images/modal-bg-big.png");
 
-    background-size: 100%;
+    background-size: cover;
     background-repeat: no-repeat;
 
     border-radius: 20px;
@@ -39,8 +39,8 @@
       display: grid;
       justify-items: flex-end;
       position: absolute;
-      right: 15px;
-      top: 25px;
+      right: 29px;
+      top: 29px;
       cursor: pointer;
     }
 
@@ -60,6 +60,7 @@
       top: -10px;
       margin-bottom: 10px;
       font-family: "Age";
+      font-weight: 400;
     }
 
     .text {
@@ -67,6 +68,7 @@
       color: $text-dark;
       line-height: 18px;
       margin-bottom: 30px;
+      font-weight: 400;
     }
 
     .input_container {
@@ -74,7 +76,7 @@
       height: 50px;
       width: 330px;
       border-radius: 10px;
-      margin-bottom: 15px;
+      margin-bottom: 12px;
       border: 1px solid $input-border;
       outline: none;
       display: flex;
@@ -86,6 +88,7 @@
         font-weight: 300;
         border: none;
         outline: none;
+        background-color: transparent;
       }
 
       .country_code_selected {
@@ -167,8 +170,9 @@
 @media screen and (max-width: 870px) {
   .modalWrapper {
     .modal {
-      background-color: #fff;
-      background-image: none;
+      // background-color: #fff;
+      // background-image: none;
+      background-position-x: 50px;
 
       width: 430px;
 
@@ -183,8 +187,7 @@
   .modalWrapper {
     padding: 20px 15px;
     .modal {
-      background-color: #fff;
-      background-image: none;
+     
 
       width: 100%;
 
