@@ -164,6 +164,12 @@ main{
   }
 }
 
+@media screen and (max-width: 355px){
+  .App{
+    grid-template-columns: auto 1fr auto;
+  }
+}
+
 // ::-webkit-scrollbar {
 //   width: 11px;
 // }

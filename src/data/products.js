@@ -194,13 +194,14 @@ export const productsFastCurrentStation = [
         icon: "plugs",
         text: "CCS2",
       },
-      {
-        icon: "plugs",
-        text: "GBT",
-      },
+
       {
         icon: "plugs",
         text: "CHAdeMO",
+      },
+      {
+        icon: "plugs",
+        text: "GBT",
       },
       {
         icon: "plugs",
@@ -244,13 +245,14 @@ export const productsFastCurrentStation = [
         icon: "plugs",
         text: "CCS2",
       },
-      {
-        icon: "plugs",
-        text: "GBT",
-      },
+
       {
         icon: "plugs",
         text: "CHAdeMO",
+      },
+      {
+        icon: "plugs",
+        text: "GBT",
       },
       {
         icon: "plugs",
@@ -339,13 +341,14 @@ export const productsFastCurrentStation = [
         icon: "plugs",
         text: "CCS2",
       },
-      {
-        icon: "plugs",
-        text: "GBT",
-      },
+
       {
         icon: "plugs",
         text: "CHAdeMO",
+      },
+      {
+        icon: "plugs",
+        text: "GBT",
       },
       {
         icon: "plugs",
@@ -388,13 +391,14 @@ export const productsFastCurrentStation = [
         icon: "plugs",
         text: "CCS2",
       },
-      {
-        icon: "plugs",
-        text: "GBT",
-      },
+
       {
         icon: "plugs",
         text: "CHAdeMO",
+      },
+      {
+        icon: "plugs",
+        text: "GBT",
       },
       {
         icon: "plugs",
@@ -438,13 +442,14 @@ export const productsFastCurrentStation = [
         icon: "plugs",
         text: "CCS2",
       },
-      {
-        icon: "plugs",
-        text: "GBT",
-      },
+
       {
         icon: "plugs",
         text: "CHAdeMO",
+      },
+      {
+        icon: "plugs",
+        text: "GBT",
       },
       {
         icon: "plugs",
@@ -530,13 +535,14 @@ export const productsFastCurrentStation = [
         icon: "plugs",
         text: "CCS2",
       },
-      {
-        icon: "plugs",
-        text: "GBT",
-      },
+
       {
         icon: "plugs",
         text: "CHAdeMO",
+      },
+      {
+        icon: "plugs",
+        text: "GBT",
       },
       {
         icon: "plugs",
@@ -551,9 +557,9 @@ export const productsFastCurrentStation = [
   //wall
   {
     image: null,
-    title: "Напольная зарядная станция постоянного тока",
+    title: "Настенная зарядная станция постоянного тока",
     code: "BDC-P1",
-    type: "floor",
+    type: "wall",
     tags: [
       {
         icon: "lightning",
@@ -588,15 +594,15 @@ export const productsFastCurrentStation = [
         icon: "cpu",
         text: "приложение",
       },
+      {
+        icon: "cpu",
+        text: "RFID",
+      },
 
       {
         icon: "cpu",
         text: "современная система управления",
         textMobile: "система управления",
-      },
-      {
-        icon: "cpu",
-        text: "RFID",
       },
     ],
   },
