@@ -49,13 +49,21 @@ footer {
       flex-direction: column;
       gap: 10px;
       @media screen and (max-width: 960px) {
-        margin-bottom: 40px;
+        margin-bottom: 20px;
       }
       a {
         color: #fff;
         font-size: 1.6rem;
         line-height: 14px;
         transition: 0.3s ease;
+
+        br{
+          display: none;
+          @media screen and (max-width: 420px) {
+display: block;
+          }
+
+        }
         &:hover {
           color: $svg-hover;
         }
@@ -126,8 +134,23 @@ footer {
   font-size: 1.6rem;
 
   .firstCopyright {
-    margin-bottom: 25px;
+    margin-bottom: 20px;
     line-height: 16px;
+
+    @media screen and (max-width: 460px) {
+      width: 320px;
+      word-break: keep-all;
+    }
+
+    @media screen and (max-width: 390px) {
+      width: 320px;
+      word-break: keep-all;
+    }
+
+    @media screen and (max-width: 350px) {
+      width: 100%;
+      word-break: keep-all;
+    }
   }
 
   .copyright {
