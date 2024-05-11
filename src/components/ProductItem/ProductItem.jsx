@@ -9,6 +9,8 @@ import PropTypes from "prop-types";
 
 import useStore from "../../store/store";
 import PhoneSvg from "../../svgComponents/PhoneSvg";
+import { useState } from "react";
+import CountModal from "../../Modals/CountModal";
 
 function ProductItem({ image, title, code, tags, generalType, calcRef }) {
   const { selectedItems, add, remove } = useStore((state) => ({
@@ -17,22 +19,30 @@ function ProductItem({ image, title, code, tags, generalType, calcRef }) {
     remove: state.remove,
   }));
 
+  const [countModal, setCountModal] = useState(false);
+
   const scrollToCall = () => {
     window.scroll(0, calcRef.current.offsetParent.offsetTop - 120, {
       behavior: "smooth",
-    })
+    });
 
     setTimeout(() => {
       calcRef.current.focus();
     }, 500);
   };
 
-  const callPhone =() =>[
-    window.location.href = `tel:${import.meta.env.VITE_PHONE}`
-  ]
+  const callPhone = () => {
+    window.location.href = `tel:${import.meta.env.VITE_PHONE}`;
+  };
+
+  const orderCall = (code, title) => {
+    add(code, title);
+    setCountModal(true);
+  };
 
   return (
     <div className={style.container}>
+      {countModal && <CountModal onClose={() => setCountModal(false)} />}
       <div className={` ${style.imageWrapper} ${style[generalType]}`}>
         <img src={image} alt="product" />
       </div>
@@ -94,7 +104,12 @@ function ProductItem({ image, title, code, tags, generalType, calcRef }) {
                 ? "Выбрано"
                 : "Выбрать"}
             </button>
-            <button className={style.phoneBtn}>Заказать звонок</button>
+            <button
+              className={style.phoneBtn}
+              onClick={() => orderCall(code, title)}
+            >
+              Заказать звонок
+            </button>
             <button className={style.callBtn} onClick={() => callPhone()}>
               <PhoneSvg />
             </button>

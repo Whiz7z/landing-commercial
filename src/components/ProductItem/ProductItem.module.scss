@@ -102,14 +102,20 @@
     height: 60px;
     font-size: 18px;
     font-weight: 500;
+    transition: 0.3s ease-in-out;
+    
+    &:hover{
+      background-color: $c-700;
+    }
   }
 
   .choosedBtn {
     background-color: $c-700;
+    
   }
 
   .consultMe {
-    width: 310px;
+    width: 350px;
   }
 
   .phoneBtn {
@@ -120,6 +126,12 @@
     font-size: 18px;
     font-weight: 400;
     color: $text-dark-70;
+
+    transition: 0.3s ease-in-out;
+
+    &:hover {
+      color: $text-dark;
+    }
   }
 
   .callBtn {
@@ -134,6 +146,11 @@
     height: 60px;
     font-size: 18px;
     font-weight: 500;
+    transition: 0.3s ease-in-out;
+    
+    &:hover{
+      background-color: $c-700;
+    }
 
     svg {
       width: 18px;

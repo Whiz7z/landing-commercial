@@ -22,6 +22,7 @@ import useStore from "../../store/store";
 import InputMask from "react-input-mask";
 import CheckLineSvg from "../../svgComponents/CheckLineSvg";
 import GradientLineSvg from "../../svgComponents/GradientLineSvg";
+import ConfirmModal from "../../Modals/ConfirmModal";
 
 let currentTypes = [
   {
@@ -60,6 +61,7 @@ function MainContent() {
   const [number, setNumber] = useState("");
 
   const [countModal, setCountModal] = useState(false);
+  const [confirmModal, setConfirmModal] = useState(false);
 
   const [openSelect, setOpenSelect] = useState(false);
 
@@ -89,7 +91,11 @@ function MainContent() {
   const sendProducts =() => {
     console.log(selectedItems);
     console.log(numberMobile);
+
+    setConfirmModal(true);
   }
+
+ 
   useEffect(() => {
     console.log("selectedItems", extractNumbers(numberMobile).length);
   }, [numberMobile]);
@@ -97,6 +103,7 @@ function MainContent() {
   return (
     <div className={style.container}>
       {countModal && <CountModal onClose={() => setCountModal(false)} />}
+      {confirmModal && <ConfirmModal onClose={() => setConfirmModal(false)} />}
 
       <aside>
         <div className={style.chooseCurrent}>
@@ -232,9 +239,7 @@ function MainContent() {
               </InputMask>
             </div>
             <button
-              className={`${
-                style.btnActive
-              }`}
+              className={`${style.btnActive}`}
               onClick={() => sendProducts()}
               // disabled={selectedItems.length === 0 || numberMobile.length < 8}
             >
