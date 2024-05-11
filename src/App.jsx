@@ -8,11 +8,11 @@ import CookiesModal from "./Modals/CookiesModal";
 function App() {
   const [cookieModal, setCookieModal] = useState(false);
 
-  // useEffect(() => {
-  //   setTimeout(() => {
-  //     setCookieModal(true);
-  //   }, 1000);
-  // },[]);
+  useEffect(() => {
+    setTimeout(() => {
+      setCookieModal(true);
+    }, 1000);
+  },[]);
 
   return (
     <>
