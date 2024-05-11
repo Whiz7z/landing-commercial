@@ -45,6 +45,15 @@ const styleTag = (
             -ms-transform-style: flat;
             transform-style: flat;
           }
+
+          .swiper-slide{
+            visibility: hidden;
+          }
+
+          .swiper-slide-active, .swiper-slide-prev, .swiper-slide-next{
+            visibility: visible;
+            
+          }
         `}</style>
 );
 
