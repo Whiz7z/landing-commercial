@@ -4,6 +4,7 @@ import CrossSvg from "./../svgComponents/CrossSvg";
 import useStore from "../store/store";
 
 import InputMask from "react-input-mask";
+import useSendEmail from "../hooks/useSenEmail";
 
 const countries = [
   { code: "RU", dial_code: "+7" },
@@ -24,6 +25,8 @@ function CountModal({ onClose }) {
   const [phoneNumber, setPhoneNumber] = useState("");
   const [number, setNumber] = useState("");
   const [openCodeSelect, setOpenCodeSelect] = useState(false);
+
+  const [sendEmail] = useSendEmail();
   const closeModal = () => {
     onClose();
   };
@@ -31,6 +34,12 @@ function CountModal({ onClose }) {
   const sendPhoneNumber = () => {
     console.log(number);
     console.log(selectedItems);
+    const formattedString = selectedItems
+      .map((device) => `${device.code} - ${device.title}`)
+      .join("\n");
+    console.log(formattedString);
+
+    sendEmail(number, formattedString);
     onClose();
   };
   return (

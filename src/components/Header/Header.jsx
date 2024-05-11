@@ -46,7 +46,7 @@ const Header = () => {
           </a>
           <div className={style.contact}>
             <p className={style.contactText}>Быстрая связь с нами:</p>
-            <p className={style.ourNumberText}>Наш номер:</p>
+            <p className={style.ourNumberText}>Наш номер</p>
             <span>+7 (495) 182-00-11 </span>
           </div>
         </section>

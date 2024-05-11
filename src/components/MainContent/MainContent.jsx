@@ -23,6 +23,7 @@ import InputMask from "react-input-mask";
 import CheckLineSvg from "../../svgComponents/CheckLineSvg";
 import GradientLineSvg from "../../svgComponents/GradientLineSvg";
 import ConfirmModal from "../../Modals/ConfirmModal";
+import useSendEmail from "../../hooks/useSenEmail";
 
 let currentTypes = [
   {
@@ -69,6 +70,8 @@ function MainContent() {
   const [phoneNumber, setPhoneNumber] = useState("");
   const [numberMobile, setNumberMobile] = useState("");
   const [openCodeSelect, setOpenCodeSelect] = useState(false);
+
+  const [sendEmail] = useSendEmail();
   const calcRef  = useRef(null);
 
   const { selectedItems, add, remove } = useStore((state) => ({
@@ -91,6 +94,13 @@ function MainContent() {
   const sendProducts =() => {
     console.log(selectedItems);
     console.log(numberMobile);
+
+    const formattedString = selectedItems
+      .map((device) => `${device.code} - ${device.title}`)
+      .join("\n");
+    console.log(formattedString);
+
+    sendEmail(numberMobile, formattedString);
 
     setConfirmModal(true);
   }
