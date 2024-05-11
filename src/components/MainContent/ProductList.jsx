@@ -37,6 +37,14 @@ const styleTag = (
             height: auto;
             margin: 0 auto;
           }
+
+          .swiper-wrapper,
+          .swiper-slide{
+            -moz-transform-style: flat;
+            -webkit-transform-style: flat;
+            -ms-transform-style: flat;
+            transform-style: flat;
+          }
         `}</style>
 );
 
@@ -68,7 +76,11 @@ function ProductList({ productType, currentType, calcRef }) {
       <Route
         path="/services"
         element={
-          <ItemsList calcRef={calcRef} productType={productType} listType="services"/>
+          <ItemsList
+            calcRef={calcRef}
+            productType={productType}
+            listType="services"
+          />
         }
         exact
       ></Route>
@@ -88,7 +100,6 @@ function ProductList({ productType, currentType, calcRef }) {
 }
 
 const StationsList = ({ productType, currentType, calcRef }) => {
-  
   const location = useLocation();
 
   useEffect(() => {
@@ -134,15 +145,15 @@ const StationsList = ({ productType, currentType, calcRef }) => {
           >
             {combinedArray.map((product, index) => (
               <SwiperSlide key={index}>
-                {(isActive) => (
+                {(isActive, isNext, isPrev) => (
                   <>
-                    {isActive && (
+                    {isNext || isActive || isPrev ? (
                       <ProductItem
                         {...product}
                         generalType="stations"
                         calcRef={calcRef}
                       />
-                    )}
+                    ) : null}
                   </>
                 )}
               </SwiperSlide>
@@ -246,7 +257,6 @@ const StationsList = ({ productType, currentType, calcRef }) => {
   }
 };
 
-
 const ItemsList = ({ calcRef, productType, listType }) => {
   // const targetRef = useRef(null);
   // const hasMounted = useRef(false);
@@ -317,6 +327,5 @@ const ItemsList = ({ calcRef, productType, listType }) => {
     </>
   );
 };
-
 
 export default ProductList;
