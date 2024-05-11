@@ -600,7 +600,7 @@ menu {
       span {
         align-self: center;
         position: relative;
-        top: 1px
+        top: 2px
       }
     }
   }
@@ -629,6 +629,11 @@ menu {
       color: $text-dark;
       padding: 0 20px;
       margin-bottom: 15px;
+
+      &::placeholder{
+        font-size: 16px;
+      }
+      
     }
   }
 

@@ -55,21 +55,24 @@ function CountModal({ onClose }) {
         <h2>электрические станции под ключ</h2>
 
         <p className={style.text}>
-          Напишите ваш номер телефона,<br/> чтобы предоставить ответы<br/> по всем
-          вопросам и запросам
+          Напишите ваш номер телефона,
+          <br /> чтобы предоставить ответы
+          <br /> по всем вопросам и запросам
         </p>
 
         <div>
           <InputMask
-            mask={`${countryCode.dial_code} 999 999 99 99`}
-            maskChar=" "
-            placeholder={`${countryCode.dial_code} _ _ _  _ _ _  _ _  _ _`}
+            // mask={`${countryCode.dial_code} 999 999 99 99`}
+            mask={`+9 999 999 99 99`}
+            maskChar=""
+            // placeholder={`${countryCode.dial_code} _ _ _  _ _ _  _ _  _ _`}
+            placeholder="Напишите номер телефона"
             value={number}
             onChange={(e) => setNumber(e.target.value)}
           >
             {(inputProps) => (
               <div className={style.input_container}>
-                <div
+                {/* <div
                   className={style.country_code_selected}
                   onClick={() => setOpenCodeSelect(true)}
                 >
@@ -93,7 +96,7 @@ function CountModal({ onClose }) {
                       </div>
                     ))}
                   </div>
-                )}
+                )} */}
 
                 <input {...inputProps} type="tel" />
               </div>

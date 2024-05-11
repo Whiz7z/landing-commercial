@@ -207,9 +207,11 @@ function MainContent() {
           <div className={style.mobile_calc} id="calc">
             <div>
               <InputMask
-                mask={`${countryCode.dial_code} 999 999 99 99`}
+                // mask={`${countryCode.dial_code} 999 999 99 99`}
+                mask={`+9 999 999 99 99`}
                 maskChar=""
-                placeholder={`${countryCode.dial_code} _ _ _  _ _ _  _ _  _ _`}
+                // placeholder={`${countryCode.dial_code} _ _ _  _ _ _  _ _  _ _`}
+                placeholder="Напишите номер телефона"
                 value={numberMobile}
                 onChange={(e) =>
                   setNumberMobile(extractNumbers(e.target.value))
@@ -217,13 +219,13 @@ function MainContent() {
               >
                 {(inputProps) => (
                   <div className={style.input_container}>
-                    <div
+                    {/* <div
                       className={style.country_code_selected}
                       onClick={() => setOpenCodeSelect(true)}
                     >
                       {countryCode.code}
-                    </div>
-                    {openCodeSelect && (
+                    </div> */}
+                    {/* {openCodeSelect && (
                       <div
                         className={style.country_code_select}
                         onMouseLeave={() => setOpenCodeSelect(false)}
@@ -241,7 +243,7 @@ function MainContent() {
                           </div>
                         ))}
                       </div>
-                    )}
+                    )} */}
 
                     <input {...inputProps} type="tel" ref={calcRef} />
                   </div>

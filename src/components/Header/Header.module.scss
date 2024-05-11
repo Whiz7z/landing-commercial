@@ -23,7 +23,7 @@
     display: none;
     transition: 0.3s ease-in-out;
     &:hover {
-      background-color:$btn-hover ;
+      background-color: $btn-hover;
     }
   }
 
@@ -133,6 +133,17 @@
     }
   }
 
+  @media screen and (max-width: 356px) {
+    .contact {
+      .ourNumberText {
+        margin-right: 15px;
+      }
+
+      span{
+        margin-right: 15px;
+      }
+    }
+  }
   @media screen and (max-width: 330px) {
     .contact {
       .ourNumberText {
@@ -244,7 +255,7 @@
         a {
           font-size: 1.4rem;
           align-self: center;
-          
+
           .icon {
             height: 20px;
             top: 1px;
