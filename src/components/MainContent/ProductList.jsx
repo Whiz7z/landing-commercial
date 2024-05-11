@@ -13,8 +13,8 @@ import {
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination, Scrollbar, A11y } from "swiper/modules";
 import "swiper/css";
-import "swiper/css/navigation";
-import "swiper/css/pagination";
+// import "swiper/css/navigation";
+// import "swiper/css/pagination";
 import "swiper/css/scrollbar";
 import DecorArrowSvg from "../../svgComponents/DecorArrowSvg";
 
@@ -128,7 +128,7 @@ const StationsList = ({ productType, currentType, calcRef }) => {
             slidesPerView={1}
             centeredSlides={true}
             loop={true}
-            modules={[Navigation, Pagination, Scrollbar, A11y]}
+            modules={[Navigation,  A11y]}
             onSlideChange={() => console.log("slide change")}
             onSwiper={(swiper) => console.log(swiper)}
           >
@@ -168,7 +168,7 @@ const StationsList = ({ productType, currentType, calcRef }) => {
             slidesPerView={1}
             centeredSlides={true}
             loop={true}
-            modules={[Navigation, Pagination, Scrollbar, A11y]}
+            modules={[Navigation, A11y]}
             onSlideChange={() => console.log("slide change")}
             onSwiper={(swiper) => console.log(swiper)}
           >
@@ -208,7 +208,7 @@ const StationsList = ({ productType, currentType, calcRef }) => {
             slidesPerView={1}
             centeredSlides={true}
             loop={true}
-            modules={[Navigation, Pagination, Scrollbar, A11y]}
+            modules={[Navigation,  A11y]}
             onSlideChange={() => console.log("slide change")}
             onSwiper={(swiper) => console.log(swiper)}
           >
@@ -279,7 +279,7 @@ const ItemsList = ({ calcRef, productType, listType }) => {
           slidesPerView={1}
           centeredSlides={true}
           loop={false}
-          modules={[Navigation, Pagination, Scrollbar, A11y]}
+          modules={[Navigation, A11y]}
           onSlideChange={() => console.log("slide change")}
           onSwiper={(swiper) => console.log(swiper)}
         >
