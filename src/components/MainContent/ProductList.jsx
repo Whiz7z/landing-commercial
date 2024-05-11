@@ -128,7 +128,8 @@ const StationsList = ({ productType, currentType, calcRef }) => {
             slidesPerView={1}
             centeredSlides={true}
             loop={true}
-            modules={[Navigation,  A11y]}
+            cssMode={true}
+            modules={[Navigation, A11y]}
             onSlideChange={() => console.log("slide change")}
             onSwiper={(swiper) => console.log(swiper)}
           >
@@ -168,6 +169,7 @@ const StationsList = ({ productType, currentType, calcRef }) => {
             slidesPerView={1}
             centeredSlides={true}
             loop={true}
+            cssMode={true}
             modules={[Navigation, A11y]}
             onSlideChange={() => console.log("slide change")}
             onSwiper={(swiper) => console.log(swiper)}
@@ -207,6 +209,7 @@ const StationsList = ({ productType, currentType, calcRef }) => {
             spaceBetween={10}
             slidesPerView={1}
             centeredSlides={true}
+            cssMode={true}
             loop={true}
             modules={[Navigation,  A11y]}
             onSlideChange={() => console.log("slide change")}
@@ -279,6 +282,7 @@ const ItemsList = ({ calcRef, productType, listType }) => {
           slidesPerView={1}
           centeredSlides={true}
           loop={false}
+          cssMode={true}
           modules={[Navigation, A11y]}
           onSlideChange={() => console.log("slide change")}
           onSwiper={(swiper) => console.log(swiper)}
