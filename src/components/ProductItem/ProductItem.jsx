@@ -65,8 +65,11 @@ function ProductItem({ image, title, code, tags, generalType, calcRef }) {
                     <WrenchSvg w="12.15px" h="12.15px" fill="#757f7b" />
                   )}
                 </span>
+                <span className={`${style.text} ${style.textMobile}`}>
+                  {tag.textMobile ? tag.textMobile : tag.text}
+                </span>
                 <span
-                  className={style.text}
+                  className={`${style.text} ${style.textDesktop}`}
                   dangerouslySetInnerHTML={{ __html: tag.text }}
                 ></span>
               </span>

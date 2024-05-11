@@ -595,10 +595,12 @@ menu {
       border-radius: 100px;
       justify-self: end;
       padding: 0 20px;
+      padding-bottom: 1px;
       gap: 12px;
       span {
         align-self: center;
-        height: 11px;
+        position: relative;
+        top: 1px
       }
     }
   }

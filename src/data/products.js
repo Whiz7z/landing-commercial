@@ -115,6 +115,7 @@ export const productsDetails = [
       {
         icon: "plugs",
         text: "высокая совместимость со станциями",
+        textMobile: "высокая совместимость",
       },
     ],
   },
@@ -149,11 +150,13 @@ export const productsDetails = [
       {
         icon: "cpu",
         text: "резервирование очереди зарядки",
+        textMobile: "резервирование зарядки",
       },
 
       {
         icon: "cpu",
         text: "интеллектуальная система управления",
+        textMobile: "интеллектуальная система",
       },
     ],
   },
@@ -169,6 +172,7 @@ export const productsFastCurrentStation = [
       {
         icon: "lightning",
         text: "быстрый постоянный ток: <span class='textLight'>от 30 кВт до 240 кВт</span>",
+        textMobile: "от 30 кВт до 240 кВт",
       },
       {
         icon: "shield",
@@ -218,6 +222,7 @@ export const productsFastCurrentStation = [
       {
         icon: "lightning",
         text: "быстрый постоянный ток: <span class='textLight'>от 52 кВт до 262 кВт</span>",
+        textMobile: "от 52 кВт до 262 кВт",
       },
       {
         icon: "shield",
@@ -267,6 +272,7 @@ export const productsFastCurrentStation = [
       {
         icon: "lightning",
         text: "быстрый постоянный ток: <span class='textLight'>60 кВт или 80 кВт (+42)</span>",
+        textMobile: "60 кВт или 80 кВт (+42)",
       },
       {
         icon: "shield",
@@ -288,10 +294,12 @@ export const productsFastCurrentStation = [
       {
         icon: "plugs",
         text: "система организации проводов",
+        textMobile: "организация проводов",
       },
       {
         icon: "cpu",
         text: "современная система управления",
+        textMobile: "система управление",
       },
       {
         icon: "cpu",
@@ -309,6 +317,7 @@ export const productsFastCurrentStation = [
       {
         icon: "lightning",
         text: "быстрый постоянный ток: <span class='textLight'>от 60 кВт до 240 кВт</span>",
+        textMobile: "от 60 кВт до 240 кВт",
       },
       {
         icon: "shield",
@@ -357,6 +366,7 @@ export const productsFastCurrentStation = [
       {
         icon: "lightning",
         text: "быстрый постоянный ток: <span class='textLight'>от 82 кВт до 262 кВт</span>",
+        textMobile: "от 82 кВт до 262 кВт",
       },
       {
         icon: "shield",
@@ -406,6 +416,7 @@ export const productsFastCurrentStation = [
       {
         icon: "lightning",
         text: "быстрый постоянный ток: <span class='textLight'>от 60 кВт до 120 кВт</span>",
+        textMobile: "от 60 кВт до 120 кВт",
       },
       {
         icon: "shield",
@@ -455,6 +466,7 @@ export const productsFastCurrentStation = [
       {
         icon: "lightning",
         text: "быстрый постоянный ток: <span class='textLight'>320 кВт или 360 кВт</span>",
+        textMobile: "320 кВт или 360 кВт",
       },
       {
         icon: "shield",
@@ -496,6 +508,7 @@ export const productsFastCurrentStation = [
       {
         icon: "lightning",
         text: "быстрый постоянный ток: <span class='textLight'>от 360 кВт до 600 кВт</span>",
+        textMobile: "от 360 кВт до 600 кВт",
       },
       {
         icon: "shield",
@@ -545,6 +558,7 @@ export const productsFastCurrentStation = [
       {
         icon: "lightning",
         text: "быстрый постоянный ток: <span class='textLight'>от 20 кВт до 40 кВт</span>",
+        textMobile: "от 20 кВт до 40 кВт",
       },
       {
         icon: "shield",
@@ -578,6 +592,7 @@ export const productsFastCurrentStation = [
       {
         icon: "cpu",
         text: "современная система управления",
+        textMobile: "система управления",
       },
       {
         icon: "cpu",
@@ -597,6 +612,7 @@ export const productsSlowCurrentStation = [
       {
         icon: "lightning",
         text: "медленный переменный ток: <span class='textLight'>3.7 кВт</span>",
+        textMobile: "3.7 кВт",
       },
       {
         icon: "shield",
@@ -614,10 +630,12 @@ export const productsSlowCurrentStation = [
       {
         icon: "plugs",
         text: "высокая совместимость с электромобилями",
+        textMobile: "высокая совместимость",
       },
       {
         icon: "cpu",
         text: "современная система управления",
+        textMobile: "система управления",
       },
       {
         icon: "cpu",
@@ -635,6 +653,7 @@ export const productsSlowCurrentStation = [
       {
         icon: "lightning",
         text: "медленный переменный ток: <span class='textLight'>7.4 кВт или 22 кВт</span>",
+        textMobile: "7.4 кВт или 22 кВт",
       },
       {
         icon: "shield",
@@ -652,10 +671,12 @@ export const productsSlowCurrentStation = [
       {
         icon: "plugs",
         text: "высокая совместимость с электромобилями",
+        textMobile: "высокая совместимость",
       },
       {
         icon: "cpu",
         text: "современная система управления",
+        textMobile: "система управления",
       },
       {
         icon: "cpu",
@@ -673,6 +694,7 @@ export const productsSlowCurrentStation = [
       {
         icon: "lightning",
         text: "медленный переменный ток: <span class='textLight'>от 7.4 кВт до 22 кВт</span>",
+        textMobile: "от 7.4 кВт до 22 кВт",
       },
       {
         icon: "shield",
@@ -693,6 +715,7 @@ export const productsSlowCurrentStation = [
       {
         icon: "plugs",
         text: "высокая совместимость с электромобилями",
+        textMobile: "высокая совместимость",
       },
       {
         icon: "cpu",
@@ -717,6 +740,7 @@ export const productsSlowCurrentStation = [
       {
         icon: "lightning",
         text: "медленный переменный ток: <span class='textLight'>от 7.4 кВт до 22 кВт</span>",
+        textMobile: "от 7.4 кВт до 22 кВт",
       },
       {
         icon: "shield",
@@ -734,6 +758,7 @@ export const productsSlowCurrentStation = [
       {
         icon: "plugs",
         text: "высокая совместимость с электромобилями",
+        textMobile: "высокая совместимость",
       },
       {
         icon: "cpu",
@@ -758,6 +783,7 @@ export const productsSlowCurrentStation = [
       {
         icon: "lightning",
         text: "медленный переменный ток: <span class='textLight'>от 7.4 кВт до 22 кВт</span>",
+        textMobile: "от 7.4 кВт до 22 кВт",
       },
       {
         icon: "shield",
@@ -779,6 +805,7 @@ export const productsSlowCurrentStation = [
       {
         icon: "plugs",
         text: "высокая совместимость с электромобилями",
+        textMobile: "высокая совместимость",
       },
       {
         icon: "cpu",
@@ -803,6 +830,7 @@ export const productsSlowCurrentStation = [
       {
         icon: "lightning",
         text: "медленный переменный ток: <span class='textLight'>от 7.4 кВт до 22 кВт</span>",
+        textMobile: "от 7.4 кВт до 22 кВт",
       },
       {
         icon: "shield",
@@ -820,6 +848,7 @@ export const productsSlowCurrentStation = [
       {
         icon: "plugs",
         text: "высокая совместимость с электромобилями",
+        textMobile: "высокая совместимость",
       },
       {
         icon: "cpu",
@@ -844,6 +873,7 @@ export const productsSlowCurrentStation = [
       {
         icon: "lightning",
         text: "медленный переменный ток: <span class='textLight'>22 кВт (2 пистолета)</span>",
+        textMobile: "22 кВт (2 пистолета)",
       },
       {
         icon: "shield",
@@ -865,6 +895,7 @@ export const productsSlowCurrentStation = [
       {
         icon: "plugs",
         text: "высокая совместимость с электромобилями",
+        textMobile: "высокая совместимость",
       },
       {
         icon: "cpu",

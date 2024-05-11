@@ -152,8 +152,7 @@ function MainContent() {
             <CheckLineSvg />
           </div>
           <h2>
-            Выберите себе станцию,{" "}
-            <br />
+            Выберите себе станцию, <br />
             либо просто позвоните нам
           </h2>
           <ul>
@@ -191,9 +190,9 @@ function MainContent() {
           <div className={style.mobile_calc} id="calc">
             <div>
               <InputMask
-                mask={`${countryCode.dial_code} (999) 999-99-99`}
-                maskChar="_"
-                placeholder={`${countryCode.dial_code} (_ _ _) _ _ _-_ _-_ _`}
+                mask={`${countryCode.dial_code} 999 999 99 99`}
+                maskChar=""
+                placeholder={`${countryCode.dial_code} _ _ _  _ _ _  _ _  _ _`}
                 value={numberMobile}
                 onChange={(e) =>
                   setNumberMobile(extractNumbers(e.target.value))
@@ -234,12 +233,10 @@ function MainContent() {
             </div>
             <button
               className={`${
-                selectedItems.length > 0 && numberMobile.length > 8
-                  ? style.btnActive
-                  : style.btnNonActive
+                style.btnActive
               }`}
               onClick={() => sendProducts()}
-              disabled={selectedItems.length === 0 || numberMobile.length < 8}
+              // disabled={selectedItems.length === 0 || numberMobile.length < 8}
             >
               Рассчитать за 2 минуты
             </button>

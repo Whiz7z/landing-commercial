@@ -54,14 +54,27 @@ function Footer() {
       </div>
 
       <div className={style.bottomFooter}>
-        <p className={style.firstCopyright}>
+        <p className={`${style.firstCopyright} ${style.desktopFirstCopyright}`}>
           настоящий интернет-сайт, а также вся информация о товарах и об
           услугах, предоставленная на нём, носит исключительно
           <br /> информационный характер и ни при каких условиях не является
           публичной офертой, определяемой действующим законодательством
         </p>
-        <p className={style.copyright}>
+
+        <div
+          className={`${style.firstCopyright} ${style.mobileFirstCopyright}`}
+        >
+          настоящий интернет-сайт, а также вся информация о товарах и об
+          услугах, предоставленная на нём, носит исключительно информационный
+          характер и ни при каких условиях
+          <br /> не является публичной офертой, определяемой действующим
+          <br /> российским законодательством
+        </div>
+        <p className={`${style.copyright} ${style.descktopCopyright}`}>
           ооо «энерго-точка» · огрн: 123456789012345
+        </p>
+        <p className={`${style.copyright} ${style.mobileCopyright}`}>
+          ооо «энерго-точка»<br/>огрн: 123456789012345
         </p>
       </div>
     </footer>
