@@ -128,18 +128,23 @@ const StationsList = ({ productType, currentType, calcRef }) => {
             slidesPerView={1}
             centeredSlides={true}
             loop={true}
-            cssMode={true}
             modules={[Navigation, A11y]}
             onSlideChange={() => console.log("slide change")}
             onSwiper={(swiper) => console.log(swiper)}
           >
             {combinedArray.map((product, index) => (
               <SwiperSlide key={index}>
-                <ProductItem
-                  {...product}
-                  generalType="stations"
-                  calcRef={calcRef}
-                />
+                {(isActive) => (
+                  <>
+                    {isActive && (
+                      <ProductItem
+                        {...product}
+                        generalType="stations"
+                        calcRef={calcRef}
+                      />
+                    )}
+                  </>
+                )}
               </SwiperSlide>
             ))}
           </Swiper>
@@ -169,18 +174,23 @@ const StationsList = ({ productType, currentType, calcRef }) => {
             slidesPerView={1}
             centeredSlides={true}
             loop={true}
-            cssMode={true}
             modules={[Navigation, A11y]}
             onSlideChange={() => console.log("slide change")}
             onSwiper={(swiper) => console.log(swiper)}
           >
             {productsSlowCurrentStation.map((product, index) => (
               <SwiperSlide key={index}>
-                <ProductItem
-                  {...product}
-                  generalType="stations"
-                  calcRef={calcRef}
-                />
+                {(isActive) => (
+                  <>
+                    {isActive && (
+                      <ProductItem
+                        {...product}
+                        generalType="stations"
+                        calcRef={calcRef}
+                      />
+                    )}
+                  </>
+                )}
               </SwiperSlide>
             ))}
           </Swiper>
@@ -209,19 +219,24 @@ const StationsList = ({ productType, currentType, calcRef }) => {
             spaceBetween={10}
             slidesPerView={1}
             centeredSlides={true}
-            cssMode={true}
             loop={true}
-            modules={[Navigation,  A11y]}
+            modules={[Navigation, A11y]}
             onSlideChange={() => console.log("slide change")}
             onSwiper={(swiper) => console.log(swiper)}
           >
             {productsFastCurrentStation.map((product, index) => (
               <SwiperSlide key={index}>
-                <ProductItem
-                  {...product}
-                  generalType="stations"
-                  calcRef={calcRef}
-                />
+                {(isActive) => (
+                  <>
+                    {isActive && (
+                      <ProductItem
+                        {...product}
+                        generalType="stations"
+                        calcRef={calcRef}
+                      />
+                    )}
+                  </>
+                )}
               </SwiperSlide>
             ))}
           </Swiper>
@@ -282,7 +297,6 @@ const ItemsList = ({ calcRef, productType, listType }) => {
           slidesPerView={1}
           centeredSlides={true}
           loop={false}
-          cssMode={true}
           modules={[Navigation, A11y]}
           onSlideChange={() => console.log("slide change")}
           onSwiper={(swiper) => console.log(swiper)}
