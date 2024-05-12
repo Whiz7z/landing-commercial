@@ -45,6 +45,7 @@
     font-size: 16px;
     font-weight: 700;
     line-height: 16px;
+    margin-top: 5px;
     word-break: keep-all;
     white-space: nowrap;
 
@@ -61,6 +62,8 @@
     margin-top: 10px;
     span {
       font-size: 18px;
+      position: relative;
+      top: 2px
     }
   }
 }
@@ -121,8 +124,8 @@
     border: none;
     width: 200px;
     height: 60px;
-    //font-size: 18px;
-    font-size: 16px;
+    font-size: 18px;
+    //font-size: 16px;
     font-weight: 500;
     transition: 0.3s ease-in-out;
     font-weight: 400;
@@ -145,8 +148,8 @@
     outline: none;
     border: none;
     width: 200px;
-    //font-size: 18px;
-    font-size: 16px;
+    font-size: 18px;
+    //font-size: 16px;
     font-weight: 400;
     color: $text-dark-70;
 
