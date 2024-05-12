@@ -132,24 +132,17 @@
     //font-size: 16px;
     font-weight: 500;
 
-    transition-property: height, width, background-color, padding, margin;
-    transition-duration: 0.1s, 0.1s, 0.3s, 0.1s, 0.1s;
-    transition-timing-function: ease-in-out, ease-in-out, ease-in-out,
-      ease-in-out, ease-in-out;
-
-    font-weight: 400;
-    &:hover {
-      background-color: $c-700;
-    }
+    transition-property: color, background-color;
+    transition-duration: 0.1s, 0.3s;
+    transition-timing-function: ease-in-out, ease-in-out;
 
     &:active {
-      position: relative;
-      height: 56px;
-      width: 196px;
-      padding: 0 13px 0 13px;
-      margin: 2px 2px;
-      align-self: center;
+      color: $transparent-white;
+      font-weight: 500;
       //transform: scaleX(0.98);
+    }
+    &:hover {
+      background-color: $c-700;
     }
   }
 
@@ -160,18 +153,13 @@
   .consultMe {
     width: 350px;
 
-    transition-property: height, width, background-color, padding, margin;
-    transition-duration: 0.1s, 0.1s, 0.3s, 0.1s 0.1s;
-    transition-timing-function: ease-in-out, ease-in-out, ease-in-out,
-      ease-in-out, ease-in-out;
+    transition-property: color, background-color;
+    transition-duration: 0.1s, 0.3s;
+    transition-timing-function: ease-in-out, ease-in-out;
 
     &:active {
-      position: relative;
-      height: 56px;
-      width: 346px;
-      padding: 0 13px 0 13px;
-      margin: 2px 2px;
-      align-self: center;
+      color: $transparent-white;
+      font-weight: 500;
       //transform: scaleX(0.98);
     }
   }
@@ -186,10 +174,20 @@
     font-weight: 400;
     color: $text-dark-70;
 
-    transition: 0.3s ease-in-out;
+
+    transition-property: color, background-color;
+    transition-duration: 0.1s, 0.3s;
+    transition-timing-function: ease-in-out, ease-in-out;
+
+    
 
     &:hover {
       color: $text-dark;
+      &:active {
+      color: $transparent-black;
+      font-weight: 500;
+      //transform: scaleX(0.98);
+    }
     }
   }
 
@@ -205,20 +203,25 @@
     height: 60px;
     font-size: 18px;
     font-weight: 500;
-    transition: 0.3s color ease-in-out;
 
-    transition-property: height, width, background-color, padding, margin;
-    transition-duration: 0.1s, 0.1s, 0.3s, 0.1s, 0.1s;
-    transition-timing-function: ease-in-out, ease-in-out, ease-in-out,
-      ease-in-out, ease-in-out;
+    transition-property: color, background-color;
+    transition-duration: 0.1s, 0.3s;
+    transition-timing-function: ease-in-out, ease-in-out;
+
+    svg {
+      path {
+        transition-property: color, background-color;
+        transition-duration: 0.1s, 0.3s;
+        transition-timing-function: ease-in-out, ease-in-out;
+      }
+    }
 
     &:active {
-      position: relative;
-      height: 56px;
-      width: 56px;
-      margin: 2px 2px;
-      align-self: center;
-      //transform: scaleX(0.98);
+      svg {
+        path {
+          fill: $transparent-white;
+        }
+      }
     }
 
     &:hover {
@@ -295,18 +298,13 @@
       width: 100%;
       font-size: 14px;
 
-      transition-property: height, width, background-color, padding, margin;
-      transition-duration: 0.1s, 0.1s, 0.3s, 0.1s 0.1s;
-      transition-timing-function: ease-in-out, ease-in-out, ease-in-out,
-        ease-in-out, ease-in-out;
+      transition-property: color, background-color;
+      transition-duration: 0.1s, 0.3s;
+      transition-timing-function: ease-in-out, ease-in-out;
 
       &:active {
-        position: relative;
-        height: 56px;
-        width: calc(100% - 4px);
-        // padding: 0 13px 0 13px;
-        margin: 2px 2px;
-        align-self: center;
+        color: $transparent-white;
+        font-weight: 500;
         //transform: scaleX(0.98);
       }
     }
@@ -341,21 +339,21 @@
         font-size: 16px;
 
         &:active {
-          width: 229px;
-          margin: 2px;
+          color: $transparent-white;
+          font-weight: 500;
         }
       }
 
-      .consultMe{
+      .consultMe {
+        transition-property: color, background-color;
+        transition-duration: 0.1s, 0.3s;
+        transition-timing-function: ease-in-out, ease-in-out;
+
         &:active {
-        position: relative;
-        height: 56px;
-        width: calc(100% - 4px);
-        // padding: 0 13px 0 13px;
-        margin: 2px 2px;
-        align-self: center;
-        //transform: scaleX(0.98);
-      }
+          color: $transparent-white;
+          font-weight: 500;
+          //transform: scaleX(0.98);
+        }
       }
     }
   }

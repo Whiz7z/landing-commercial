@@ -4,6 +4,7 @@ import ProductItem from "../ProductItem/ProductItem";
 import style from "./MainContent.module.scss";
 import { Routes, Route } from "react-router-dom";
 import { Swiper, SwiperSlide } from "swiper/react";
+import { motion, AnimatePresence } from "framer-motion";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
@@ -55,6 +56,62 @@ function extractNumbers(phoneNumber) {
   return phoneNumber.replace(/\D/g, ""); // \D matches any non-digit character and replaces it with ''
 }
 
+const arrowVariants = {
+  all: {
+    y: 0,
+  },
+  slow: {
+    y: 48,
+  },
+  fast: {
+    y: 98,
+  },
+};
+
+const dropdownVariants = {
+  hidden: {
+    opacity: 0,
+    height: 0,
+    overflow: "hidden",
+    transition: {
+      opacity: { duration: 0.3 },
+      height: { duration: 0.3 },
+    },
+  },
+
+  initial: {
+    heightL: 50,
+  },
+  visible: {
+    opacity: 1,
+    height: "auto",
+    transition: {
+      staggerChildren: 0.1,
+
+      opacity: { delay: 0.1, duration: 0.2 },
+      height: { duration: 0.5 },
+    },
+  },
+};
+
+
+
+const itemVariants = {
+  hidden: {
+    opacity: 0,
+    transition: {
+      duration: 0.2,
+    },
+  },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.2,
+    },
+  },
+};
+
 function MainContent() {
   const [currentType, setCurrentType] = useState("all");
   const [productType, setProductType] = useState("wall");
@@ -70,19 +127,53 @@ function MainContent() {
   const [phoneNumber, setPhoneNumber] = useState("");
   const [numberMobile, setNumberMobile] = useState("");
   const [openCodeSelect, setOpenCodeSelect] = useState(false);
+  const [mouseLeft, setMouseLeft] = useState(true);
+  const [hovered, setHovered] = useState(false);
 
   const [sendEmail] = useSendEmail();
-  const calcRef  = useRef(null);
+  const calcRef = useRef(null);
+
+  const closeTimeoutRef = useRef(null);
+
+  const handleSelectOpen = () => {
+    if (closeTimeoutRef.current) {
+      clearTimeout(closeTimeoutRef.current);
+      closeTimeoutRef.current = null;
+    }
+    setOpenSelect((prev) => !prev);
+  };
+
+  const closeSelect = () => {
+    setOpenSelect(false);
+  };
+
+  const handleMouseLeave = () => {
+    closeTimeoutRef.current = setTimeout(() => {
+      closeSelect();
+    }, 22000);
+  };
+
+  const handleMouseEnter = () => {
+    if (closeTimeoutRef.current) {
+      clearTimeout(closeTimeoutRef.current);
+      closeTimeoutRef.current = null;
+    }
+    ///setOpenSelect();
+  };
+
+  useEffect(() => {
+    return () => {
+      if (closeTimeoutRef.current) {
+        clearTimeout(closeTimeoutRef.current);
+      }
+    };
+  }, []);
 
   const { selectedItems, add, remove } = useStore((state) => ({
     selectedItems: state.selectedItems,
     add: state.add,
     remove: state.remove,
   }));
-
-  const openTypeSelect = () => {
-    setOpenSelect(true);
-  };
 
   const chooseCurrent = (id) => {
     setCurrentType(currentTypes.find((item) => item.id === id).value);
@@ -91,9 +182,14 @@ function MainContent() {
     console.log("currentType", currentType);
   };
 
-  const sendProducts =() => {
+  const sendProducts = () => {
     console.log(selectedItems);
     console.log(numberMobile);
+
+    if (selectedItems.length === 0 || numberMobile.length < 8) {
+      setConfirmModal(true);
+      return;
+    }
 
     const formattedString = selectedItems
       .map((device) => `${device.code} - ${device.title}`)
@@ -103,9 +199,8 @@ function MainContent() {
     sendEmail(numberMobile, formattedString);
 
     setConfirmModal(true);
-  }
+  };
 
- 
   useEffect(() => {
     console.log("selectedItems", extractNumbers(numberMobile).length);
   }, [numberMobile]);
@@ -122,42 +217,83 @@ function MainContent() {
             <br /> от производителя
           </h2>
           <p>более 10 моделей · более 50 комплектаций</p>
-          <div
-            name="current"
-            id="current"
-            value={currentType}
-            className={style.select}
-            onMouseLeave={() => setOpenSelect(false)}
-          >
-            {!openSelect && (
-              <div
-                className={style.selectPreview}
-                onClick={() => openTypeSelect(true)}
-              >
-                {currentTypes.find((item) => item.value == currentType)?.text}
-                <span>
-                  <SelectArrowSvg />
-                </span>
-              </div>
-            )}
+          <AnimatePresence>
+            <motion.div
+              initial="initial"
+              animate="visible"
+              exit="hidden"
+              variants={dropdownVariants}
+              name="current"
+              id="current"
+              value={currentType}
+              className={style.select}
+              onMouseLeave={() => {
+                handleMouseLeave();
+              }}
+              onMouseEnter={handleMouseEnter}
+            >
+              {!openSelect && (
+                <motion.div
+                  className={`${style.selectPreview} ${
+                    currentType !== "all" && style.activePreview
+                  }`}
+                  onClick={() => handleSelectOpen()}
+                >
+                  {currentTypes.find((item) => item.value == currentType)?.text}
+                  <span>
+                    <SelectArrowSvg />
+                  </span>
+                </motion.div>
+              )}
 
-            {openSelect
-              ? currentTypes.map((item) => (
-                  <div
+              {/* <div onClick={() => handleSelectOpen()}>{currentTypes[0].text}</div> */}
+
+              <motion.div
+                className={style.select_container}
+                initial="hidden"
+                animate={openSelect ? "visible" : "hidden"}
+                exit="hidden"
+                variants={dropdownVariants}
+              >
+                {currentTypes.map((item) => (
+                  <motion.div
+                    initial="hidden"
+                    animate="visible"
+                    exit="hidden"
+                    variants={itemVariants}
                     key={item.id}
                     className={`${style.option} ${
                       item.checked ? `${style.active}` : `${style.nonactive}`
-                    }`}
+                    } ${item.value == "all" ? style.noArrow : null}`}
                     onClick={() => chooseCurrent(item.id)}
+                    onMouseEnter={() => {
+                      setHovered(item.value);
+                    }}
                   >
                     {item.text}
-                    <span>
-                      <SelectArrowSvg />
-                    </span>
-                  </div>
-                ))
-              : null}
-          </div>
+                  </motion.div>
+                ))}
+
+                {/* {currentTypes.find((item) => item.value == currentType)?.text} */}
+                <motion.span
+                  initial={{ y: 0 }}
+                  animate={
+                    hovered === "all"
+                      ? "all"
+                      : hovered === "slow"
+                      ? "slow"
+                      : hovered === "fast"
+                      ? "fast"
+                      : currentType
+                  }
+                  variants={arrowVariants}
+                  className={style.optionArrow}
+                >
+                  <SelectArrowSvg />
+                </motion.span>
+              </motion.div>
+            </motion.div>
+          </AnimatePresence>
         </div>
 
         <div className={style.info}>
@@ -207,11 +343,8 @@ function MainContent() {
           <div className={style.mobile_calc} id="calc">
             <div>
               <InputMask
-                // mask={`${countryCode.dial_code} 999 999 99 99`}
                 mask={`+7 (999) 999-99-99`}
                 maskChar=""
-                // placeholder={`${countryCode.dial_code} _ _ _  _ _ _  _ _  _ _`}
-                // placeholder="Напишите номер телефона"
                 placeholder="+7"
                 value={numberMobile}
                 onChange={(e) =>
@@ -220,32 +353,6 @@ function MainContent() {
               >
                 {(inputProps) => (
                   <div className={style.input_container}>
-                    {/* <div
-                      className={style.country_code_selected}
-                      onClick={() => setOpenCodeSelect(true)}
-                    >
-                      {countryCode.code}
-                    </div> */}
-                    {/* {openCodeSelect && (
-                      <div
-                        className={style.country_code_select}
-                        onMouseLeave={() => setOpenCodeSelect(false)}
-                      >
-                        {countries.map((country, index) => (
-                          <div
-                            key={index}
-                            onClick={() => {
-                              setCountryCode(country);
-                              setOpenCodeSelect(false);
-                            }}
-                          >
-                            {country.code}
-                            <span>{country.dial_code}</span>
-                          </div>
-                        ))}
-                      </div>
-                    )} */}
-
                     <input {...inputProps} type="tel" ref={calcRef} />
                   </div>
                 )}
@@ -254,7 +361,6 @@ function MainContent() {
             <button
               className={`${style.btnActive}`}
               onClick={() => sendProducts()}
-              // disabled={selectedItems.length === 0 || numberMobile.length < 8}
             >
               Рассчитать за 2 минуты
             </button>

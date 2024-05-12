@@ -51,6 +51,11 @@ aside {
     margin-bottom: 20px;
   }
 
+  .select_container {
+    display: grid;
+    row-gap: 25px;
+  }
+
   .select {
     padding: 15px;
     border-radius: 10px;
@@ -64,20 +69,26 @@ aside {
 
     -webkit-appearance: none;
     -moz-appearance: none;
-    // background: transparent;
-    // background-image: url("data:image/svg+xml;utf8,<svg width='14' height='9' viewBox='0 0 14 9' fill='none' xmlns='http://www.w3.org/2000/svg'><path d='M13.6922 1.94219L7.44219 8.19219C7.38415 8.2503 7.31522 8.2964 7.23934 8.32785C7.16347 8.3593 7.08214 8.37549 7 8.37549C6.91787 8.37549 6.83654 8.3593 6.76067 8.32785C6.68479 8.2964 6.61586 8.2503 6.55782 8.19219L0.307816 1.94219C0.220309 1.85478 0.160705 1.74337 0.136548 1.62207C0.112392 1.50076 0.12477 1.37502 0.172115 1.26076C0.21946 1.14649 0.299644 1.04884 0.402515 0.980175C0.505386 0.911506 0.626319 0.874903 0.750004 0.875L13.25 0.875C13.3737 0.874903 13.4946 0.911506 13.5975 0.980175C13.7004 1.04884 13.7805 1.14649 13.8279 1.26076C13.8752 1.37502 13.8876 1.50076 13.8635 1.62207C13.8393 1.74337 13.7797 1.85478 13.6922 1.94219Z' fill='black'/></svg>");
-    // background-repeat: no-repeat;
-    // background-position-x: calc(100% - 20px);
-    // background-position-y: 24px;
 
     display: flex;
     flex-direction: column;
-    gap: 25px;
+    // gap: 25px;
 
     span {
       position: absolute;
       right: 15px;
       top: 15px;
+    }
+
+    .select_container {
+      .optionArrow {
+        @media screen and (max-width: 766px) {
+          margin-top: 3px;
+        }
+        svg{
+          transform: rotate(90deg);
+        }
+      }
     }
 
     .selectPreview {
@@ -90,6 +101,19 @@ aside {
       }
     }
 
+    .activePreview {
+      color: $text-dark;
+    }
+
+    // .noArrow {
+    //     &:hover {
+    //       span {
+    //         display: none;
+    //         opacity: 0;
+    //       }
+    //     }
+    //   }
+
     .option {
       text-rendering: optimizeLegibility;
       -webkit-font-smoothing: antialiased;
@@ -98,6 +122,7 @@ aside {
       color: $text-muted;
       font-weight: 300;
       box-sizing: border-box;
+      position: relative;
 
       span {
         opacity: 0;
@@ -232,20 +257,15 @@ menu {
           height: 50px;
           display: flex;
           align-items: center;
-          transition: 0.1s ease-in-out;
+          transition: 0.3s ease-in-out;
           align-self: center;
           .radio {
             display: flex;
             align-items: center;
           }
 
-          &:active {
-            position: relative;
-            height: 46px;
-            padding: 0 18px 0 18px;
-            margin: 0 2px;
-            align-self: center;
-            //transform: scaleX(0.98);
+          &:hover {
+            background-color: $btn-active;
           }
         }
       }
@@ -351,11 +371,6 @@ menu {
     width: 320px;
     height: 60px;
     cursor: pointer;
-    &:active {
-      width: 316px;
-      height: 56px;
-      margin: 2px;
-    }
   }
 
   .btnNonActive {
@@ -371,13 +386,18 @@ menu {
     background-color: $logo;
     color: #fff;
     cursor: pointer;
-    transition-property: height, width, background-color, padding, margin;
-    transition-duration: 0.1s, 0.1s, 0.3s, 0.1s, 0.1s;
-    transition-timing-function: ease-in-out, ease-in-out, ease-in-out,
-      ease-in-out, ease-in-out;
+
+    transition-property: color, background-color;
+    transition-duration: 0.1s, 0.3s;
+    transition-timing-function: ease-in-out, ease-in-out;
+
+    &:active {
+      color: $transparent-white;
+      font-weight: 500;
+    }
 
     &:hover {
-      background-color: $btn-hover;
+      background-color: $c-700;
     }
   }
 }
@@ -405,8 +425,6 @@ menu {
       height: 100%;
       padding: 0;
     }
-
-    
 
     .country_code_selected {
       font-family: "Age";
@@ -669,26 +687,24 @@ menu {
       padding: 0 20px;
       margin-bottom: 15px;
 
-      
-
       &::placeholder {
         font-size: 16px;
         color: $text-dark;
       }
     }
 
-    .btnActive {
-        transition-property: height, width, background-color, padding, margin;
-        transition-duration: 0.1s, 0.1s, 0.3s, 0.1s, 0.1s;
-        transition-timing-function: ease-in-out, ease-in-out, ease-in-out,
-          ease-in-out, ease-in-out;
-        &:active {
-          //padding: 0 18px;
-          width: calc(100% - 4px);
-          height: 56px;
-          margin: 2px;
-        }
-      }
+    // .btnActive {
+    //     transition-property: height, width, background-color, padding, margin;
+    //     transition-duration: 0.1s, 0.1s, 0.3s, 0.1s, 0.1s;
+    //     transition-timing-function: ease-in-out, ease-in-out, ease-in-out,
+    //       ease-in-out, ease-in-out;
+    //     &:active {
+    //       //padding: 0 18px;
+    //       width: calc(100% - 4px);
+    //       height: 56px;
+    //       margin: 2px;
+    //     }
+    //   }
   }
 
   .container {

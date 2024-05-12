@@ -1,14 +1,14 @@
 import React from "react";
 import style from "./ConfirmModal.module.scss";
+import TransparentCircle from "../svgComponents/TransparentCircle";
 function ConfirmModal({onClose}) {
   return (
-    <div className={style.modalWrapper}>
+    <div className={style.modalWrapper} onClick={onClose}>
       <div className={style.modal}>
-        <p>
-          Мы в ближайшие минуты с вами свяжемся и предоставим ответы на все ваши
-          вопросы
-        </p>
-        <button onClick={()=> onClose()}>Подтвердить и закрыть</button>
+        <span>
+          <TransparentCircle w="25" h="25" />
+        </span>
+        <p>Готово</p>
       </div>
     </div>
   );

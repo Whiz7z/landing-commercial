@@ -42,6 +42,10 @@ function CountModal({ onClose }) {
     console.log(formattedString);
 
     sendEmail(number, formattedString);
+
+    setTimeout(() => {
+      onClose();
+    }, 2000);
     // onClose();
   };
   return (

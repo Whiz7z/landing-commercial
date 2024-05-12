@@ -42,6 +42,33 @@
       right: 29px;
       top: 29px;
       cursor: pointer;
+
+      svg {
+        path {
+          transition-property: fill;
+          transition-duration: 0.1s;
+          transition-timing-function: ease-in-out;
+        }
+      }
+
+      
+
+      &:hover {
+        svg {
+          path {
+            fill: $text-dark;
+          }
+        }
+
+        &:active {
+        svg {
+          path {
+            fill: $text-dark-60;
+          }
+        }
+      }
+      }
+
     }
 
     .logo {
@@ -112,7 +139,7 @@
 
         &::placeholder {
           font-size: 18px;
-          font-weight: 400; 
+          font-weight: 400;
           color: $text-dark;
         }
       }
@@ -162,7 +189,7 @@
 
     .btn {
       cursor: pointer;
-      
+
       font-size: 18px;
       width: 330px;
       height: 60px;
@@ -172,29 +199,22 @@
       padding: 0 0;
       font-weight: 500;
       align-self: center;
-
-      
-
-      
-
-      
     }
 
     .active {
       color: white;
       background-color: $logo;
       cursor: pointer;
-      transition-property: height, width, background-color, padding, margin;
-    transition-duration: 0.1s, 0.1s, 0.3s, 0.1s, 0.1s;
-    transition-timing-function: ease-in-out, ease-in-out, ease-in-out, ease-in-out,  ease-in-out;
+      transition-property: color;
+      transition-duration: 0.1s;
+      transition-timing-function: ease-in-out;
 
       &:active {
-        width: 326px;
-        height: 56px;
-        margin: 2px;
+        color: $transparent-white;
+        font-weight: 500;
       }
       &:hover {
-        background-color: $btn-hover;
+        background-color: $c-700;
       }
     }
 

@@ -55,14 +55,24 @@
   .callBtn {
     display: none;
 
-    transition-property: padding, height, margin, background-color;
-    transition-duration: 0.1s, 0.1s, 0.1s, 0.3s;
-    transition-timing-function: ease-in-out, ease-in-out, ease-in-out, ease-in-out;
+    transition-property: color;
+    transition-duration: 0.1s;
+    transition-timing-function: ease-in-out;
+
+    svg path {
+      transition-property: fill;
+      transition-duration: 0.1s;
+      transition-timing-function: ease-in-out;
+    }
 
     &:active {
-      padding: 0 18px;
-      height: 46px;
-      margin: 2px 2px 2px 2px;
+      color: $transparent-white;
+
+      span {
+        svg path {
+          fill: $transparent-white;
+        }
+      }
     }
     &:hover {
       background-color: $btn-hover;
@@ -261,21 +271,18 @@
         display: flex;
         gap: 8px;
         align-items: center;
-        transition: 0.1s ease-in-out;
+        transition-property: color, background-color;
+        transition-duration: 0.1s, 0.3s;
+        transition-timing-function: ease-in-out, ease-in-out;
 
         &:active {
-          position: relative;
-          height: 46px;
-          padding: 0 23px 0 23px;
-          margin: 0 2px;
-          align-self: center;
-
-          @media screen and (max-width: 766px) {
-            margin: 2px;
-
-            padding: 10px 20px 10px 16px;
-          }
+          color: $transparent-black;
+          font-weight: 500;
           //transform: scaleX(0.98);
+        }
+
+        &:hover {
+          background-color: $btn-active;
         }
         .icon {
           position: relative;
