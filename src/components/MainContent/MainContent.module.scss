@@ -798,15 +798,32 @@ menu {
   }
 }
 
+
 @media screen and (max-width: 380px) {
   .container {
-    .aside {
+    aside {
       display: grid;
-      grid-template-columns: auto 1fr auto;
+      grid-template-columns:  auto 350px auto ;
       
+
+      .info{
+        width: 100%;
+        grid-column: 2/3;
+      }
+
+      .chooseCurrent{
+        width: 100%;
+       grid-column: 2/3;
+      }
+
+      .calculate{
+        width: 100%;
+        grid-column: 2/3;
+      }
     }
   }
 }
+
 
 @media screen and (max-width: 360px) {
   .container {
@@ -818,6 +835,32 @@ menu {
         input {
           font-size: 14px;
         }
+      }
+    }
+  }
+}
+
+
+@media screen and (max-width: 355px) {
+  .container {
+    aside {
+      display: grid;
+      grid-template-columns:  1fr ;
+      
+
+      .info{
+        width: 100%;
+        grid-column: 1/2;
+      }
+
+      .chooseCurrent{
+        width: 100%;
+        grid-column: 1/2;
+      }
+
+      .calculate{
+        width: 100%;
+        grid-column: 1/2;
       }
     }
   }
