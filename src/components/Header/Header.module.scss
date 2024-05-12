@@ -5,6 +5,39 @@
   flex-direction: column;
   gap: 1.5rem;
   width: 100%;
+
+  @media screen and (max-width: 380px) {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    justify-content: center;
+
+    .headerTop {
+      grid-row: 1/2;
+      grid-column: 1/4;
+      padding: 0 10px;
+    }
+
+    .headerBottom {
+      grid-row: 2/3;
+      grid-column: 1/4;
+    }
+  }
+
+  @media screen and (max-width: 370px) {
+    grid-template-columns: 1fr;
+
+    .headerTop {
+      width: 100%;
+      padding: 0px 0px;
+
+      .contact {
+        padding-right: 20px;
+      }
+    }
+    .headerBottom {
+      width: 100%;
+    }
+  }
 }
 
 .headerTop {
@@ -14,7 +47,6 @@
   color: $text-muted;
   margin-top: 20px;
   font-size: 1.4rem;
-  
 
   .infoText {
     line-height: 14px;
@@ -32,7 +64,7 @@
     display: flex;
     position: relative;
     top: 4px;
-    
+
     span {
       font-size: 1.6rem;
       color: $text-light;
@@ -142,7 +174,7 @@
         margin-right: 15px;
       }
 
-      span{
+      span {
         margin-right: 15px;
       }
     }
@@ -222,7 +254,7 @@
         align-items: center;
         transition: 0.1s ease-in-out;
 
-        &:active{
+        &:active {
           position: relative;
           height: 46px;
           padding: 0 23px 0 23px;
@@ -247,8 +279,6 @@
           padding-right: 10px;
         }
       }
-
-      
     }
 
     .active {
@@ -352,13 +382,12 @@
 
   @media screen and (max-width: 766px) {
     display: grid;
-    
 
     .subLogo {
       font-size: 16px;
       line-height: 16px;
       position: relative;
-       top: -6px;
+      top: -6px;
     }
     .menu {
       display: grid;
@@ -379,7 +408,6 @@
   @media screen and (max-width: 380px) {
     width: 350px;
     .menu {
-
       li {
         a {
           // font-size: 1.4rem;

@@ -352,6 +352,12 @@ menu {
     height: 60px;
     cursor: pointer;
     transition: 0.3s ease-in-out;
+    transition-property: height, width, color, padding, margin;
+    transition-duration: 0.2s, 0.2s, 0.3s, 0.2s 0.2s; 
+    transition-timing-function: ease-in-out, ease-in-out, ease-in-out, ease-in-out,  ease-in-out;
+
+    
+
   }
 
   .btnNonActive {
@@ -367,6 +373,12 @@ menu {
     background-color: $logo;
     color: #fff;
     cursor: pointer;
+
+    &:active {
+      width: 316px;
+      height: 56px;
+      margin: 2px;
+    }
 
     &:hover {
       background-color: $btn-hover;

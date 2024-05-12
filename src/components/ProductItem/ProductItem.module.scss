@@ -309,6 +309,11 @@
     .actions {
       .chooseBtn {
         font-size: 16px;
+
+        &:active {
+          width: 229px;
+          margin: 2px;
+        }
       }
     }
   }
