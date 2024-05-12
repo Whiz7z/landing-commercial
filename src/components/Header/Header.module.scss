@@ -54,7 +54,16 @@
 
   .callBtn {
     display: none;
-    transition: 0.3s ease-in-out;
+
+    transition-property: padding, height, margin, background-color;
+    transition-duration: 0.1s, 0.1s, 0.1s, 0.3s;
+    transition-timing-function: ease-in-out, ease-in-out, ease-in-out, ease-in-out;
+
+    &:active {
+      padding: 0 18px;
+      height: 46px;
+      margin: 2px 2px 2px 2px;
+    }
     &:hover {
       background-color: $btn-hover;
     }
@@ -260,6 +269,12 @@
           padding: 0 23px 0 23px;
           margin: 0 2px;
           align-self: center;
+
+          @media screen and (max-width: 766px) {
+            margin: 2px;
+
+            padding: 10px 20px 10px 16px;
+          }
           //transform: scaleX(0.98);
         }
         .icon {

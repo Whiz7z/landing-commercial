@@ -132,9 +132,10 @@
     //font-size: 16px;
     font-weight: 500;
 
-    transition-property: height, width, color, padding, margin;
-    transition-duration: 0.2s, 0.2s, 0.3s, 0.2s 0.2s; 
-    transition-timing-function: ease-in-out, ease-in-out, ease-in-out, ease-in-out,  ease-in-out;
+    transition-property: height, width, background-color, padding, margin;
+    transition-duration: 0.1s, 0.1s, 0.3s, 0.1s, 0.1s;
+    transition-timing-function: ease-in-out, ease-in-out, ease-in-out,
+      ease-in-out, ease-in-out;
 
     font-weight: 400;
     &:hover {
@@ -159,9 +160,10 @@
   .consultMe {
     width: 350px;
 
-    transition-property: height, width, color, padding, margin;
-    transition-duration: 0.2s, 0.2s, 0.3s, 0.2s 0.2s; 
-    transition-timing-function: ease-in-out, ease-in-out, ease-in-out, ease-in-out,  ease-in-out;
+    transition-property: height, width, background-color, padding, margin;
+    transition-duration: 0.1s, 0.1s, 0.3s, 0.1s 0.1s;
+    transition-timing-function: ease-in-out, ease-in-out, ease-in-out,
+      ease-in-out, ease-in-out;
 
     &:active {
       position: relative;
@@ -205,6 +207,20 @@
     font-weight: 500;
     transition: 0.3s color ease-in-out;
 
+    transition-property: height, width, background-color, padding, margin;
+    transition-duration: 0.1s, 0.1s, 0.3s, 0.1s, 0.1s;
+    transition-timing-function: ease-in-out, ease-in-out, ease-in-out,
+      ease-in-out, ease-in-out;
+
+    &:active {
+      position: relative;
+      height: 56px;
+      width: 56px;
+      margin: 2px 2px;
+      align-self: center;
+      //transform: scaleX(0.98);
+    }
+
     &:hover {
       background-color: $c-700;
     }
@@ -217,7 +233,6 @@
       left: 2px;
     }
   }
-
 }
 
 @media screen and (max-width: 900px) {
@@ -279,6 +294,21 @@
     .consultMe {
       width: 100%;
       font-size: 14px;
+
+      transition-property: height, width, background-color, padding, margin;
+      transition-duration: 0.1s, 0.1s, 0.3s, 0.1s 0.1s;
+      transition-timing-function: ease-in-out, ease-in-out, ease-in-out,
+        ease-in-out, ease-in-out;
+
+      &:active {
+        position: relative;
+        height: 56px;
+        width: calc(100% - 4px);
+        // padding: 0 13px 0 13px;
+        margin: 2px 2px;
+        align-self: center;
+        //transform: scaleX(0.98);
+      }
     }
 
     button {
@@ -314,6 +344,18 @@
           width: 229px;
           margin: 2px;
         }
+      }
+
+      .consultMe{
+        &:active {
+        position: relative;
+        height: 56px;
+        width: calc(100% - 4px);
+        // padding: 0 13px 0 13px;
+        margin: 2px 2px;
+        align-self: center;
+        //transform: scaleX(0.98);
+      }
       }
     }
   }

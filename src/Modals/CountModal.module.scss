@@ -173,23 +173,26 @@
       font-weight: 500;
       align-self: center;
 
-      transition-property: height, width, color,  margin;
-      transition-duration: 0.2s, 0.2s, 1s, 0.2s 0.2s; 
-      transition-timing-function: ease-in-out,ease-in-out, ease-in-out,  ease-in-out;
+      
 
       
 
-      &:active {
-        width: 326px;
-        height: 56px;
-        margin: 2px;
-      }
+      
     }
 
     .active {
       color: white;
       background-color: $logo;
       cursor: pointer;
+      transition-property: height, width, background-color, padding, margin;
+    transition-duration: 0.1s, 0.1s, 0.3s, 0.1s, 0.1s;
+    transition-timing-function: ease-in-out, ease-in-out, ease-in-out, ease-in-out,  ease-in-out;
+
+      &:active {
+        width: 326px;
+        height: 56px;
+        margin: 2px;
+      }
       &:hover {
         background-color: $btn-hover;
       }

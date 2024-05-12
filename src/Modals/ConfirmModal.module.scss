@@ -48,6 +48,21 @@
       font-weight: 500;
       background-color: $c-600;
       color:white;
+
+      transition-property: padding, height, width, margin, background-color;
+    transition-duration: 0.1s, 0.1s, 0.1s, 0.1s, 0.3s;
+    transition-timing-function: ease-in-out, ease-in-out,ease-in-out, ease-in-out, ease-in-out;
+
+    &:active {
+      width: calc(100% - 4px);
+      height: 56px;
+      margin: 2px 2px 22px 2px;
+    }
+
+
+      &:hover {
+        background-color: $btn-hover;
+      }
     }
   }
 }
