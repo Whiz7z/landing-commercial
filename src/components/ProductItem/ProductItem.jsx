@@ -47,7 +47,7 @@ function ProductItem({ image, title, code, tags, generalType, calcRef }) {
         <img src={image} alt="product" />
       </div>
       <div className={style.info}>
-        <h3>{title}</h3>
+        <h3 dangerouslySetInnerHTML={{ __html:title }}></h3>
         <p>
           артикул: <span>{code} </span>
         </p>

@@ -208,10 +208,11 @@ function MainContent() {
             <div>
               <InputMask
                 // mask={`${countryCode.dial_code} 999 999 99 99`}
-                mask={`+9 999 999 99 99`}
+                mask={`+7 (999) 999-99-99`}
                 maskChar=""
                 // placeholder={`${countryCode.dial_code} _ _ _  _ _ _  _ _  _ _`}
-                placeholder="Напишите номер телефона"
+                // placeholder="Напишите номер телефона"
+                placeholder="+7"
                 value={numberMobile}
                 onChange={(e) =>
                   setNumberMobile(extractNumbers(e.target.value))

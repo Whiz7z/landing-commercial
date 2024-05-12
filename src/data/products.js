@@ -22,7 +22,7 @@ import serviceImage from "../assets/images/services/service.png"
 export const productsServices = [
   {
     image: serviceImage,
-    title: "Монтирование электрической зарядной станции",
+    title: "Монтирование любой электрической<br/> зарядной станции",
     code: "M-100",
     type: "mounting",
     tags: [
@@ -48,7 +48,7 @@ export const productsServices = [
 
   {
     image: serviceImage,
-    title: "Ремонтирование электрической зарядной станции",
+    title: "Ремонтирование любой электрической<br/> зарядной станции",
     code: "R-100",
     type: "fixing",
     tags: [
@@ -70,7 +70,6 @@ export const productsServices = [
       },
     ],
   },
-
 ];
 
 export const productsDetails = [

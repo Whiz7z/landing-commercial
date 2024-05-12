@@ -3,8 +3,8 @@
 function CheckCircle( {w, h, fill, bg}) {
   return (
     <svg
-      width={w|| '20'}
-      height={h|| '20'}
+      width={w|| '18'}
+      height={h|| '18'}
       viewBox="0 0 20 20"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
