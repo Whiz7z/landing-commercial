@@ -158,6 +158,20 @@
 
   .consultMe {
     width: 350px;
+
+    transition-property: height, width, color, padding, margin;
+    transition-duration: 0.2s, 0.2s, 0.3s, 0.2s 0.2s; 
+    transition-timing-function: ease-in-out, ease-in-out, ease-in-out, ease-in-out,  ease-in-out;
+
+    &:active {
+      position: relative;
+      height: 56px;
+      width: 346px;
+      padding: 0 13px 0 13px;
+      margin: 2px 2px;
+      align-self: center;
+      //transform: scaleX(0.98);
+    }
   }
 
   .phoneBtn {
@@ -204,8 +218,6 @@
     }
   }
 
-  button {
-  }
 }
 
 @media screen and (max-width: 900px) {

@@ -239,14 +239,14 @@ menu {
             align-items: center;
           }
 
-          &:active{
-          position: relative;
-          height: 46px;
-          padding: 0 18px 0 18px;
-          margin: 0 2px;
-          align-self: center;
-          //transform: scaleX(0.98);
-        }
+          &:active {
+            position: relative;
+            height: 46px;
+            padding: 0 18px 0 18px;
+            margin: 0 2px;
+            align-self: center;
+            //transform: scaleX(0.98);
+          }
         }
       }
 
@@ -794,6 +794,16 @@ menu {
           }
         }
       }
+    }
+  }
+}
+
+@media screen and (max-width: 380px) {
+  .container {
+    .aside {
+      display: grid;
+      grid-template-columns: auto 1fr auto;
+      
     }
   }
 }
