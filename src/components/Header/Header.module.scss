@@ -319,7 +319,7 @@
     background-size: 105%;
     background-repeat: no-repeat;
 
-    padding: 10px auto 10px 20px;
+    padding: 10px 10px 20px 20px;
     border-radius: 10px;
     .logo {
       a {
@@ -350,13 +350,17 @@
 
   @media screen and (max-width: 766px) {
     display: grid;
+    
 
     .subLogo {
       font-size: 16px;
+      line-height: 16px;
+      position: relative;
+       top: -6px;
     }
     .menu {
       display: grid;
-
+      margin: 0;
       li {
         a {
           padding: 10px 22px 10px 18px;
@@ -371,7 +375,9 @@
   }
 
   @media screen and (max-width: 380px) {
+    width: 350px;
     .menu {
+
       li {
         a {
           // font-size: 1.4rem;
@@ -397,7 +403,7 @@
       li {
         a {
           // font-size: 1.2rem;
-          padding: 10px 12px 10px 12px;
+          padding: 10px 22px 10px 18px;
           .icon {
             top: 1px;
             svg {
