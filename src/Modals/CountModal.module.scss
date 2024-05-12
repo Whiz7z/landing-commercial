@@ -162,7 +162,7 @@
 
     .btn {
       cursor: pointer;
-      transition: 0.3s ease-in-out;
+      
       font-size: 18px;
       width: 330px;
       height: 60px;
@@ -172,6 +172,18 @@
       padding: 0 0;
       font-weight: 500;
       align-self: center;
+
+      transition-property: height, width, color,  margin;
+      transition-duration: 0.2s, 0.2s, 1s, 0.2s 0.2s; 
+      transition-timing-function: ease-in-out,ease-in-out, ease-in-out,  ease-in-out;
+
+      
+
+      &:active {
+        width: 326px;
+        height: 56px;
+        margin: 2px;
+      }
     }
 
     .active {

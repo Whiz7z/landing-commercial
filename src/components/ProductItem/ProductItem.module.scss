@@ -133,8 +133,8 @@
     font-weight: 500;
 
     transition-property: height, width, color, padding, margin;
-    transition-duration: 0.2s, 0.2s, 0.3s, 0.2s 0.2s; /* Different durations for each property */
-    transition-timing-function: ease-in-out,ease-in-out, ease-in-out, ease-in-out,  ease-in-out;
+    transition-duration: 0.2s, 0.2s, 0.3s, 0.2s 0.2s; 
+    transition-timing-function: ease-in-out, ease-in-out, ease-in-out, ease-in-out,  ease-in-out;
 
     font-weight: 400;
     &:hover {
