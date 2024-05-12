@@ -625,7 +625,9 @@ menu {
   .mainContent {
     display: grid;
     row-gap: 10px;
+     
     .category_decor {
+       
       display: flex;
       align-items: center;
       height: 25px;
@@ -647,7 +649,7 @@ menu {
 
   .slider_products {
     display: grid;
-
+   
     width: 330px;
     margin: 0 auto;
   }
@@ -831,6 +833,20 @@ menu {
       .calculate{
         width: 100%;
         grid-column: 2/3;
+      }
+    }
+
+    .mainContent{
+      grid-template-columns: auto 350px auto;
+
+      .category_decor{
+        grid-row: 1/2;
+        grid-column: 2/3;
+      }
+
+      .slider_products{
+        grid-row: 2/3;
+        grid-column: 1/3;
       }
     }
   }
