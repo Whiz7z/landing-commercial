@@ -74,7 +74,7 @@ const dropdownVariants = {
     height: 0,
     overflow: "hidden",
     transition: {
-      opacity: { duration: 0.3 },
+      opacity: { duration: 0 },
       height: { duration: 0.3 },
     },
   },
