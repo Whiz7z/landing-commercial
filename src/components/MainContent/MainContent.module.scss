@@ -223,7 +223,8 @@ menu {
           position: relative;
           padding: 0 20px 0 20px;
           color: $text-dark;
-          font-size: 18px;
+          // font-size: 18px;
+          font-size: 16px;
           border-radius: 10px;
           font-weight: 400;
           gap: 8px;
@@ -261,12 +262,14 @@ menu {
       .active {
         a {
           background-color: $btn-active;
+          font-weight: 400;
         }
       }
 
       .nonactive {
         a {
           background-color: $btn-nonactive;
+          font-weight: 300;
         }
       }
     }
@@ -276,7 +279,7 @@ menu {
     padding: 15px 19px 15px 20px;
     border-radius: 10px;
     border: 1px solid $text-muted;
-    font-size: 1.8rem;
+    font-size: 1.6rem;
     font-weight: 400;
     color: $text-muted;
     display: flex;

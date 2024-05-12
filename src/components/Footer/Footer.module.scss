@@ -5,8 +5,7 @@ footer {
   height: 100%;
   position: relative;
   background-color: $text-dark;
-  border-top-left-radius: 10px;
-  border-top-right-radius: 10px;
+
   padding: 50px 30px 35px 30px;
   position: relative;
   //bottom: -430px;
@@ -22,8 +21,14 @@ footer {
   margin-bottom: 30px;
   .info {
     .logo {
-      align-self: center;
+      align-self: start;
+
       a {
+        display: grid;
+        align-items: start;
+        height: 50px;
+        line-height: 40px;
+        justify-content: start;
         font-family: "Age";
         font-size: 40px;
         color: #fff;
@@ -38,7 +43,8 @@ footer {
       margin-bottom: 10px;
       font-family: "Age";
       color: #fff;
-      font-weight: 300;
+      letter-spacing: 1px;
+      font-weight: 100;
       @media screen and (max-width: 960px) {
         color: $bg;
       }
@@ -57,12 +63,11 @@ footer {
         line-height: 14px;
         transition: 0.3s ease;
 
-        br{
+        br {
           display: none;
           @media screen and (max-width: 420px) {
-display: block;
+            display: block;
           }
-
         }
         &:hover {
           color: $svg-hover;
@@ -80,6 +85,7 @@ display: block;
     .telegram_link {
       align-self: flex-end;
       justify-self: start;
+      margin-bottom: 20px;
       svg {
         path {
           transition: 0.3s ease;
@@ -108,9 +114,10 @@ display: block;
     }
     .phone {
       align-self: flex-end;
+      margin-bottom: 10px;
     }
     .gmail {
-      align-self: self-end;
+      align-self: flex-end;
     }
   }
 }
@@ -137,6 +144,10 @@ display: block;
     margin-bottom: 20px;
     line-height: 16px;
 
+    br {
+      display: none;
+    }
+
     @media screen and (max-width: 460px) {
       width: 320px;
       word-break: keep-all;
@@ -156,16 +167,17 @@ display: block;
   .copyright {
     color: $text-semi-muted;
     font-size: 16px;
+    display: block;
+  }
+
+  .mobileCopyright {
+    display: none;
   }
 }
 
 .mobileFirstCopyright {
   display: none;
   font-size: 14px;
-}
-
-.descktopCopyright {
-  display: none;
 }
 
 @media screen and (max-width: 1360px) {

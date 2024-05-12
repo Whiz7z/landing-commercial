@@ -1,6 +1,18 @@
 @import "../../styles/variables.scss";
 
+.container:first-child
+{
+  .actions{
+
+    button{
+      font-size: 18px;
+    }
+
+  }
+}
+
 .container {
+  // padding: 15px 12px 15px 15px;
   padding: 15px;
   display: grid;
   grid-template-columns: max-content auto;
@@ -28,16 +40,25 @@
 }
 
 .info {
+  display: grid;
   h3 {
     font-size: 16px;
     font-weight: 700;
     line-height: 16px;
+    word-break: keep-all;
+    white-space: nowrap;
+
+    @media screen and (max-width: 900px) {
+      word-break: normal;
+    white-space: normal;
+    }
   }
 
   p {
     font-size: 16px;
     color: $text-dark-50;
     margin-bottom: 12px;
+    margin-top: 10px;
     span {
       font-size: 18px;
     }
@@ -100,10 +121,11 @@
     border: none;
     width: 200px;
     height: 60px;
-    font-size: 18px;
+    //font-size: 18px;
+    font-size: 16px;
     font-weight: 500;
     transition: 0.3s ease-in-out;
-    
+    font-weight: 400;
     &:hover{
       background-color: $c-700;
     }
@@ -123,7 +145,8 @@
     outline: none;
     border: none;
     width: 200px;
-    font-size: 18px;
+    //font-size: 18px;
+    font-size: 16px;
     font-weight: 400;
     color: $text-dark-70;
 

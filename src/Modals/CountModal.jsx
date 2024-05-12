@@ -5,6 +5,8 @@ import useStore from "../store/store";
 
 import InputMask from "react-input-mask";
 import useSendEmail from "../hooks/useSenEmail";
+import CheckCircle from "../svgComponents/CheckCircle";
+import TransparentCircle from "../svgComponents/TransparentCircle";
 
 const countries = [
   { code: "RU", dial_code: "+7" },
@@ -26,7 +28,7 @@ function CountModal({ onClose }) {
   const [number, setNumber] = useState("");
   const [openCodeSelect, setOpenCodeSelect] = useState(false);
 
-  const [sendEmail] = useSendEmail();
+  const [sendEmail, submitting, success] = useSendEmail();
   const closeModal = () => {
     onClose();
   };
@@ -40,7 +42,7 @@ function CountModal({ onClose }) {
     console.log(formattedString);
 
     sendEmail(number, formattedString);
-    onClose();
+    // onClose();
   };
   return (
     <div className={style.modalWrapper}>
@@ -54,25 +56,42 @@ function CountModal({ onClose }) {
         </div>
         <h2>электрические станции под ключ</h2>
 
-        <p className={style.text}>
-          Напишите ваш номер телефона,
-          <br /> чтобы предоставить ответы
-          <br /> по всем вопросам и запросам
-        </p>
+        {success ? (
+          <p className={style.text}>
+            Мы в ближайшие минуты
+            <br /> с вами свяжемся и предоставим
+            <br /> ответы на все ваши вопросы
+          </p>
+        ) : (
+          <p className={style.text}>
+            Напишите ваш номер телефона,
+            <br /> чтобы предоставить ответы
+            <br /> по всем вопросам и запросам
+          </p>
+        )}
 
-        <div>
-          <InputMask
-            // mask={`${countryCode.dial_code} 999 999 99 99`}
-            mask={`+9 999 999 99 99`}
-            maskChar=""
-            // placeholder={`${countryCode.dial_code} _ _ _  _ _ _  _ _  _ _`}
-            placeholder="Напишите номер телефона"
-            value={number}
-            onChange={(e) => setNumber(e.target.value)}
-          >
-            {(inputProps) => (
-              <div className={style.input_container}>
-                {/* <div
+        {success ? (
+          <>
+            <div className={style.doneIcon}>
+              <TransparentCircle />
+            </div>
+            <span className={style.doneText}>Готово</span>
+          </>
+        ) : (
+          <>
+            <div>
+              <InputMask
+                // mask={`${countryCode.dial_code} 999 999 99 99`}
+                mask={`+9 999 999 99 99`}
+                maskChar=""
+                // placeholder={`${countryCode.dial_code} _ _ _  _ _ _  _ _  _ _`}
+                placeholder="Напишите номер телефона"
+                value={number}
+                onChange={(e) => setNumber(e.target.value)}
+              >
+                {(inputProps) => (
+                  <div className={style.input_container}>
+                    {/* <div
                   className={style.country_code_selected}
                   onClick={() => setOpenCodeSelect(true)}
                 >
@@ -98,21 +117,23 @@ function CountModal({ onClose }) {
                   </div>
                 )} */}
 
-                <input {...inputProps} type="tel" />
-              </div>
-            )}
-          </InputMask>
-        </div>
+                    <input {...inputProps} type="tel" />
+                  </div>
+                )}
+              </InputMask>
+            </div>
 
-        <button
-          className={`${style.btn} ${
-            number.length > 7 ? style.active : style.nonActive
-          }`}
-          onClick={sendPhoneNumber}
-          disabled={number.length < 8}
-        >
-          Подтвердить и отправить
-        </button>
+            <button
+              className={`${style.btn} ${
+                number.length > 7 ? style.active : style.nonActive
+              }`}
+              onClick={sendPhoneNumber}
+              disabled={number.length < 8}
+            >
+              Подтвердить и отправить
+            </button>
+          </>
+        )}
       </div>
     </div>
   );

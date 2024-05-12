@@ -46,11 +46,28 @@
 
     .logo {
       align-self: center;
+      display: grid;
       a {
         font-family: "Age";
         font-size: 50px;
         color: $logo;
       }
+    }
+
+    .doneIcon {
+      width: 320px;
+      display: grid;
+      justify-items: center;
+      margin-bottom: 28px;
+      margin-top: 10px;
+    }
+
+    .doneText {
+      font-size: 18px;
+      width: 320px;
+      text-align: center;
+      line-height: 20px;
+      margin-bottom: 40px;
     }
 
     h2 {
@@ -180,6 +197,22 @@
 
       width: 430px;
 
+      .doneIcon {
+        width: 100%;
+        display: grid;
+        justify-items: center;
+        margin-bottom: 28px;
+        margin-top: 10px;
+      }
+
+      .doneText {
+        font-size: 18px;
+        width: 100%;
+        text-align: center;
+        line-height: 20px;
+        margin-bottom: 40px;
+      }
+
       h2 {
         font-size: 1.8rem;
       }
@@ -191,8 +224,6 @@
   .modalWrapper {
     padding: 20px 15px;
     .modal {
-     
-
       width: 100%;
 
       .logo {

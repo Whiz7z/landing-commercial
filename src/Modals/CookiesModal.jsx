@@ -9,21 +9,25 @@ function CookiesModal({ onClose }) {
     <div className={style.modalWrapper}>
       <div className={style.modal}>
         <div className={style.icon}>
-          <LightingSvg fill={"white"} w="14px" h="14px" />
+          <LightingSvg fill={"white"} w="14px" h="18px" />
         </div>
 
         <p>
           Если продолжаете использовать
-          <br /> наш интернет-сайт,
-          <br /> то вы полностью соглашаетесь
-          <br /> с{" "}
+          <br className={style.br} /> наш интернет-сайт,
+          <br className={style.brMobile} /> то вы полностью
+          <br className={style.brDesktop} /> соглашаетесь
+          <br className={style.brMobile} /> с{" "}
           <a href="#">
-            условиями обработки персональных данных
-            <br /> и файлов куки (англ. “cookies”)
-            <br />
+            условиями обработки
+            <br className={style.br} /> персональных данных
+            <br className={style.brMobile} /> и файлов куки
+            <br className={style.brDesktop} /> (англ. “cookies”)
+            <br className={style.brMobile} />
           </a>{" "}
           и подтверждаете,
-          <br /> что ознакомлены c документом
+          <br className={style.brDesktop} />
+          <br className={style.brMobile} /> что ознакомлены c документом
         </p>
 
         <button className={style.btn} onClick={closeModal}>

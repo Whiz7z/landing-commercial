@@ -52,7 +52,6 @@ const styleTag = (
 
           .swiper-slide-active, .swiper-slide-prev, .swiper-slide-next{
             visibility: visible;
-            
           }
         `}</style>
 );

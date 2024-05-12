@@ -27,9 +27,7 @@ const useSendEmail =() => {
         setSubmitting(false);
         setSuccess(true);
 
-        setTimeout(() => {
-          setSuccess(false);
-        }, 5000);
+        
       });
 
     
