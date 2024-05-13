@@ -271,15 +271,12 @@
         display: flex;
         gap: 8px;
         align-items: center;
-        transition-property: color, background-color, text-shadow;
-        transition-duration: 0.1s, 0.3s, 0.3s;
-        transition-timing-function: ease-in-out, ease-in-out, ease-in-out;
+        transition-property: color, background-color;
+        transition-duration: 0.1s, 0.3s;
+        transition-timing-function: ease-in-out, ease-in-out;
 
         &:active {
           color: $transparent-black;
-          
-          //font-weight: 500;
-          //transform: scaleX(0.98);
         }
 
         &:hover {

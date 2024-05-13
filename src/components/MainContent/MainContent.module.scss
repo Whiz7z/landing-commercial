@@ -257,11 +257,15 @@ menu {
           height: 50px;
           display: flex;
           align-items: center;
-          transition: 0.3s ease-in-out;
+          
           align-self: center;
           box-sizing: border-box;
           position: relative;
-          
+
+          transition-property: color, background-color;
+          transition-duration: 0.1s, 0.3s;
+          transition-timing-function: ease-in-out, ease-in-out;
+
           .radio {
             display: flex;
             align-items: center;
@@ -269,6 +273,10 @@ menu {
 
           &:hover {
             background-color: $btn-active;
+          }
+
+          &:active {
+            color: $transparent-black;
           }
         }
       }
@@ -296,14 +304,12 @@ menu {
       .active {
         a {
           background-color: $btn-active;
-          
         }
       }
 
       .nonactive {
         a {
           background-color: $btn-nonactive;
-          
         }
       }
     }
