@@ -27,6 +27,7 @@ import ConfirmModal from "../../Modals/ConfirmModal";
 import useSendEmail from "../../hooks/useSenEmail";
 import { smoothScroll } from "../../util/smoothScroll";
 import SmoothScroll from "smooth-scroll";
+import animateScrollTo from "animated-scroll-to";
 
 let currentTypes = [
   {
@@ -176,12 +177,12 @@ function MainContent() {
     const element = document.getElementById("stations");
 
     if (element) {
-      const scroll = new SmoothScroll(`<div id="stations"></div>`, {
-        speed: 500,
-        speedAsDuration: true,
-        easing: "easeInOutCubic",
-      });
-      scroll.animateScroll(element.offsetTop - 120, { duration: 500 });
+      // const scroll = new SmoothScroll(`<div id="stations"></div>`, {
+      //   speed: 500,
+      //   speedAsDuration: true,
+      //   easing: "easeInOutCubic",
+      // });
+      // scroll.animateScroll(element.offsetTop - 120, { duration: 500 });
 
       //smoothScroll(element, 1000);
 
@@ -191,6 +192,8 @@ function MainContent() {
       // });
 
       //element.scrollIntoView({ behavior: "smooth", block: "start" });
+
+      animateScrollTo(element.offsetTop - 140, { speed: 500 });
 
 
       console.log("off --- ", element.offsetTop);
