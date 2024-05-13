@@ -201,7 +201,7 @@ function MainContent() {
         },
         maxDuration: 500,
         minDuration: 500,
-        speed: element.offsetTop * 3,
+        speed: 500,
       });
 
 

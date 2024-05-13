@@ -133,7 +133,9 @@ const StationsList = ({ productType, currentType, calcRef }) => {
           },
           maxDuration: 500,
           minDuration: 500,
-          speed: element.offsetTop * 3,
+          // speed: element.offsetTop * 3,
+          
+          speed: 500,
         });
       }
     }
@@ -312,7 +314,9 @@ const ItemsList = ({ calcRef, productType, listType }) => {
           },
           maxDuration: 500,
           minDuration: 500,
-          speed: element.offsetTop * 3,
+          // speed: element.offsetTop * 3,
+          
+          speed: 500,
         });
         
       }
