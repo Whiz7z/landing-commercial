@@ -188,10 +188,10 @@ function MainContent() {
 
       //smoothScroll(element, 1000);
 
-      // window.scroll({
-      //   top: element.offsetTop - 120,
-      //   behavior: "smooth",
-      // });
+      window.scroll({
+        top: element.offsetTop - 120,
+        behavior: "smooth",
+      });
 
       //element.scrollIntoView({ behavior: "smooth", block: "start" });
 

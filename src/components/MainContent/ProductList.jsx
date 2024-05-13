@@ -117,7 +117,7 @@ const StationsList = ({ productType, currentType, calcRef }) => {
       const id = location.hash.replace("#", "");
       const element = document.getElementById(id);
       if (element) {
-        //element.scrollIntoView({ behavior: "smooth", block: "start" });
+        element.scrollIntoView({ behavior: "smooth", block: "start" });
         //smoothScroll(element, 800);
 
         // const scroll = new SmoothScroll(`<div id="${id}"></div>`, {
@@ -127,7 +127,7 @@ const StationsList = ({ productType, currentType, calcRef }) => {
         // });
         // scroll.animateScroll(element.offsetTop);
 
-        animateScrollTo(element.offsetTop);
+        //animateScrollTo(element.offsetTop);
       }
     }
   }, [location]);
@@ -289,7 +289,7 @@ const ItemsList = ({ calcRef, productType, listType }) => {
 
       console.log(id)
       if (element) {
-        //element.scrollIntoView({ behavior: "smooth", block: "start" });
+        element.scrollIntoView({ behavior: "smooth", block: "start" });
         //smoothScroll(element, 800);
 
         // const scroll = new SmoothScroll(`<div id="${id}"></div>`, {
