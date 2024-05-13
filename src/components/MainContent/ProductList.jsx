@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from "react";
-
+import { smoothScroll } from "../../util/smoothScroll";
 import ProductItem from "../ProductItem/ProductItem";
 import style from "./MainContent.module.scss";
 import { Routes, Route, useLocation } from "react-router-dom";
@@ -115,7 +115,8 @@ const StationsList = ({ productType, currentType, calcRef }) => {
       const id = location.hash.replace("#", "");
       const element = document.getElementById(id);
       if (element) {
-        element.scrollIntoView({ behavior: "smooth", block: "start" });
+        //element.scrollIntoView({ behavior: "smooth", block: "start" });
+        smoothScroll(element, 800);
       }
     }
   }, [location]);
@@ -266,19 +267,7 @@ const StationsList = ({ productType, currentType, calcRef }) => {
 };
 
 const ItemsList = ({ calcRef, productType, listType }) => {
-  // const targetRef = useRef(null);
-  // const hasMounted = useRef(false);
 
-  // useEffect(() => {
-  //   if (hasMounted.current) {
-  //     console.log("scrolled");
-
-  //     window.scroll(0, targetRef.current.offsetTop - 50);
-  //   }
-  // }, [productType]);
-  // useEffect(() => {
-  //   hasMounted.current = true;
-  // }, []);
 
   const location = useLocation();
 
@@ -287,7 +276,8 @@ const ItemsList = ({ calcRef, productType, listType }) => {
       const id = location.hash.replace("#", "");
       const element = document.getElementById(id);
       if (element) {
-        element.scrollIntoView({ behavior: "smooth", block: "start" });
+        //element.scrollIntoView({ behavior: "smooth", block: "start" });
+        smoothScroll(element, 800);
       }
     }
   }, [location]);

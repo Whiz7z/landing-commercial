@@ -4,7 +4,7 @@ import ProductItem from "../ProductItem/ProductItem";
 import style from "./MainContent.module.scss";
 import { Routes, Route } from "react-router-dom";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence, transform } from "framer-motion";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
@@ -59,12 +59,21 @@ function extractNumbers(phoneNumber) {
 const arrowVariants = {
   all: {
     y: 0,
+    transition: {
+      y: { duration: 0.5 },
+    },
   },
   slow: {
     y: 48,
+    transition: {
+      y: { duration: 0.5 },
+    },
   },
   fast: {
     y: 98,
+    transition: {
+      y: { duration: 0.5 },
+    },
   },
 };
 
