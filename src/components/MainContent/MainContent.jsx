@@ -195,7 +195,7 @@ function MainContent() {
 
       //element.scrollIntoView({ behavior: "smooth", block: "start" });
 
-      animateScrollTo(element.offsetTop - 140);
+     // animateScrollTo(element.offsetTop - 140);
 
 
       console.log("off --- ", element.offsetTop);
