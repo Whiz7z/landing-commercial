@@ -277,7 +277,8 @@
 
         &:active {
           color: $transparent-black;
-          font-weight: 500;
+          text-shadow: 0px 0px 1px rgba(0, 0, 0, 0.6);
+          //font-weight: 500;
           //transform: scaleX(0.98);
         }
 
@@ -306,14 +307,15 @@
     .active {
       a {
         background-color: $btn-active;
-        font-weight: 500;
+        text-shadow: 0px 0px 1px black;
+        //font-weight: 500;
       }
     }
 
     .nonActive {
       a {
         background-color: $btn-nonactive;
-        font-weight: 400;
+        //font-weight: 400;
       }
     }
   }
