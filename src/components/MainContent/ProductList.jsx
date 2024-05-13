@@ -3,6 +3,7 @@ import { smoothScroll } from "../../util/smoothScroll";
 import ProductItem from "../ProductItem/ProductItem";
 import style from "./MainContent.module.scss";
 import { Routes, Route, useLocation } from "react-router-dom";
+import SmoothScroll from "smooth-scroll";
 import {
   productsSlowCurrentStation,
   productsFastCurrentStation,
@@ -116,7 +117,12 @@ const StationsList = ({ productType, currentType, calcRef }) => {
       const element = document.getElementById(id);
       if (element) {
         //element.scrollIntoView({ behavior: "smooth", block: "start" });
-        smoothScroll(element, 800);
+        //smoothScroll(element, 800);
+        const scroll = new SmoothScroll(`<div id="${id}"></div>`, {
+          speed: 800, // The lower the number, the faster the scroll.
+          speedAsDuration: true, // Use speed as the total duration of the scroll animation.
+        });
+        scroll.animateScroll(element.offsetTop);
       }
     }
   }, [location]);
@@ -129,7 +135,7 @@ const StationsList = ({ productType, currentType, calcRef }) => {
     return (
       <>
         {styleTag}
-        <div className={style.category_decor}>
+        <div className={style.category_decor} id="stations">
           станции
           <span>
             <DecorArrowSvg />
@@ -142,7 +148,7 @@ const StationsList = ({ productType, currentType, calcRef }) => {
               <ProductItem key={index} {...product} generalType="stations" />
             ))}
         </div>
-        <div className={`${style.slider_products}`} id="stations">
+        <div className={`${style.slider_products}`}>
           <Swiper
             spaceBetween={10}
             slidesPerView={1}
@@ -275,9 +281,18 @@ const ItemsList = ({ calcRef, productType, listType }) => {
     if (location.hash) {
       const id = location.hash.replace("#", "");
       const element = document.getElementById(id);
+
+      console.log(id)
       if (element) {
         //element.scrollIntoView({ behavior: "smooth", block: "start" });
-        smoothScroll(element, 800);
+        //smoothScroll(element, 800);
+
+        const scroll = new SmoothScroll(`<div id="${id}"></div>`, {
+          speed: 800, // The lower the number, the faster the scroll.
+          speedAsDuration: true, // Use speed as the total duration of the scroll animation.
+        });
+         scroll.animateScroll( element.offsetTop );
+        
       }
     }
   }, [location]);
