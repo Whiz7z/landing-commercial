@@ -3,12 +3,17 @@ import BDESC from "../assets/images/products/fastCurrent/BDESC.png";
 import BGDC from "../assets/images/products/fastCurrent/BGDC.png";
 import BDCDW from "../assets/images/products/fastCurrent/BDC-D-W.png";
 import BDDC from "../assets/images/products/fastCurrent/BDDC.png";
+import BDCP1 from "../assets/images/products/fastCurrent/BDC-P1.png";
+import BADCS2 from "../assets/images/products/fastCurrent/BADC-S2.png";
+import BDCD2 from "../assets/images/products/fastCurrent/BDC-D2.png";
+import BADCD3 from "../assets/images/products/fastCurrent/BADC-D3.png";
 
 import BCMA1 from "../assets/images/products/slowCurrent/BCM-A1.png";
 import BCPA1 from "../assets/images/products/slowCurrent/BCP-A1.png";
 import BCMA2 from "../assets/images/products/slowCurrent/BCM-A2.png";
 import BCPA2 from "../assets/images/products/slowCurrent/BCP-A2.png";
 import BCPCV from "../assets/images/products/slowCurrent/BCPCV.png";
+
 
 import BCPPA1 from "../assets/images/products/slowCurrent/BCPP-A1.png";
 import BCPPA2 from "../assets/images/products/slowCurrent/BCPP-A2.png";
@@ -215,7 +220,7 @@ export const productsFastCurrentStation = [
   },
 
   {
-    image: null,
+    image: BADCS2,
     title: "Напольная зарядная станция постоянного тока",
     code: "BADC-S2",
     type: "floor",
@@ -311,9 +316,9 @@ export const productsFastCurrentStation = [
   },
 
   {
-    image: null,
+    image: BDCD2,
     title: "Напольная зарядная станция постоянного тока",
-    code: "BDC-S2",
+    code: "BDC-D2",
     type: "floor",
     tags: [
       {
@@ -361,7 +366,7 @@ export const productsFastCurrentStation = [
     ],
   },
   {
-    image: null,
+    image: BADCD3,
     title: "Напольная зарядная станция постоянного тока",
     code: "BADC-D3",
     type: "floor",
@@ -556,7 +561,7 @@ export const productsFastCurrentStation = [
   },
   //wall
   {
-    image: null,
+    image: BDCP1,
     title: "Настенная зарядная станция постоянного тока",
     code: "BDC-P1",
     type: "wall",

@@ -119,8 +119,8 @@ function ProductItem({ image, title, code, tags, generalType, calcRef }) {
                 scrollToCall();
                 selectedItems.find((item) => item.code === code)
                   ? remove(code)
-                  : add(code, title)}
-              }
+                  : add(code, title);
+              }}
             >
               {selectedItems.find((item) => item.code === code)
                 ? "Выбрано"
@@ -167,8 +167,11 @@ function ProductItem({ image, title, code, tags, generalType, calcRef }) {
                 ? "Выбрано"
                 : "Выбрать"}
             </button>
-            <button className={style.phoneBtn} onClick={() => callPhone()}>
-              Позвонить нам
+            <button
+              className={style.phoneBtn}
+              onClick={() => orderCall(code, title)}
+            >
+              Заказать звонок
             </button>
             <button className={style.callBtn} onClick={() => callPhone()}>
               <PhoneSvg />
