@@ -25,6 +25,7 @@ import CheckLineSvg from "../../svgComponents/CheckLineSvg";
 import GradientLineSvg from "../../svgComponents/GradientLineSvg";
 import ConfirmModal from "../../Modals/ConfirmModal";
 import useSendEmail from "../../hooks/useSenEmail";
+import SmoothScroll from "smooth-scroll";
 
 let currentTypes = [
   {
@@ -176,6 +177,15 @@ function MainContent() {
   const chooseCurrent = (id) => {
     setCurrentType(currentTypes.find((item) => item.id === id).value);
     setOpenSelect(false);
+
+    const element = document.getElementById('stations');
+
+    const scroll = new SmoothScroll(`<div id="stations"></div>`, {
+      speed: 800,
+      speedAsDuration: true,
+      easing: "easeInOutCubic",
+    });
+    scroll.animateScroll(element.offsetTop - 120, { duration: 1000 });
 
     console.log("currentType", currentType);
   };
