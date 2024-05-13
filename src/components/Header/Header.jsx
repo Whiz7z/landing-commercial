@@ -11,7 +11,7 @@ const Header = () => {
   const location = useLocation();
 
   const {pathname} = location;
-  const  phoneNumber = import.meta.env.VITE_PHONE
+  const phoneNumber = import.meta.env.VITE_PHONE ?? '447935867519';
 
   console.log(phoneNumber);
 

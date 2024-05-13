@@ -925,3 +925,52 @@ menu {
     }
   }
 }
+
+
+@media screen and (max-width: 340px){
+  .container {
+    aside {
+      display: grid;
+      grid-template-columns: 1fr;
+
+      .info {
+        width: 100%;
+        grid-column: 1/2;
+        padding-left: 10px;
+
+        .lineContainer{
+          width: 310px;
+          justify-items: start;
+          justify-content: start;
+        }
+      }
+
+      .chooseCurrent {
+        
+        grid-column: 1/2;
+        
+        padding-left: 10px;
+        
+        .select{
+          width: 310px;
+        }
+
+        
+      }
+
+      .calculate {
+        width: 100%;
+        grid-column: 1/2;
+        padding-left: 10px;
+
+        .mobile_calc{
+          width: 310px;
+        }
+
+        .lineContainer{
+          width: 310px;
+        }
+      }
+    }
+  }
+}

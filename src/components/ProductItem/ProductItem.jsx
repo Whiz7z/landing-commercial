@@ -34,7 +34,9 @@ function ProductItem({ image, title, code, tags, generalType, calcRef }) {
   };
 
   const callPhone = () => {
-    window.location.href = `tel:${import.meta.env.VITE_PHONE}`;
+    window.location.href = `tel:${
+      import.meta.env.VITE_PHONE ?? "447935867519"
+    }`;
   };
 
   const orderCall = (code, title) => {
