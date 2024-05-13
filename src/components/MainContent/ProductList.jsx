@@ -299,7 +299,7 @@ const ItemsList = ({ calcRef, productType, listType }) => {
         // });
         //  scroll.animateScroll( element.offsetTop );
 
-        animateScrollTo(element.offsetTop);
+        //animateScrollTo(element.offsetTop);
         
       }
     }
