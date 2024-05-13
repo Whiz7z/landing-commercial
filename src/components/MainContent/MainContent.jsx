@@ -195,14 +195,7 @@ function MainContent() {
 
       //element.scrollIntoView({ behavior: "smooth", block: "start" });
 
-      animateScrollTo(element.offsetTop - 140, {
-        easing: (t) => {
-          return t
-        },
-        maxDuration: 500,
-        minDuration: 500,
-        speed: 500,
-      });
+      animateScrollTo(element.offsetTop - 140);
 
 
       console.log("off --- ", element.offsetTop);

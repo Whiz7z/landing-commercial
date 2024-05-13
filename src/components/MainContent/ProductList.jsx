@@ -127,16 +127,7 @@ const StationsList = ({ productType, currentType, calcRef }) => {
         // });
         // scroll.animateScroll(element.offsetTop);
 
-        animateScrollTo(element.offsetTop, {
-          easing: (t) => {
-            return t;
-          },
-          maxDuration: 500,
-          minDuration: 500,
-          // speed: element.offsetTop * 3,
-          
-          speed: 500,
-        });
+        animateScrollTo(element.offsetTop);
       }
     }
   }, [location]);
@@ -308,16 +299,7 @@ const ItemsList = ({ calcRef, productType, listType }) => {
         // });
         //  scroll.animateScroll( element.offsetTop );
 
-        animateScrollTo(element.offsetTop, {
-          easing: (t) => {
-            return t
-          },
-          maxDuration: 500,
-          minDuration: 500,
-          // speed: element.offsetTop * 3,
-          
-          speed: 500,
-        });
+        animateScrollTo(element.offsetTop);
         
       }
     }
