@@ -198,7 +198,7 @@ function MainContent() {
           return t;
         },
         minDuration: 500,
-        speed: 1000,
+        speed: 200,
       });
 
 
