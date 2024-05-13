@@ -197,7 +197,7 @@ function MainContent() {
 
       animateScrollTo(element.offsetTop - 140, {
         easing: (t) => {
-          return t;
+          return 1 - --t * t * t * t;
         },
         maxDuration: 500,
         minDuration: 500,
