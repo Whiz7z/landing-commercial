@@ -177,11 +177,11 @@ function MainContent() {
 
     if (element) {
       const scroll = new SmoothScroll(`<div id="stations"></div>`, {
-        speed: 800,
+        speed: 500,
         speedAsDuration: true,
         easing: "easeInOutCubic",
       });
-      scroll.animateScroll(element.offsetTop - 120, { duration: 1000 });
+      scroll.animateScroll(element.offsetTop - 120, { duration: 500 });
 
       //smoothScroll(element, 1000);
 
