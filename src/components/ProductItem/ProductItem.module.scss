@@ -146,6 +146,24 @@
     }
   }
 
+  .chooseBtnMobile {
+    display: none;
+
+    @media screen and (max-width: 766px) {
+      display: block;
+      
+    }
+  }
+
+  .chooseBtnDesktop {
+    display: block;
+
+    @media screen and (max-width: 766px) {
+      display: none;
+      
+    }
+  }
+
   .choosedBtn {
     background-color: $c-700;
   }

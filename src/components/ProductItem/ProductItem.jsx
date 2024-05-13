@@ -22,7 +22,7 @@ function ProductItem({ image, title, code, tags, generalType, calcRef }) {
   const [countModal, setCountModal] = useState(false);
 
   const scrollToCall = () => {
-    window.scroll(0, calcRef.current.offsetParent.offsetTop - 120, {
+    window.scroll(0, calcRef.current.offsetParent.offsetTop - 200, {
       behavior: "smooth",
     });
 
@@ -47,7 +47,7 @@ function ProductItem({ image, title, code, tags, generalType, calcRef }) {
         <img src={image} alt="product" />
       </div>
       <div className={style.info}>
-        <h3 dangerouslySetInnerHTML={{ __html:title }}></h3>
+        <h3 dangerouslySetInnerHTML={{ __html: title }}></h3>
         <p>
           артикул: <span>{code} </span>
         </p>
@@ -89,7 +89,7 @@ function ProductItem({ image, title, code, tags, generalType, calcRef }) {
         {generalType === "stations" && (
           <div className={style.actions}>
             <button
-              className={`${style.chooseBtn} ${
+              className={`${style.chooseBtn} ${style.chooseBtnDesktop} ${
                 selectedItems.find((item) => item.code === code)
                   ? style.choosedBtn
                   : null
@@ -98,6 +98,24 @@ function ProductItem({ image, title, code, tags, generalType, calcRef }) {
                 selectedItems.find((item) => item.code === code)
                   ? remove(code)
                   : add(code, title)
+              }
+            >
+              {selectedItems.find((item) => item.code === code)
+                ? "Выбрано"
+                : "Выбрать"}
+            </button>
+
+            <button
+              className={`${style.chooseBtn} ${style.chooseBtnMobile} ${
+                selectedItems.find((item) => item.code === code)
+                  ? style.choosedBtn
+                  : null
+              }`}
+              onClick={() => {
+                scrollToCall();
+                selectedItems.find((item) => item.code === code)
+                  ? remove(code)
+                  : add(code, title)}
               }
             >
               {selectedItems.find((item) => item.code === code)
