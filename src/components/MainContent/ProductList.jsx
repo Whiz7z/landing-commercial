@@ -119,8 +119,9 @@ const StationsList = ({ productType, currentType, calcRef }) => {
         //element.scrollIntoView({ behavior: "smooth", block: "start" });
         //smoothScroll(element, 800);
         const scroll = new SmoothScroll(`<div id="${id}"></div>`, {
-          speed: 800, // The lower the number, the faster the scroll.
-          speedAsDuration: true, // Use speed as the total duration of the scroll animation.
+          speed: 800,
+          speedAsDuration: true, 
+          easing: "easeInOutCubic",
         });
         scroll.animateScroll(element.offsetTop);
       }
@@ -288,8 +289,9 @@ const ItemsList = ({ calcRef, productType, listType }) => {
         //smoothScroll(element, 800);
 
         const scroll = new SmoothScroll(`<div id="${id}"></div>`, {
-          speed: 800, // The lower the number, the faster the scroll.
-          speedAsDuration: true, // Use speed as the total duration of the scroll animation.
+          speed: 800, 
+          speedAsDuration: true,
+          easing: "easeInOutCubic", 
         });
          scroll.animateScroll( element.offsetTop );
         
