@@ -22,6 +22,8 @@ function ProductItem({ image, title, code, tags, generalType, calcRef }) {
   const [countModal, setCountModal] = useState(false);
 
   const scrollToCall = () => {
+
+    console.log(calcRef.current.offsetParent.offsetTop);
     window.scroll(0, calcRef.current.offsetParent.offsetTop - 200, {
       behavior: "smooth",
     });

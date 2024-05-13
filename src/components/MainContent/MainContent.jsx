@@ -25,6 +25,7 @@ import CheckLineSvg from "../../svgComponents/CheckLineSvg";
 import GradientLineSvg from "../../svgComponents/GradientLineSvg";
 import ConfirmModal from "../../Modals/ConfirmModal";
 import useSendEmail from "../../hooks/useSenEmail";
+import { smoothScroll } from "../../util/smoothScroll";
 import SmoothScroll from "smooth-scroll";
 
 let currentTypes = [
@@ -60,15 +61,12 @@ function extractNumbers(phoneNumber) {
 const arrowVariants = {
   all: {
     y: 0,
-   
   },
   slow: {
     y: 48,
-    
   },
   fast: {
     y: 98,
-    
   },
 };
 
@@ -98,8 +96,6 @@ const dropdownVariants = {
   },
 };
 
-
-
 const itemVariants = {
   hidden: {
     opacity: 0,
@@ -119,7 +115,6 @@ const itemVariants = {
 function MainContent() {
   const [currentType, setCurrentType] = useState("all");
   const [productType, setProductType] = useState("wall");
-
 
   const [countModal, setCountModal] = useState(false);
   const [confirmModal, setConfirmModal] = useState(false);
@@ -178,16 +173,29 @@ function MainContent() {
     setCurrentType(currentTypes.find((item) => item.id === id).value);
     setOpenSelect(false);
 
-    const element = document.getElementById('stations');
+    const element = document.getElementById("stations");
 
-    const scroll = new SmoothScroll(`<div id="stations"></div>`, {
-      speed: 800,
-      speedAsDuration: true,
-      easing: "easeInOutCubic",
-    });
-    scroll.animateScroll(element.offsetTop - 120, { duration: 1000 });
+    if (element) {
+      const scroll = new SmoothScroll(`<div id="stations"></div>`, {
+        speed: 800,
+        speedAsDuration: true,
+        easing: "easeInOutCubic",
+      });
+      scroll.animateScroll(element.offsetTop - 120, { duration: 1000 });
 
-    console.log("currentType", currentType);
+      //smoothScroll(element, 1000);
+
+      // window.scroll({
+      //   top: element.offsetTop - 120,
+      //   behavior: "smooth",
+      // });
+
+      //element.scrollIntoView({ behavior: "smooth", block: "start" });
+
+
+      console.log("off --- ", element.offsetTop);
+      console.log("currentType", currentType);
+    }
   };
 
   const sendProducts = () => {
@@ -493,7 +501,6 @@ const StationsCategories = ({
               </span>
               портативные
             </a>
-            
           </li>
         )}
       </ul>
