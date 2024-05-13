@@ -62,12 +62,15 @@ function extractNumbers(phoneNumber) {
 const arrowVariants = {
   all: {
     y: 0,
+    transition: { type: "spring", bounce: 0, duration: 0.3 },
   },
   slow: {
     y: 48,
+    transition: { type: "spring", bounce: 0, duration: 0.3 },
   },
   fast: {
     y: 98,
+    transition: { type: "spring", bounce: 0, duration: 0.3 },
   },
 };
 
