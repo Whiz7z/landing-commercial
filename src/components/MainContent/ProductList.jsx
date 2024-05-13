@@ -18,6 +18,7 @@ import "swiper/css";
 // import "swiper/css/pagination";
 import "swiper/css/scrollbar";
 import DecorArrowSvg from "../../svgComponents/DecorArrowSvg";
+import animateScrollTo from "animated-scroll-to";
 
 const styleTag = (
   <style>{`
@@ -118,12 +119,20 @@ const StationsList = ({ productType, currentType, calcRef }) => {
       if (element) {
         //element.scrollIntoView({ behavior: "smooth", block: "start" });
         //smoothScroll(element, 800);
-        const scroll = new SmoothScroll(`<div id="${id}"></div>`, {
-          speed: 800,
-          speedAsDuration: true, 
-          easing: "easeInOutCubic",
+
+        // const scroll = new SmoothScroll(`<div id="${id}"></div>`, {
+        //   speed: 800,
+        //   speedAsDuration: true, 
+        //   easing: "easeInOutCubic",
+        // });
+        // scroll.animateScroll(element.offsetTop);
+
+        animateScrollTo(element.offsetTop , {
+          easing: (t) => {
+            return t;
+          },
+          speed: 500,
         });
-        scroll.animateScroll(element.offsetTop);
       }
     }
   }, [location]);
@@ -288,12 +297,19 @@ const ItemsList = ({ calcRef, productType, listType }) => {
         //element.scrollIntoView({ behavior: "smooth", block: "start" });
         //smoothScroll(element, 800);
 
-        const scroll = new SmoothScroll(`<div id="${id}"></div>`, {
-          speed: 800, 
-          speedAsDuration: true,
-          easing: "easeInOutCubic", 
+        // const scroll = new SmoothScroll(`<div id="${id}"></div>`, {
+        //   speed: 800, 
+        //   speedAsDuration: true,
+        //   easing: "easeInOutCubic", 
+        // });
+        //  scroll.animateScroll( element.offsetTop );
+
+        animateScrollTo(element.offsetTop, {
+          easing: (t) => {
+            return t;
+          },
+          speed: 500,
         });
-         scroll.animateScroll( element.offsetTop );
         
       }
     }
