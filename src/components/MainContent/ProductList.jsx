@@ -307,10 +307,10 @@ const ItemsList = ({ calcRef, productType, listType }) => {
 
         animateScrollTo(element.offsetTop, {
           easing: (t) => {
-            return --t * t * t + 1;
+            return 1 - --t * t * t * t;
           },
           minDuration: 500,
-          speed: 200,
+          speed: 1000,
         });
         
       }

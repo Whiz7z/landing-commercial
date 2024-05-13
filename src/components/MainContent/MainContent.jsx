@@ -177,6 +177,8 @@ function MainContent() {
     const element = document.getElementById("stations");
 
     if (element) {
+
+      console.log('offset', element.offsetTop);
       // const scroll = new SmoothScroll(`<div id="stations"></div>`, {
       //   speed: 500,
       //   speedAsDuration: true,
@@ -195,10 +197,10 @@ function MainContent() {
 
       animateScrollTo(element.offsetTop - 140, {
         easing: (t) => {
-          return --t * t * t + 1;
+          return 1 - --t * t * t * t;
         },
         minDuration: 500,
-        speed: 200,
+        speed: 1000,
       });
 
 
