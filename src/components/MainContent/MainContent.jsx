@@ -448,7 +448,7 @@ const StationsCategories = ({
           }
           onClick={() => changeProductType("wall")}
         >
-          <a href="#">
+          <a href="#" title={"настенные"}>
             <span className={style.radio}>
               <RadioSvg innerFill={productType === "wall" ? null : "none"} />
             </span>
@@ -461,7 +461,7 @@ const StationsCategories = ({
           }
           onClick={() => changeProductType("floor")}
         >
-          <a href="#">
+          <a href="#" title={"напольные"}>
             <span className={style.radio}>
               <RadioSvg innerFill={productType === "floor" ? null : "none"} />
             </span>
@@ -477,7 +477,7 @@ const StationsCategories = ({
             }
             onClick={() => changeProductType("portable")}
           >
-            <a href="#">
+            <a href="#" title={"портативные"}>
               <span className={style.radio}>
                 <RadioSvg
                   innerFill={productType === "portable" ? null : "none"}
@@ -485,6 +485,7 @@ const StationsCategories = ({
               </span>
               портативные
             </a>
+            
           </li>
         )}
       </ul>
