@@ -59,21 +59,15 @@ function extractNumbers(phoneNumber) {
 const arrowVariants = {
   all: {
     y: 0,
-    transition: {
-      y: { duration: 0.5 },
-    },
+   
   },
   slow: {
     y: 48,
-    transition: {
-      y: { duration: 0.5 },
-    },
+    
   },
   fast: {
     y: 98,
-    transition: {
-      y: { duration: 0.5 },
-    },
+    
   },
 };
 
@@ -125,18 +119,13 @@ function MainContent() {
   const [currentType, setCurrentType] = useState("all");
   const [productType, setProductType] = useState("wall");
 
-  const [number, setNumber] = useState("");
 
   const [countModal, setCountModal] = useState(false);
   const [confirmModal, setConfirmModal] = useState(false);
 
   const [openSelect, setOpenSelect] = useState(false);
 
-  const [countryCode, setCountryCode] = useState(countries[0]);
-  const [phoneNumber, setPhoneNumber] = useState("");
   const [numberMobile, setNumberMobile] = useState("");
-  const [openCodeSelect, setOpenCodeSelect] = useState(false);
-  const [mouseLeft, setMouseLeft] = useState(true);
   const [hovered, setHovered] = useState(false);
 
   const [sendEmail] = useSendEmail();
@@ -159,7 +148,7 @@ function MainContent() {
   const handleMouseLeave = () => {
     closeTimeoutRef.current = setTimeout(() => {
       closeSelect();
-    }, 22000);
+    }, 3500);
   };
 
   const handleMouseEnter = () => {
