@@ -129,7 +129,7 @@ const StationsList = ({ productType, currentType, calcRef }) => {
 
         animateScrollTo(element.offsetTop, {
           easing: (t) => {
-            return 1 - --t * t * t * t;
+            return t;
           },
           maxDuration: 500,
           minDuration: 500,
@@ -310,7 +310,7 @@ const ItemsList = ({ calcRef, productType, listType }) => {
 
         animateScrollTo(element.offsetTop, {
           easing: (t) => {
-            return 1 - --t * t * t * t;
+            return t
           },
           maxDuration: 500,
           minDuration: 500,
