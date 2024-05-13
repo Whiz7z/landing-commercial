@@ -277,6 +277,14 @@
 
         &:active {
           color: $transparent-black;
+
+          .icon {
+            svg {
+              path {
+                fill: $transparent-black;
+              }
+            }
+          }
         }
 
         &:hover {
@@ -304,7 +312,7 @@
     .active {
       a {
         background-color: $btn-active;
-        
+
         //font-weight: 500;
       }
     }
