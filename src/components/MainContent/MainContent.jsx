@@ -197,7 +197,8 @@ function MainContent() {
         easing: (t) => {
           return t;
         },
-        speed: 500,
+        minDuration: 500,
+        speed: 1000,
       });
 
 
