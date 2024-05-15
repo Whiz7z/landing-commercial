@@ -53,7 +53,8 @@ const Header = () => {
 
         <section className={style.headerBottom}>
           <div className={style.logo}>
-            <a href="#">energotochka</a>
+            {/* <a href="#">energotochka</a> */}
+            <a href="#">Баребухи</a>
             <h2 className={style.subLogo}>электрические станции под ключ</h2>
           </div>
           <menu className={style.menu}>
@@ -66,7 +67,7 @@ const Header = () => {
             >
               <NavLink to="/stations#stations">
                 <span className={style.icon}>
-                  <LightingSvg  />
+                  <LightingSvg />
                 </span>
                 станции
               </NavLink>

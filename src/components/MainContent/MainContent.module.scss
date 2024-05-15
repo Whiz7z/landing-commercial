@@ -923,6 +923,14 @@ menu {
         grid-column: 1/2;
       }
     }
+
+    .mainContent {
+      padding-right: 10px;
+      grid-template-columns: auto 1fr auto;
+      .category_decor{
+        margin-right: 10px;
+      }
+    }
   }
 }
 
@@ -970,6 +978,13 @@ menu {
         .lineContainer{
           width: 310px;
         }
+      }
+    }
+
+    .mainContent {
+      
+      .category_decor{
+        margin-right: 15px;
       }
     }
   }

@@ -33,9 +33,11 @@ function CookiesModal({ onClose }) {
         <button className={style.btn} onClick={closeModal}>
           Подтвердить и закрыть
         </button>
-        <p className={style.copyright}>
+        <p popovertarget="my-popover" className={style.copyright}>
           ооо «энерго-точка» · огрн: 123456789012345
         </p>
+
+        
       </div>
     </div>
   );
