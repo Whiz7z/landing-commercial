@@ -1,19 +1,13 @@
 import CheckCircle from "../../svgComponents/CheckCircle";
 import RadioSvg from "../../svgComponents/RadioSvg";
-import ProductItem from "../ProductItem/ProductItem";
 import style from "./MainContent.module.scss";
 import { Routes, Route } from "react-router-dom";
-import { Swiper, SwiperSlide } from "swiper/react";
-import { motion, AnimatePresence, transform } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/scrollbar";
 
-import {
-  productsSlowCurrentStation,
-  productsFastCurrentStation,
-} from "../../data/products";
 import { useEffect, useRef, useState } from "react";
 import CountModal from "../../Modals/CountModal";
 import ProductList from "../MainContent/ProductList";
@@ -22,12 +16,8 @@ import SelectArrowSvg from "../../svgComponents/SelectArrowSvg";
 import useStore from "../../store/store";
 import InputMask from "react-input-mask";
 import CheckLineSvg from "../../svgComponents/CheckLineSvg";
-import GradientLineSvg from "../../svgComponents/GradientLineSvg";
 import ConfirmModal from "../../Modals/ConfirmModal";
 import useSendEmail from "../../hooks/useSenEmail";
-import { smoothScroll } from "../../util/smoothScroll";
-import SmoothScroll from "smooth-scroll";
-import animateScrollTo from "animated-scroll-to";
 
 let currentTypes = [
   {
@@ -47,13 +37,7 @@ let currentTypes = [
   },
 ];
 
-const countries = [
-  { code: "RU", dial_code: "+7" },
-  { code: "UA", dial_code: "+380" },
-  { code: "BL", dial_code: "+375" },
 
-  // Add more countries and their dial codes here
-];
 
 function extractNumbers(phoneNumber) {
   return phoneNumber.replace(/\D/g, ""); // \D matches any non-digit character and replaces it with ''
@@ -167,7 +151,7 @@ function MainContent() {
     };
   }, []);
 
-  const { selectedItems, add, remove } = useStore((state) => ({
+  const { selectedItems } = useStore((state) => ({
     selectedItems: state.selectedItems,
     add: state.add,
     remove: state.remove,
@@ -180,36 +164,14 @@ function MainContent() {
     const element = document.getElementById("stations");
 
     if (element) {
-
-      console.log('offset', element.offsetTop);
-      // const scroll = new SmoothScroll(`<div id="stations"></div>`, {
-      //   speed: 500,
-      //   speedAsDuration: true,
-      //   easing: "easeInOutCubic",
-      // });
-      // scroll.animateScroll(element.offsetTop - 120, { duration: 500 });
-
-      //smoothScroll(element, 1000);
-
       window.scroll({
         top: element.offsetTop - 120,
         behavior: "smooth",
       });
-
-      //element.scrollIntoView({ behavior: "smooth", block: "start" });
-
-     // animateScrollTo(element.offsetTop - 140);
-
-
-      console.log("off --- ", element.offsetTop);
-      console.log("currentType", currentType);
     }
   };
 
   const sendProducts = () => {
-    console.log(selectedItems);
-    console.log(numberMobile);
-
     if (selectedItems.length === 0 || numberMobile.length < 8) {
       setConfirmModal(true);
       return;
@@ -218,16 +180,11 @@ function MainContent() {
     const formattedString = selectedItems
       .map((device) => `${device.code} - ${device.title}`)
       .join("\n");
-    console.log(formattedString);
 
     sendEmail(numberMobile, formattedString);
-
     setConfirmModal(true);
   };
 
-  useEffect(() => {
-    console.log("selectedItems", extractNumbers(numberMobile).length);
-  }, [numberMobile]);
 
   return (
     <div className={style.container}>

@@ -1,9 +1,7 @@
-import React, { useEffect, useRef } from "react";
-import { smoothScroll } from "../../util/smoothScroll";
+import  { useEffect } from "react";
 import ProductItem from "../ProductItem/ProductItem";
 import style from "./MainContent.module.scss";
 import { Routes, Route, useLocation } from "react-router-dom";
-import SmoothScroll from "smooth-scroll";
 import {
   productsSlowCurrentStation,
   productsFastCurrentStation,
@@ -12,13 +10,12 @@ import {
 } from "../../data/products";
 
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation, Pagination, Scrollbar, A11y } from "swiper/modules";
+import { Navigation, A11y } from "swiper/modules";
 import "swiper/css";
 // import "swiper/css/navigation";
 // import "swiper/css/pagination";
 import "swiper/css/scrollbar";
 import DecorArrowSvg from "../../svgComponents/DecorArrowSvg";
-import animateScrollTo from "animated-scroll-to";
 
 const styleTag = (
   <style>{`
@@ -160,8 +157,6 @@ const StationsList = ({ productType, currentType, calcRef }) => {
             centeredSlides={true}
             loop={true}
             modules={[Navigation, A11y]}
-            onSlideChange={() => console.log("slide change")}
-            onSwiper={(swiper) => console.log(swiper)}
           >
             {combinedArray.map((product, index) => (
               <SwiperSlide key={index}>
@@ -206,8 +201,6 @@ const StationsList = ({ productType, currentType, calcRef }) => {
             centeredSlides={true}
             loop={true}
             modules={[Navigation, A11y]}
-            onSlideChange={() => console.log("slide change")}
-            onSwiper={(swiper) => console.log(swiper)}
           >
             {productsSlowCurrentStation.map((product, index) => (
               <SwiperSlide key={index}>
@@ -252,8 +245,6 @@ const StationsList = ({ productType, currentType, calcRef }) => {
             centeredSlides={true}
             loop={true}
             modules={[Navigation, A11y]}
-            onSlideChange={() => console.log("slide change")}
-            onSwiper={(swiper) => console.log(swiper)}
           >
             {productsFastCurrentStation.map((product, index) => (
               <SwiperSlide key={index}>
@@ -287,20 +278,8 @@ const ItemsList = ({ calcRef, productType, listType }) => {
       const id = location.hash.replace("#", "");
       const element = document.getElementById(id);
 
-      console.log(id)
       if (element) {
         element.scrollIntoView({ behavior: "smooth", block: "start" });
-        //smoothScroll(element, 800);
-
-        // const scroll = new SmoothScroll(`<div id="${id}"></div>`, {
-        //   speed: 800, 
-        //   speedAsDuration: true,
-        //   easing: "easeInOutCubic", 
-        // });
-        //  scroll.animateScroll( element.offsetTop );
-
-        //animateScrollTo(element.offsetTop);
-        
       }
     }
   }, [location]);
@@ -329,16 +308,14 @@ const ItemsList = ({ calcRef, productType, listType }) => {
           centeredSlides={true}
           loop={false}
           modules={[Navigation, A11y]}
-          onSlideChange={() => console.log("slide change")}
-          onSwiper={(swiper) => console.log(swiper)}
         >
           {listType === "details"
-            ? productsDetails.map((product, index) => (
+            ? productsDetails.map((product) => (
                 <SwiperSlide key={product.code}>
                   <ProductItem {...product} generalType="details" />
                 </SwiperSlide>
               ))
-            : productsServices.map((product, index) => (
+            : productsServices.map((product) => (
                 <SwiperSlide key={product.code}>
                   <ProductItem {...product} generalType="services" />
                 </SwiperSlide>

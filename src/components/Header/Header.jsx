@@ -13,17 +13,17 @@ const Header = () => {
   const {pathname} = location;
   const phoneNumber = import.meta.env.VITE_PHONE ?? '447935867519';
 
-  console.log(phoneNumber);
+  
 
   useEffect(() => {
     // if current url contains #services - remove the hash
-    console.log(location);
+   
     if (
       location.hash.includes("#services") ||
       location.hash.includes("#details") ||
       location.hash.includes("#stations")
     ) {
-      console.log("includes");
+      
       window.location.hash = "";
     }
   }, [location]);

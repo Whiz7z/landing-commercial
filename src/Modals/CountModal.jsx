@@ -17,29 +17,23 @@ const countries = [
 ];
 
 function CountModal({ onClose }) {
-  const { selectedItems, add, remove } = useStore((state) => ({
+  const { selectedItems } = useStore((state) => ({
     selectedItems: state.selectedItems,
     add: state.add,
     remove: state.remove,
   }));
 
-  const [countryCode, setCountryCode] = useState(countries[0]);
-  const [phoneNumber, setPhoneNumber] = useState("");
   const [number, setNumber] = useState("");
-  const [openCodeSelect, setOpenCodeSelect] = useState(false);
 
-  const [sendEmail, submitting, success] = useSendEmail();
+  const [sendEmail, success] = useSendEmail();
   const closeModal = () => {
     onClose();
   };
 
   const sendPhoneNumber = () => {
-    console.log(number);
-    console.log(selectedItems);
     const formattedString = selectedItems
       .map((device) => `${device.code} - ${device.title}`)
       .join("\n");
-    console.log(formattedString);
 
     sendEmail(number, formattedString);
 
