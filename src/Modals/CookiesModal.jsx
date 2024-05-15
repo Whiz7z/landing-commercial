@@ -34,7 +34,8 @@ function CookiesModal({ onClose }) {
           Подтвердить и закрыть
         </button>
         <p popovertarget="my-popover" className={style.copyright}>
-          ооо «энерго-точка» · огрн: 123456789012345
+          {/* ооо «энерго-точка» · огрн: 123456789012345 */}
+          
         </p>
 
         

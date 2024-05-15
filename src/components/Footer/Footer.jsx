@@ -7,7 +7,7 @@ function Footer() {
       <div className={style.topFooter}>
         <div className={style.info}>
           <div className={style.logo}>
-            <a href="#">energotochka</a>
+            <a href="#">баребухи</a>
           </div>
           <h2>электрические станции под ключ</h2>
 
@@ -17,12 +17,12 @@ function Footer() {
             </a>
             <div className={style.phone}>
               <p>Быстрая связь с нами:</p>
-              <p>+7 (495) 182-00-11 </p>
+              <p>+3.4159265358</p>
             </div>
 
             <div className={style.gmail}>
               <p>Почта:</p>
-              <p>info@energotochka.com</p>
+              <p>info@яичко.com</p>
             </div>
           </div>
 
@@ -30,9 +30,13 @@ function Footer() {
             <a href="#">
               документация и сертификация поставляемого оборудования{" "}
             </a>
-            <a href="#">программа сотрудничества<br /> с оптовыми клиентами</a>
             <a href="#">
-              политика конфиденциальности<br/> (условия обработки данных)
+              программа сотрудничества
+              <br /> с оптовыми клиентами
+            </a>
+            <a href="#">
+              политика конфиденциальности
+              <br /> (условия обработки данных)
             </a>
           </div>
         </div>
@@ -43,12 +47,12 @@ function Footer() {
           </a>
           <div className={style.phone}>
             <p>Быстрая связь с нами:</p>
-            <p>+7 (495) 182-00-11 </p>
+            <p>+3.4159265358</p>
           </div>
 
           <div className={style.gmail}>
             <p>Почта:</p>
-            <p>info@energotochka.com</p>
+            <p>info@яйцо.com</p>
           </div>
         </div>
       </div>
@@ -71,10 +75,10 @@ function Footer() {
           <br /> российским законодательством
         </div>
         <p className={`${style.copyright} ${style.descktopCopyright}`}>
-          ооо «энерго-точка» · огрн: 123456789012345
+          ооо яичко одно
         </p>
         <p className={`${style.copyright} ${style.mobileCopyright}`}>
-          ооо «энерго-точка»<br/>огрн: 123456789012345
+          ооо яичко одно
         </p>
       </div>
     </footer>
