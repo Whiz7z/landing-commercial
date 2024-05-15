@@ -26,9 +26,9 @@ import serviceImage from "../assets/images/services/service.png"
 
 export const productsServices = [
   {
-    image: serviceImage,
+    image: null,
     title: "Монтирование любой электрической<br/> зарядной станции",
-    code: "M-100",
+    code: "xxx",
     type: "mounting",
     tags: [
       {
@@ -52,9 +52,9 @@ export const productsServices = [
   },
 
   {
-    image: serviceImage,
+    image: null,
     title: "Ремонтирование любой электрической<br/> зарядной станции",
-    code: "R-100",
+    code: "xxx",
     type: "fixing",
     tags: [
       {
@@ -79,9 +79,9 @@ export const productsServices = [
 
 export const productsDetails = [
   {
-    image: C1,
+    image: null,
     title: "Кабель-удлинитель для пистолета станции",
-    code: "C-1",
+    code: "xxx",
     type: "cabel",
     tags: [
       {
@@ -126,9 +126,9 @@ export const productsDetails = [
   },
 
   {
-    image: DLB1,
+    image: null,
     title: "Блок динамического балансирования нагрузки",
-    code: "DLB-1",
+    code: "xxx",
     type: "cabel",
     tags: [
       {
@@ -169,9 +169,9 @@ export const productsDetails = [
 
 export const productsFastCurrentStation = [
   {
-    image: BDCS1,
+    image: null,
     title: "Напольная зарядная станция постоянного тока",
-    code: "BDC-S1",
+    code: "xxx",
     type: "floor",
     tags: [
       {
@@ -220,9 +220,9 @@ export const productsFastCurrentStation = [
   },
 
   {
-    image: BADCS2,
+    image: null,
     title: "Напольная зарядная станция постоянного тока",
-    code: "BADC-S2",
+    code: "xxx",
     type: "floor",
     tags: [
       {
@@ -271,9 +271,9 @@ export const productsFastCurrentStation = [
   },
 
   {
-    image: BDESC,
+    image: null,
     title: "Напольная зарядная станция постоянного тока",
-    code: "BDESC",
+    code: "xxx",
     type: "floor",
     tags: [
       {
@@ -316,9 +316,9 @@ export const productsFastCurrentStation = [
   },
 
   {
-    image: BDCD2,
+    image: null,
     title: "Напольная зарядная станция постоянного тока",
-    code: "BDC-D2",
+    code: "xxx",
     type: "floor",
     tags: [
       {
@@ -366,9 +366,9 @@ export const productsFastCurrentStation = [
     ],
   },
   {
-    image: BADCD3,
+    image: null,
     title: "Напольная зарядная станция постоянного тока",
-    code: "BADC-D3",
+    code: "xxx",
     type: "floor",
     tags: [
       {
@@ -417,9 +417,9 @@ export const productsFastCurrentStation = [
   },
 
   {
-    image: BGDC,
+    image: null,
     title: "Напольная зарядная станция постоянного тока",
-    code: "BGDC",
+    code: "xxx",
     type: "floor",
     tags: [
       {
@@ -468,9 +468,9 @@ export const productsFastCurrentStation = [
   },
 
   {
-    image: BDCDW,
+    image: null,
     title: "Напольная зарядная станция постоянного тока",
-    code: "BDC-D-W",
+    code: "xxx",
     type: "floor",
     tags: [
       {
@@ -510,9 +510,9 @@ export const productsFastCurrentStation = [
   },
 
   {
-    image: BDDC,
+    image: null,
     title: "Напольная зарядная станция постоянного тока",
-    code: "BDDC",
+    code: "xxx",
     type: "floor",
     tags: [
       {
@@ -561,9 +561,9 @@ export const productsFastCurrentStation = [
   },
   //wall
   {
-    image: BDCP1,
+    image: null,
     title: "Настенная зарядная станция постоянного тока",
-    code: "BDC-P1",
+    code: "xxx",
     type: "wall",
     tags: [
       {
@@ -615,9 +615,9 @@ export const productsFastCurrentStation = [
 
 export const productsSlowCurrentStation = [
   {
-    image: BCPPA1,
+    image: null,
     title: "Медленное портативное устройство переменного тока",
-    code: "BCPP-A1",
+    code: "xxx",
     type: "portable",
     tags: [
       {
@@ -656,9 +656,9 @@ export const productsSlowCurrentStation = [
   },
 
   {
-    image: BCPPA2,
+    image: null,
     title: "Медленное портативное устройство переменного тока",
-    code: "BCPP-A2",
+    code: "xxx",
     type: "portable",
     tags: [
       {
@@ -697,9 +697,9 @@ export const productsSlowCurrentStation = [
   },
 
   {
-    image: BCMA1,
+    image: null,
     title: "Настенная зарядная станция переменного тока",
-    code: "BCM-A1",
+    code: "xxx",
     type: "wall",
     tags: [
       {
@@ -743,9 +743,9 @@ export const productsSlowCurrentStation = [
     ],
   },
   {
-    image: BCPA1,
+    image: null,
     title: "Настенная зарядная станция переменного тока",
-    code: "BCP-A1",
+    code: "xxx",
     type: "wall",
     tags: [
       {
@@ -786,9 +786,9 @@ export const productsSlowCurrentStation = [
     ],
   },
   {
-    image: BCMA2,
+    image: null,
     title: "Настенная зарядная станция переменного тока",
-    code: "BCM-A2",
+    code: "xxx",
     type: "wall",
     tags: [
       {
@@ -833,9 +833,9 @@ export const productsSlowCurrentStation = [
     ],
   },
   {
-    image: BCPA2,
+    image: null,
     title: "Настенная зарядная станция переменного тока",
-    code: "BCP-A2",
+    code: "xxx",
     type: "wall",
     tags: [
       {
@@ -876,9 +876,9 @@ export const productsSlowCurrentStation = [
     ],
   },
   {
-    image: BCPCV,
+    image: null,
     title: "Напольная зарядная станция переменного тока",
-    code: "BCPCV",
+    code: "xxx",
     type: "floor",
     tags: [
       {

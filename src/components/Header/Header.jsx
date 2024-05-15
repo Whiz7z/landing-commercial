@@ -47,7 +47,7 @@ const Header = () => {
           <div className={style.contact}>
             <p className={style.contactText}>Быстрая связь с нами:</p>
             <p className={style.ourNumberText}>Наш номер</p>
-            <span>+7 (495) 182-00-11 </span>
+            <span>+3.14</span>
           </div>
         </section>
 
