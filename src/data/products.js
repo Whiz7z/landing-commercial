@@ -23,7 +23,7 @@
 
 // import serviceImage from "../assets/images/services/service.png"
 
-import noImage from "../assets/images/products/fastCurrent/boiler-image.png";
+import noImage from "../assets/images/products/boiler-image.png";
 
 
 export const productsServices = [
