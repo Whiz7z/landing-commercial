@@ -1,29 +1,29 @@
-import BDCS1 from "../assets/images/products/fastCurrent/BDC-S1.png";
-import BDESC from "../assets/images/products/fastCurrent/BDESC.png";
-import BGDC from "../assets/images/products/fastCurrent/BGDC.png";
-import BDCDW from "../assets/images/products/fastCurrent/BDC-D-W.png";
-import BDDC from "../assets/images/products/fastCurrent/BDDC.png";
-import BDCP1 from "../assets/images/products/fastCurrent/BDC-P1.png";
-import BADCS2 from "../assets/images/products/fastCurrent/BADC-S2.png";
-import BDCD2 from "../assets/images/products/fastCurrent/BDC-D2.png";
-import BADCD3 from "../assets/images/products/fastCurrent/BADC-D3.png";
+// import BDCS1 from "../assets/images/products/fastCurrent/BDC-S1.png";
+// import BDESC from "../assets/images/products/fastCurrent/BDESC.png";
+// import BGDC from "../assets/images/products/fastCurrent/BGDC.png";
+// import BDCDW from "../assets/images/products/fastCurrent/BDC-D-W.png";
+// import BDDC from "../assets/images/products/fastCurrent/BDDC.png";
+// import BDCP1 from "../assets/images/products/fastCurrent/BDC-P1.png";
+// import BADCS2 from "../assets/images/products/fastCurrent/BADC-S2.png";
+// import BDCD2 from "../assets/images/products/fastCurrent/BDC-D2.png";
+// import BADCD3 from "../assets/images/products/fastCurrent/BADC-D3.png";
 
-import BCMA1 from "../assets/images/products/slowCurrent/BCM-A1.png";
-import BCPA1 from "../assets/images/products/slowCurrent/BCP-A1.png";
-import BCMA2 from "../assets/images/products/slowCurrent/BCM-A2.png";
-import BCPA2 from "../assets/images/products/slowCurrent/BCP-A2.png";
-import BCPCV from "../assets/images/products/slowCurrent/BCPCV.png";
+// import BCMA1 from "../assets/images/products/slowCurrent/BCM-A1.png";
+// import BCPA1 from "../assets/images/products/slowCurrent/BCP-A1.png";
+// import BCMA2 from "../assets/images/products/slowCurrent/BCM-A2.png";
+// import BCPA2 from "../assets/images/products/slowCurrent/BCP-A2.png";
+// import BCPCV from "../assets/images/products/slowCurrent/BCPCV.png";
 
 
-import BCPPA1 from "../assets/images/products/slowCurrent/BCPP-A1.png";
-import BCPPA2 from "../assets/images/products/slowCurrent/BCPP-A2.png";
+// import BCPPA1 from "../assets/images/products/slowCurrent/BCPP-A1.png";
+// import BCPPA2 from "../assets/images/products/slowCurrent/BCPP-A2.png";
 
-import C1 from "../assets/images/details/C-1.png";
-import DLB1 from "../assets/images/details/DLB-1.png";
+// import C1 from "../assets/images/details/C-1.png";
+// import DLB1 from "../assets/images/details/DLB-1.png";
 
-import serviceImage from "../assets/images/services/service.png"
+// import serviceImage from "../assets/images/services/service.png"
 
-import noImage from "../assets/images/products/fastCurrent/no-image.jpg";
+import noImage from "../assets/images/products/fastCurrent/boiler-image.png";
 
 
 export const productsServices = [
