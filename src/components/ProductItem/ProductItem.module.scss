@@ -26,6 +26,12 @@
 
 .services {
   height: 215px;
+
+  img{
+    object-fit: cover;
+    //width: none;
+    height: 100%
+  }
 }
 
 .info {

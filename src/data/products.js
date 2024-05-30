@@ -23,10 +23,12 @@ import DLB1 from "../assets/images/details/DLB-1.png";
 
 import serviceImage from "../assets/images/services/service.png"
 
+import noImage from "../assets/images/products/fastCurrent/no-image.jpg";
+
 
 export const productsServices = [
   {
-    image: null,
+    image: noImage,
     title: "Монтирование любой электрической<br/> зарядной станции",
     code: "xxx",
     type: "mounting",
@@ -52,7 +54,7 @@ export const productsServices = [
   },
 
   {
-    image: null,
+    image: noImage,
     title: "Ремонтирование любой электрической<br/> зарядной станции",
     code: "xxx",
     type: "fixing",
@@ -79,7 +81,7 @@ export const productsServices = [
 
 export const productsDetails = [
   {
-    image: null,
+    image: noImage,
     title: "Кабель-удлинитель для пистолета станции",
     code: "xxx",
     type: "cabel",
@@ -126,7 +128,7 @@ export const productsDetails = [
   },
 
   {
-    image: null,
+    image: noImage,
     title: "Блок динамического балансирования нагрузки",
     code: "xxx",
     type: "cabel",
@@ -169,7 +171,7 @@ export const productsDetails = [
 
 export const productsFastCurrentStation = [
   {
-    image: null,
+    image: noImage,
     title: "Напольная зарядная станция постоянного тока",
     code: "xxx",
     type: "floor",
@@ -220,7 +222,7 @@ export const productsFastCurrentStation = [
   },
 
   {
-    image: null,
+    image: noImage,
     title: "Напольная зарядная станция постоянного тока",
     code: "xxx",
     type: "floor",
@@ -271,7 +273,7 @@ export const productsFastCurrentStation = [
   },
 
   {
-    image: null,
+    image: noImage,
     title: "Напольная зарядная станция постоянного тока",
     code: "xxx",
     type: "floor",
@@ -316,7 +318,7 @@ export const productsFastCurrentStation = [
   },
 
   {
-    image: null,
+    image: noImage,
     title: "Напольная зарядная станция постоянного тока",
     code: "xxx",
     type: "floor",
@@ -366,7 +368,7 @@ export const productsFastCurrentStation = [
     ],
   },
   {
-    image: null,
+    image: noImage,
     title: "Напольная зарядная станция постоянного тока",
     code: "xxx",
     type: "floor",
@@ -417,7 +419,7 @@ export const productsFastCurrentStation = [
   },
 
   {
-    image: null,
+    image: noImage,
     title: "Напольная зарядная станция постоянного тока",
     code: "xxx",
     type: "floor",
@@ -468,7 +470,7 @@ export const productsFastCurrentStation = [
   },
 
   {
-    image: null,
+    image: noImage,
     title: "Напольная зарядная станция постоянного тока",
     code: "xxx",
     type: "floor",
@@ -510,7 +512,7 @@ export const productsFastCurrentStation = [
   },
 
   {
-    image: null,
+    image: noImage,
     title: "Напольная зарядная станция постоянного тока",
     code: "xxx",
     type: "floor",
@@ -561,7 +563,7 @@ export const productsFastCurrentStation = [
   },
   //wall
   {
-    image: null,
+    image: noImage,
     title: "Настенная зарядная станция постоянного тока",
     code: "xxx",
     type: "wall",
@@ -615,7 +617,7 @@ export const productsFastCurrentStation = [
 
 export const productsSlowCurrentStation = [
   {
-    image: null,
+    image: noImage,
     title: "Медленное портативное устройство переменного тока",
     code: "xxx",
     type: "portable",
@@ -656,7 +658,7 @@ export const productsSlowCurrentStation = [
   },
 
   {
-    image: null,
+    image: noImage,
     title: "Медленное портативное устройство переменного тока",
     code: "xxx",
     type: "portable",
@@ -697,7 +699,7 @@ export const productsSlowCurrentStation = [
   },
 
   {
-    image: null,
+    image: noImage,
     title: "Настенная зарядная станция переменного тока",
     code: "xxx",
     type: "wall",
@@ -743,7 +745,7 @@ export const productsSlowCurrentStation = [
     ],
   },
   {
-    image: null,
+    image: noImage,
     title: "Настенная зарядная станция переменного тока",
     code: "xxx",
     type: "wall",
@@ -786,7 +788,7 @@ export const productsSlowCurrentStation = [
     ],
   },
   {
-    image: null,
+    image: noImage,
     title: "Настенная зарядная станция переменного тока",
     code: "xxx",
     type: "wall",
@@ -833,7 +835,7 @@ export const productsSlowCurrentStation = [
     ],
   },
   {
-    image: null,
+    image: noImage,
     title: "Настенная зарядная станция переменного тока",
     code: "xxx",
     type: "wall",
@@ -876,7 +878,7 @@ export const productsSlowCurrentStation = [
     ],
   },
   {
-    image: null,
+    image: noImage,
     title: "Напольная зарядная станция переменного тока",
     code: "xxx",
     type: "floor",

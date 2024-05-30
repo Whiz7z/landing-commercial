@@ -7,7 +7,7 @@ function Footer() {
       <div className={style.topFooter}>
         <div className={style.info}>
           <div className={style.logo}>
-            <a href="#">баребухи</a>
+            <a href="#">Shop</a>
           </div>
           <h2>электрические станции под ключ</h2>
 
@@ -22,7 +22,7 @@ function Footer() {
 
             <div className={style.gmail}>
               <p>Почта:</p>
-              <p>info@яичко.com</p>
+              <p>info@gmail.com</p>
             </div>
           </div>
 
@@ -52,7 +52,7 @@ function Footer() {
 
           <div className={style.gmail}>
             <p>Почта:</p>
-            <p>info@яйцо.com</p>
+            <p>info@gmail.com</p>
           </div>
         </div>
       </div>
@@ -75,10 +75,10 @@ function Footer() {
           <br /> российским законодательством
         </div>
         <p className={`${style.copyright} ${style.descktopCopyright}`}>
-          ооо яичко одно
+          ооо shop
         </p>
         <p className={`${style.copyright} ${style.mobileCopyright}`}>
-          ооо яичко одно
+          ооо shop
         </p>
       </div>
     </footer>

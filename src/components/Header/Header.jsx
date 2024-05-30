@@ -11,7 +11,7 @@ const Header = () => {
   const location = useLocation();
 
   const {pathname} = location;
-  const phoneNumber = import.meta.env.VITE_PHONE ?? '447935867519';
+  const phoneNumber = import.meta.env.VITE_PHONE ?? '000000000';
 
   
 
@@ -54,7 +54,7 @@ const Header = () => {
         <section className={style.headerBottom}>
           <div className={style.logo}>
             {/* <a href="#">energotochka</a> */}
-            <a href="#">Баребухи</a>
+            <a href="#">Shop</a>
             <h2 className={style.subLogo}>электрические станции под ключ</h2>
           </div>
           <menu className={style.menu}>
